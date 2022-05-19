@@ -3,13 +3,16 @@
   "version": "1.5.1",
   "private": true,
   "scripts": {
-    "clean": "rm -rf .next",
+    "clean": "rm -rf .next && rm -rf out",
+    "prestart": "npm run build",
     "start": "cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data",
     "dev": "next dev",
+    "prebuild": "npm run clean",
     "build": "next build && node ./scripts/generate-sitemap",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts",
+    "preexport": "npm run build",
     "export": "next export",
     "prepare": "husky install"
   },
