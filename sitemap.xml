@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://jojiapp.github.io/about</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/blog</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/projects</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/blog/deriving-ols-estimator</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/blog/github-markdown-guide</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/blog/new-features-in-v1</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/blog/pictures-of-canada</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/blog/the-time-machine</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/blog/code-sample</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://jojiapp.github.io/blog/nested-route/introducing-multi-part-posts-with-nested-routing</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/book</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/canada</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/code</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/feature</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/features</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/github</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/guide</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/holiday</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/images</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/markdown</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/math</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/multi-author</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/next-js</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/ols</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/reflection</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/tailwind</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/writings</loc>
+  </url>
+</urlset>

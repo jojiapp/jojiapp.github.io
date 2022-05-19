@@ -1,0 +1,44 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Next.js Starter Blog</title>
+      <link>https://jojiapp.github.io/blog</link>
+      <description>A blog created with Next.js and Tailwind.css</description>
+      <language>ko</language>
+      <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
+      <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
+      <lastBuildDate>Sat, 07 Aug 2021 15:32:14 GMT</lastBuildDate>
+      <atom:link href="https://jojiapp.github.io/tags/next-js/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://jojiapp.github.io/blog/new-features-in-v1</guid>
+    <title>New features in v1</title>
+    <link>https://jojiapp.github.io/blog/new-features-in-v1</link>
+    <description>An overview of the new features released in v1 - code block copy, multiple authors, frontmatter layout and more</description>
+    <pubDate>Sat, 07 Aug 2021 15:32:14 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>next-js</category><category>tailwind</category><category>guide</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/nested-route/introducing-multi-part-posts-with-nested-routing</guid>
+    <title>Introducing Multi-part Posts with Nested Routing</title>
+    <link>https://jojiapp.github.io/blog/nested-route/introducing-multi-part-posts-with-nested-routing</link>
+    <description>The blog template supports posts in nested sub-folders. This can be used to group posts of similar content e.g. a multi-part course. This post is itself an example of a nested route!</description>
+    <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>multi-author</category><category>next-js</category><category>feature</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/deriving-ols-estimator</guid>
+    <title>Deriving the OLS Estimator</title>
+    <link>https://jojiapp.github.io/blog/deriving-ols-estimator</link>
+    <description>How to derive the OLS Estimator with matrix notation and a tour of math typesetting using markdown with the help of KaTeX.</description>
+    <pubDate>Mon, 21 Dec 2020 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>next js</category><category>math</category><category>ols</category>
+  </item>
+
+    </channel>
+  </rss>
