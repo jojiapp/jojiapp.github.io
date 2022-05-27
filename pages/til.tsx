@@ -12,7 +12,7 @@ export const getStaticProps: GetStaticProps<{
   initialDisplayPosts: ComponentProps<typeof ListLayout>['initialDisplayPosts']
   pagination: ComponentProps<typeof ListLayout>['pagination']
 }> = async () => {
-  const posts = await getAllFilesFrontMatter('blog')
+  const posts = await getAllFilesFrontMatter('til')
   const initialDisplayPosts = posts.slice(0, POSTS_PER_PAGE)
   const pagination = {
     currentPage: 1,
@@ -29,12 +29,12 @@ export default function Blog({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-      <PageSEO title={`Blog - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO title={`TIL - ${siteMetadata.author}`} description={siteMetadata.description} />
       <ListLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title="Blog Posts"
+        title="TIL Posts"
       />
     </>
   )

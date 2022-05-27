@@ -25,7 +25,7 @@ import rehypePresetMinify from 'rehype-preset-minify'
 
 const root = process.cwd()
 
-export function getFiles(type: 'blog' | 'authors') {
+export function getFiles(type: 'blog' | 'authors' | 'til') {
   const prefixPaths = path.join(root, 'data', type)
   const files = getAllFilesRecursively(prefixPaths)
   // Only want to return blog/path and ignore root, replace is needed to work on Windows
@@ -42,7 +42,7 @@ export function dateSortDesc(a: string, b: string) {
   return 0
 }
 
-export async function getFileBySlug<T>(type: 'authors' | 'blog', slug: string | string[]) {
+export async function getFileBySlug<T>(type: 'authors' | 'blog' | 'til', slug: string | string[]) {
   const mdxPath = path.join(root, 'data', type, `${slug}.mdx`)
   const mdPath = path.join(root, 'data', type, `${slug}.md`)
   const source = fs.existsSync(mdxPath)
@@ -109,9 +109,8 @@ export async function getFileBySlug<T>(type: 'authors' | 'blog', slug: string | 
   }
 }
 
-export async function getAllFilesFrontMatter(folder: 'blog') {
+export async function getAllFilesFrontMatter(folder: 'blog' | 'til') {
   const prefixPaths = path.join(root, 'data', folder)
-
   const files = getAllFilesRecursively(prefixPaths)
 
   const allFrontMatter: PostFrontMatter[] = []
@@ -131,6 +130,7 @@ export async function getAllFilesFrontMatter(folder: 'blog') {
         ...frontmatter,
         slug: formatSlug(fileName),
         date: frontmatter.date ? new Date(frontmatter.date).toISOString() : null,
+        folder,
       })
     }
   })

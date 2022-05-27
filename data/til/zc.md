@@ -1,10 +1,10 @@
 ---
-title: Sample .md file
+title: 즉시적용 테스트
 date: '2022-05-27'
-tags: ['markdown', 'code', 'features']
+tags: ['test']
 draft: false
 summary: Example of a markdown file with code blocks and syntax highlighting
-layout: PostSimple
+layout: PostLayout
 ---
 
 A sample post with markdown.

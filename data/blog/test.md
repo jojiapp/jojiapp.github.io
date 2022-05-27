@@ -4,6 +4,7 @@ date: '2022-05-28'
 tags: ['test']
 draft: false
 summary: Example of a markdown file with code blocks and syntax highlighting
+layout: PostLayout
 ---
 
 A sample post with markdown.

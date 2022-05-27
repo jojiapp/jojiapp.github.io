@@ -27,18 +27,26 @@ const postDateTemplate: Intl.DateTimeFormatOptions = {
 interface Props {
   frontMatter: PostFrontMatter
   authorDetails: AuthorFrontMatter[]
+  folder: 'blog' | 'til'
   next?: { slug: string; title: string }
   prev?: { slug: string; title: string }
   children: ReactNode
 }
 
-export default function PostLayout({ frontMatter, authorDetails, next, prev, children }: Props) {
+export default function PostLayout({
+  frontMatter,
+  authorDetails,
+  folder,
+  next,
+  prev,
+  children,
+}: Props) {
   const { slug, fileName, date, title, tags } = frontMatter
 
   return (
     <SectionContainer>
       <BlogSEO
-        url={`${siteMetadata.siteUrl}/blog/${slug}`}
+        url={`${siteMetadata.siteUrl}/${folder}/${slug}`}
         authorDetails={authorDetails}
         {...frontMatter}
       />
@@ -134,7 +142,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                           Previous Article
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
+                          <Link href={`/${folder}/${prev.slug}`}>{prev.title}</Link>
                         </div>
                       </div>
                     )}
@@ -144,7 +152,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                           Next Article
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link href={`/blog/${next.slug}`}>{next.title}</Link>
+                          <Link href={`/${folder}/${next.slug}`}>{next.title}</Link>
                         </div>
                       </div>
                     )}

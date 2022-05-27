@@ -1,4 +1,5 @@
 export type PostFrontMatter = {
+  folder: 'blog' | 'til'
   title: string
   date: string
   tags: string[]
