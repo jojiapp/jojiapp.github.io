@@ -45,6 +45,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/test</loc>
+  </url>
+
+  <url>
     <loc
       >https://jojiapp.github.io/blog/nested-route/introducing-multi-part-posts-with-nested-routing</loc
     >
@@ -112,6 +116,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/tailwind</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/test</loc>
   </url>
 
   <url>

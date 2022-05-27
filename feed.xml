@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Sat, 07 Aug 2021 15:32:14 GMT</lastBuildDate>
+      <lastBuildDate>Sat, 28 May 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/test</guid>
+    <title>즉시적용 테스트</title>
+    <link>https://jojiapp.github.io/blog/test</link>
+    <description>Example of a markdown file with code blocks and syntax highlighting</description>
+    <pubDate>Sat, 28 May 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>test</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/new-features-in-v1</guid>
     <title>New features in v1</title>
