@@ -21,7 +21,7 @@ export default function remarkImgToJsx() {
         const imageNode = node.children.find((n) => n.type === 'image') as ImageNode
 
         // only local files
-        if (fs.existsSync(`${process.cwd()}/public${imageNode.url}`)) {
+        if (fs.existsSync(`${process.cwd()}//data${imageNode.url}`)) {
           const dimensions = sizeOf(`${process.cwd()}/public${imageNode.url}`)
 
           // Convert original node to next/image

@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: 'Next.js Starter Blog',
   author: '조지헌',
-  headerTitle: '기술블로그',
+  headerTitle: 'JLOG',
   description: 'A blog created with Next.js and Tailwind.css',
   language: 'ko',
   theme: 'system', // system, dark or light

@@ -164,7 +164,7 @@ export default function PostLayout({
                   href="/blog"
                   className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                 >
-                  &larr; Back to the blog
+                  &larr; Back to the {folder === 'blog' ? 'Blog' : 'TIL'}
                 </Link>
               </div>
             </footer>
