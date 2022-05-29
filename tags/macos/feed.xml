@@ -1,0 +1,34 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>Next.js Starter Blog</title>
+      <link>https://jojiapp.github.io/blog</link>
+      <description>A blog created with Next.js and Tailwind.css</description>
+      <language>ko</language>
+      <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
+      <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
+      <lastBuildDate>Sat, 29 Jan 2022 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://jojiapp.github.io/tags/macos/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://jojiapp.github.io/blog/MacOS/iTerm2</guid>
+    <title>MacOS iTerm2</title>
+    <link>https://jojiapp.github.io/blog/MacOS/iTerm2</link>
+    <description>iTerm2와 oh my zsh를 사용하여 터미널을 커스텀.</description>
+    <pubDate>Sat, 29 Jan 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Blog</category><category>MacOS</category><category>Homebrew</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/MacOS/Homebrew</guid>
+    <title>MacOS Homebrew</title>
+    <link>https://jojiapp.github.io/blog/MacOS/Homebrew</link>
+    <description>Homebrew 설치 및 사용법 알아보기.</description>
+    <pubDate>Fri, 28 Jan 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Blog</category><category>MacOS</category><category>Homebrew</category>
+  </item>
+
+    </channel>
+  </rss>

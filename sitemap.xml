@@ -21,108 +21,98 @@
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/blog/deriving-ols-estimator</loc>
+    <loc>https://jojiapp.github.io/til</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/blog/github-markdown-guide</loc>
+    <loc>https://jojiapp.github.io/blog/Git/GitHub_SSH_연결</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/blog/new-features-in-v1</loc>
+    <loc>https://jojiapp.github.io/blog/Git/Git_이란</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/blog/pictures-of-canada</loc>
+    <loc>https://jojiapp.github.io/blog/Git/Lifecycle</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/blog/the-time-machine</loc>
+    <loc>https://jojiapp.github.io/blog/Git/Log_이쁘게_출력하기</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/blog/code-sample</loc>
+    <loc>https://jojiapp.github.io/blog/Git/기본_명령어</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/blog/test</loc>
+    <loc>https://jojiapp.github.io/blog/Git/설정</loc>
   </url>
 
   <url>
-    <loc
-      >https://jojiapp.github.io/blog/nested-route/introducing-multi-part-posts-with-nested-routing</loc
-    >
+    <loc>https://jojiapp.github.io/blog/IntelliJ/Code_Style_설정</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/book</loc>
+    <loc>https://jojiapp.github.io/blog/IntelliJ/Git_설정</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/canada</loc>
+    <loc>https://jojiapp.github.io/blog/IntelliJ/터미널에서_IntelliJ_열기</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/code</loc>
+    <loc>https://jojiapp.github.io/blog/MacOS/Homebrew</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/feature</loc>
+    <loc>https://jojiapp.github.io/blog/MacOS/iTerm2</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/features</loc>
+    <loc>https://jojiapp.github.io/blog/Spring/RestDocs/Spring_Rest_Docs_Asciidoc_작성</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/github</loc>
+    <loc>https://jojiapp.github.io/blog/Spring/RestDocs/Spring_Rest_Docs_Gradle_설정</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/guide</loc>
+    <loc>https://jojiapp.github.io/blog/Spring/RestDocs/Spring_Rest_Docs_Test_코드_작성</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/holiday</loc>
+    <loc>https://jojiapp.github.io/tags/blog</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/images</loc>
+    <loc>https://jojiapp.github.io/tags/code-style</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/markdown</loc>
+    <loc>https://jojiapp.github.io/tags/docs</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/math</loc>
+    <loc>https://jojiapp.github.io/tags/git</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/multi-author</loc>
+    <loc>https://jojiapp.github.io/tags/homebrew</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/next-js</loc>
+    <loc>https://jojiapp.github.io/tags/intellij</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/ols</loc>
+    <loc>https://jojiapp.github.io/tags/macos</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/reflection</loc>
+    <loc>https://jojiapp.github.io/tags/spring</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/tailwind</loc>
-  </url>
-
-  <url>
-    <loc>https://jojiapp.github.io/tags/test</loc>
-  </url>
-
-  <url>
-    <loc>https://jojiapp.github.io/tags/writings</loc>
+    <loc>https://jojiapp.github.io/tags/spring-rest-docs</loc>
   </url>
 </urlset>
