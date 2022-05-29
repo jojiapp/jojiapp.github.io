@@ -3,7 +3,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import ListLayout from '@/layouts/ListLayout'
 import { POSTS_PER_PAGE } from '../../blog'
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
+import { GetStaticPaths, InferGetStaticPropsType } from 'next'
 import { PostFrontMatter } from 'types/PostFrontMatter'
 
 export const getStaticPaths: GetStaticPaths<{ page: string }> = async () => {
@@ -19,10 +19,13 @@ export const getStaticPaths: GetStaticPaths<{ page: string }> = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps<{
-  posts: PostFrontMatter[]
-  initialDisplayPosts: PostFrontMatter[]
-  pagination: { currentPage: number; totalPages: number }
+// @ts-ignore
+export const getStaticProps: (context) => Promise<{
+  props: {
+    pagination: { folder: 'blog' | 'til'; totalPages: number; currentPage: number }
+    initialDisplayPosts: PostFrontMatter[]
+    posts: PostFrontMatter[]
+  }
 }> = async (context) => {
   const {
     params: { page },
@@ -34,6 +37,7 @@ export const getStaticProps: GetStaticProps<{
     POSTS_PER_PAGE * pageNumber
   )
   const pagination = {
+    folder: 'blog',
     currentPage: pageNumber,
     totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
   }
