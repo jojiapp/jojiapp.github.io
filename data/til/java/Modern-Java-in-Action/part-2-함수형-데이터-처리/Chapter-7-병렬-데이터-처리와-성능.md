@@ -186,3 +186,112 @@ public class SideEffectSumTest {
 | Stream.iterate  | 나쁨   |
 | HashSet         | 좋음   |
 | TreeSet         | 좋음   |
+
+## 7.2 포크/조인 프레임워크
+
+`포크/조인 프레임워크`는 병렬화할 수 있는 작업을 재귀적으로 분할하여 서브태스크 각각의 결과를 합쳐서 전체 결과를 만들도록 설계 되었습니다.
+
+### 7.2.1 RecursiveTask 활용
+
+`스레드 풀`을 이용하려면 `RecursiveTask<V>`의 서브클래스를 만들어야 합니다.
+
+`V`은 병렬화된 태스크가 생성하는 `결과 형식`, 결과가 없을 떄는 `RecursiveAction` 형식 입니다.
+
+`RecursiveTask`를 정의하려면 추상 메소드 `compute`를 구현해야 합니다.
+
+`compute` 메소드는 태스크를 `서브태스크로 분할`하는 로직과 더이상 분할 할 수 없을 떄 `개별 서브태스크의 결과를 생산`할 알고리즘을 정의합니다.
+
+```java
+public class ForkJoinSumCalculator extends RecursiveTask<Long> {
+  public static final long THRESHOLD = 10_000L;
+  private final long[] numbers;
+  private final int start;
+  private final int end;
+
+  public ForkJoinSumCalculator(long[] numbers) {
+    this(numbers, 0, numbers.length);
+  }
+
+  public ForkJoinSumCalculator(long[] numbers, int start, int end) {
+    this.numbers = numbers;
+    this.start = start;
+    this.end = end;
+  }
+
+  @Override
+  protected Long compute() {
+    int length = end - start;
+    if (length <= THRESHOLD) {
+      return computeSequentially();
+    }
+    ForkJoinSumCalculator leftTask = new ForkJoinSumCalculator(numbers, start, start + length / 2);
+    leftTask.fork();
+    ForkJoinSumCalculator rightTask = new ForkJoinSumCalculator(numbers, start + length / 2, end);
+    Long rightResult = rightTask.compute();
+    Long leftResult = leftTask.join();
+
+    return rightResult + leftResult;
+  }
+
+  private long computeSequentially() {
+    long sum = 0;
+    for (int i = start; i < end; i++) {
+      sum += numbers[i];
+    }
+    return sum;
+  }
+}
+```
+
+```java
+public class ForkJoinSumCalculatorTest {
+  @Test
+  @DisplayName("자연수 덧셈 병렬")
+  void forkJoinSum() throws Exception {
+    // Given
+    Long n = 10_000_000L;
+    long[] numbers = LongStream.rangeClosed(1, n).toArray();
+
+    // When
+    ForkJoinTask<Long> forkJoinSumCalculator = new ForkJoinSumCalculator(numbers);
+
+    // Then
+    Long actual = new ForkJoinPool().invoke(forkJoinSumCalculator);
+    Assertions.assertThat(actual).isEqualTo(50000005000000L);
+  }
+}
+```
+
+위 코드는 `n`까지의 자연수를 입력받아 덧셈 작업을 병렬로 처리하는 로직입니다.
+
+> 일반적으로 애플리케이션에서 `ForkJoinPool`을 싱클턴으로 만들어 사용합니다.
+
+#### 💡 ForkJoinSumCalculator 실행
+
+`ForkJoinSumCalculator`를 `ForkJoinPool`로 전달하면 풀의 스레드가 `ForkJoinSumCalculator`의 `compute`를 실행하면서 작업을 수행합니다.
+
+`compute` 메소드는 병렬로 실행할 수 있을 만큼 태스크의 크기가 작아졌는지 확인하며, 만족되는 크기가 될 떄 까지 재귀적으로 분할합니다.  
+이후, 각 `서브태스크`는 `순차적을 처리`되며 `포킹 프로세스`로 만들어진 `이진트리`의 태스크를 루트에서 `역순으로 방문`합니다.
+
+각 서브태스크의 부분 결과를 합쳐서 태스크의 최종 결과를 계산합니다.
+
+### 7,2.2 포크/조인 프레임워크를 제대로 사용하는 방법
+
+- `join` 메소드를 태스크에 호출하면 태스크가 생산하는 결과가 준비될 때까지 호출자를 블록 시킵니다.  
+  따라서 **두 서브태스크가 모두 시작된 다음에 `join`을 호출해야 합니다.**
+- `RecursiveTask` 내에서는 `ForkJoinPool`의 `invoke` 메소드를 사용하면 안됩니다. 대신 `compute`나 `fork` 메소드를 직접 호ㅜㄹ 할 수 있습니다.  
+  순차코드에서 병렬 계산을 시작할 때만 `invoke`를 사용합니다.
+- 서브태스크에 `fork` 메소드를 호출해서 `ForkJoinPool`의 일정을 조절할 수 있습니다.
+  - 위의 코드에서 두 작업 모두 `fork`를 호출하는 것이 자연스러울 것 같지만, 한 쪽 작업은 `compute`를 호출하는것이 효율적입니다.
+  - 두 서브태스크의 한 태스크에는 `같은 스레드를 재사용`할 수 있기 때문에 풀에서 `불필요한 태스크를 할당하는 오버헤드`를 피할 수 있습니다.
+- `포크/조인 프레임워크`를 이용하는 병렬 계산은 `디버깅`하기 어렵습니다.
+- `멀티코어`에 `포크/조인 프레임워크`를 사용하는 것이 `순차 처리`보다 `무조건 빠를 거라는 생각`은 버려야합니다.
+
+### 7.2.3 작업 훔치기
+
+`코어 개수`와 관계없이 `적절한 크기로 분할`된 많은 태스크를 포킹하는 것이 바람직합니다.
+
+이렇게 하기 위해 포크/조인 프레임워크는 `작업 훔치기`라는 기법으로 이 문제를 해결합니다.
+
+한 스레드는 다른 스레드보다 자신에게 할당딘 태스크를 더 빨리 처리할 수 있습니다.  
+이렇게 할 일을 끝낸 스레드를 방치하는것이 아니라 `다른 스레드의 큐의 꼬리`에서 작업을 훔쳐옵니다.
