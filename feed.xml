@@ -51,6 +51,16 @@
   </item>
 
   <item>
+    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-7-병렬-데이터-처리와-성능</guid>
+    <title>Chapter 7. 병렬 데이터 처리와 성능</title>
+    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-7-병렬-데이터-처리와-성능</link>
+    <description>Chapter 7. 병렬 데이터 처리와 성능</description>
+    <pubDate>Mon, 25 Apr 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>TIL</category><category>Java</category><category>Modern Java In Action</category>
+  </item>
+
+  <item>
     <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-6-스트림으로-데이터-수집</guid>
     <title>Chapter 6. 스트림으로 데이터 수집</title>
     <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-6-스트림으로-데이터-수집</link>
