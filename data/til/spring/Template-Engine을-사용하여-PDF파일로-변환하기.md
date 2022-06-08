@@ -3,7 +3,7 @@ title: Template Engine(with Thymeleaf)을 사용하여 PDF파일로 변환하기
 date: '2022-05-19'
 tags: ['TIL', 'Java', 'Spring', 'Template Engine', 'Thymeleaf']
 draft: false
-summary: Spring Boot에서 Response DateTime Format 일괄 적용
+summary: Spring Boot에서 Template Engin를 사용하여 PDF파일 
 ---
 
 # Template Engine(with Thymeleaf)을 사용하여 PDF파일로 변환하기
