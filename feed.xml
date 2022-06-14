@@ -61,16 +61,6 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-8-컬렉션-API-개선</guid>
-    <title>Chapter 8. 컬렉션 API 개선</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-8-컬렉션-API-개선</link>
-    <description>Chapter 8. 컬렉션 API 개선</description>
-    <pubDate>Mon, 25 Apr 2022 00:00:00 GMT</pubDate>
-    <author>jojiapp@gmail.com (조지헌)</author>
-    <category>TIL</category><category>Java</category><category>Modern Java In Action</category>
-  </item>
-
-  <item>
     <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-6-스트림으로-데이터-수집</guid>
     <title>Chapter 6. 스트림으로 데이터 수집</title>
     <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-6-스트림으로-데이터-수집</link>
