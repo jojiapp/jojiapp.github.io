@@ -212,11 +212,11 @@ public class CollectionTest {
 
 ```java
 public class CollectionTest {
-	void getOrDefault() throws Exception {
-		Map<String, String> map = Map.of("key", "value");
-		String notKey = map.getOrDefault("not key", "not value");
-		System.out.println(notKey);
-	}
+    void getOrDefault() throws Exception {
+        Map<String, String> map = Map.of("key", "value");
+        String notKey = map.getOrDefault("not key", "not value");
+        System.out.println(notKey);
+    }
 }
 ```
 
@@ -228,12 +228,12 @@ public class CollectionTest {
 
 ```java
 public class CollectionTest {
-	void computeIfAbsent() throws Exception {
-		Map<String, String> map = new HashMap<>();
-		String c = map.computeIfAbsent("c", s -> "c");
-		System.out.println(c); // c
-		System.out.println(map); // key: c, value: c
-	}
+    void computeIfAbsent() throws Exception {
+        Map<String, String> map = new HashMap<>();
+        String c = map.computeIfAbsent("c", s -> "c");
+        System.out.println(c); // c
+        System.out.println(map); // key: c, value: c
+    }
 }
 ```
 
@@ -241,12 +241,12 @@ public class CollectionTest {
 
 ```java
 public class CollectionTest {
-	void computeIfPresent() throws Exception {
-		HashMap<String, String> map = new HashMap<>();
-		map.put("a", "a");
-		map.computeIfPresent("a", (s, s2) -> "b");
-		System.out.println(map); // key: a, value: b
-	}
+    void computeIfPresent() throws Exception {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("a", "a");
+        map.computeIfPresent("a", (s, s2) -> "b");
+        System.out.println(map); // key: a, value: b
+    }
 }
 ```
 
@@ -260,14 +260,14 @@ public class CollectionTest {
 
 ```java
 public class CollectionTest {
-	void remove() throws Exception {
-		HashMap<String, String> map = new HashMap<>();
-		map.put("a", "a");
-		map.put("aa", "aa");
-		map.put("b", "b");
-		map.remove("aa", "aa");
-		System.out.println(map); // aa만 삭제 됨
-	}
+    void remove() throws Exception {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("a", "a");
+        map.put("aa", "aa");
+        map.put("b", "b");
+        map.remove("aa", "aa");
+        System.out.println(map); // aa만 삭제 됨
+    }
 }
 ```
 
@@ -283,17 +283,17 @@ public class CollectionTest {
 
 ```java
 public class CollectionTest {
-	void merge() throws Exception {
-		HashMap<String, String> map1 = new HashMap<>();
-		map1.put("a", "a");
-		HashMap<String, String> map2 = new HashMap<>();
-		map2.put("a", "a");
-		map2.put("b", "b");
+    void merge() throws Exception {
+        HashMap<String, String> map1 = new HashMap<>();
+        map1.put("a", "a");
+        HashMap<String, String> map2 = new HashMap<>();
+        map2.put("a", "a");
+        map2.put("b", "b");
 
-		map1.forEach((k, v) ->
-				map2.merge(k, v, (map1Value, map2Value) -> map1Value + map2Value));
-		System.out.println(map2); // {a=aa, b=b}
-	}
+        map1.forEach((k, v) ->
+                map2.merge(k, v, (map1Value, map2Value) -> map1Value + map2Value));
+        System.out.println(map2); // {a=aa, b=b}
+    }
 }
 ```
 
@@ -322,13 +322,13 @@ public class CollectionTest {
 
 그래야 `int`의 범위를 넘어서는 이후의 상황을 대처할 수 있기 때문입니다.
 
-> 그런데 `mappingCount`는 어디에 있는거죠?
-
 ### 8.4.3 집합뷰
 
 `ConcurrentHashMap`을 집합 뷰로 반환하는 `keySet`이라는 메소드를 지원합니다.
 
 `newKeySet`이라는 메소드를 이용해 `ConcurrentHashMap`으로 유지되는 집합을 만들 수도 있습니다.
+
+> 타입을 `Set` 인터페이스로 받을 수 있습니다.
 
 ## 8.5 마치며
 
