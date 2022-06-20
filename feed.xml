@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Tue, 14 Jun 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Mon, 20 Jun 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-9-리팩터링-테스팅-디버깅</guid>
+    <title>Chapter 9. 리팩터링, 테스팅, 디버깅</title>
+    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-9-리팩터링-테스팅-디버깅</link>
+    <description>Chapter 9. 리팩터링, 테스팅, 디버깅</description>
+    <pubDate>Mon, 20 Jun 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>TIL</category><category>Java</category><category>Modern Java In Action</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-8-컬렉션-API-개선</guid>
     <title>Chapter 8. 컬렉션 API 개선</title>
