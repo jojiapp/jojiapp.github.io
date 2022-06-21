@@ -1,7 +1,7 @@
 ---
 title: MacOS Homebrew
 date: '2022-01-28'
-tags: ['Blog', 'MacOS', 'Homebrew']
+tags: ['Mac OS', 'Homebrew']
 draft: false
 summary: Homebrew 설치 및 사용법 알아보기.
 ---

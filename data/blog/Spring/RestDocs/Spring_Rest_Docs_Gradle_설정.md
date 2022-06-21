@@ -1,7 +1,7 @@
 ---
 title: Spring Rest Docs Gradle 설정
 date: '2022-02-26'
-tags: ['Blog', 'Spring', 'Spring Rest Docs', 'Docs']
+tags: ['Spring', 'Spring Rest Docs', 'Docs']
 draft: false
 summary: 문서 자동화를 위해 Spring에서 공식 지원하는 Spring Rest Docs애 대해 알아보고 Gradle 설정 방법을 알아보자.
 ---

@@ -7,10 +7,9 @@ import { PostFrontMatter } from '../types/PostFrontMatter'
 
 export const POSTS_PER_PAGE = 5
 
-// @ts-ignore
 export const getStaticProps: () => Promise<{
   props: {
-    pagination: { folder: 'blog' | 'til'; totalPages: number; currentPage: number }
+    pagination: { totalPages: number; currentPage: number }
     initialDisplayPosts: PostFrontMatter[]
     posts: PostFrontMatter[]
   }

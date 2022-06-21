@@ -1,7 +1,7 @@
 ---
 title: Local 환경에서 Static Resources 읽어오기
 date: '2022-05-17'
-tags: ['TIL', 'Java', 'Spring', 'Static Resources']
+tags: ['Java', 'Spring', 'Static Resources']
 draft: true
 summary: Local 환경에서 Static Resources 읽어오기
 ---

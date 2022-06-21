@@ -1,7 +1,7 @@
 ---
 title: Binding Error Properties Message 적용
 date: '2022-05-16'
-tags: ['TIL', 'Java', 'Spring', 'Error']
+tags: ['Java', 'Spring', 'Error']
 draft: false
 summary: Binding Error Properties Message 적용
 ---

@@ -1,7 +1,7 @@
 ---
 title: GitHub(원격저장소) SSH 연결
 date: '2022-01-30'
-tags: ['Blog', 'Git']
+tags: ['Git']
 draft: false
 summary: GitHub에 SSH를 연결하여 사용하기.
 ---

@@ -1,7 +1,7 @@
 ---
 title: 'Git 이란?'
 date: '2022-01-31'
-tags: ['Blog', 'Git']
+tags: ['Git']
 draft: false
 summary: 버전 관리 시스템(VCS)중에 가장 많이 사용되는 Git에 대해 알아보기.
 ---

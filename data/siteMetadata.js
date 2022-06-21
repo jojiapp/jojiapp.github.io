@@ -2,7 +2,7 @@ const siteMetadata = {
   title: 'JLOG',
   author: '조지헌',
   headerTitle: 'JLOG',
-  description: '매일 공부한 것을 TIL에 기록하고 정리하여 블로그에 작성중입니다.',
+  description: '매일 공부한 것을 정리하여 블로그를 작성중입니다.',
   language: 'ko',
   theme: 'system', // system, dark or light
   siteUrl: 'https://jojiapp.github.io',

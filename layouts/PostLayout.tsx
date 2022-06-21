@@ -27,26 +27,19 @@ const postDateTemplate: Intl.DateTimeFormatOptions = {
 interface Props {
   frontMatter: PostFrontMatter
   authorDetails: AuthorFrontMatter[]
-  folder: 'blog' | 'til'
+  folder: 'blog'
   next?: { slug: string; title: string }
   prev?: { slug: string; title: string }
   children: ReactNode
 }
 
-export default function PostLayout({
-  frontMatter,
-  authorDetails,
-  folder,
-  next,
-  prev,
-  children,
-}: Props) {
+export default function PostLayout({ frontMatter, authorDetails, next, prev, children }: Props) {
   const { slug, fileName, date, title, tags } = frontMatter
 
   return (
     <SectionContainer>
       <BlogSEO
-        url={`${siteMetadata.siteUrl}/${folder}/${slug}`}
+        url={`${siteMetadata.siteUrl}/blog/${slug}`}
         authorDetails={authorDetails}
         {...frontMatter}
       />
@@ -92,7 +85,7 @@ export default function PostLayout({
                       <dl className="whitespace-nowrap text-sm font-medium leading-5">
                         <dt className="sr-only">Name</dt>
                         <dd className="text-gray-900 dark:text-gray-100">{author.name}</dd>
-                        <dt className="sr-only">Twitter</dt>
+                        <dt className="sr-only">GitHub</dt>
                         <dd>
                           {author.github && (
                             <Link
@@ -142,7 +135,7 @@ export default function PostLayout({
                           Previous Article
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link href={`/${folder}/${prev.slug}`}>{prev.title}</Link>
+                          <Link href={`/blog/${prev.slug}`}>{prev.title}</Link>
                         </div>
                       </div>
                     )}
@@ -152,7 +145,7 @@ export default function PostLayout({
                           Next Article
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link href={`/${folder}/${next.slug}`}>{next.title}</Link>
+                          <Link href={`/blog/${next.slug}`}>{next.title}</Link>
                         </div>
                       </div>
                     )}
@@ -164,7 +157,7 @@ export default function PostLayout({
                   href="/blog"
                   className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                 >
-                  &larr; Back to the {folder === 'blog' ? 'Blog' : 'TIL'}
+                  &larr; Back to the Blog
                 </Link>
               </div>
             </footer>

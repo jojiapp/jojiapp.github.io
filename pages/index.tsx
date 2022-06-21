@@ -11,7 +11,7 @@ import NewsletterForm from '@/components/NewsletterForm'
 const MAX_DISPLAY = 5
 
 export const getStaticProps: GetStaticProps<{ posts: PostFrontMatter[] }> = async () => {
-  const posts = await getAllFilesFrontMatter('til')
+  const posts = await getAllFilesFrontMatter('blog')
 
   return { props: { posts } }
 }
@@ -48,7 +48,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
                         <div>
                           <h2 className="text-2xl font-bold leading-8 tracking-tight">
                             <Link
-                              href={`/til/${slug}`}
+                              href={`/blog/${slug}`}
                               className="text-gray-900 dark:text-gray-100"
                             >
                               {title}
@@ -66,7 +66,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
                       </div>
                       <div className="text-base font-medium leading-6">
                         <Link
-                          href={`/til/${slug}`}
+                          href={`/blog/${slug}`}
                           className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                           aria-label={`Read "${title}"`}
                         >
@@ -81,6 +81,17 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
           })}
         </ul>
       </div>
+      {posts.length > MAX_DISPLAY && (
+        <div className="flex justify-end text-base font-medium leading-6">
+          <Link
+            href="/blog"
+            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+            aria-label="all posts"
+          >
+            All Posts &rarr;
+          </Link>
+        </div>
+      )}
       {siteMetadata.newsletter.provider !== '' && (
         <div className="flex items-center justify-center pt-4">
           <NewsletterForm />

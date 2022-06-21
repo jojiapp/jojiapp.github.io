@@ -1,7 +1,7 @@
 ---
 title: Spring Rest Docs Asciidoc 작성 방법
 date: '2022-03-16'
-tags: ['Blog', 'Spring', 'Spring Rest Docs', 'Docs']
+tags: ['Spring', 'Spring Rest Docs', 'Docs']
 draft: false
 summary: 생성된 snippets를 이용하여 문서를 만들어 보도록 하겠습니다.
 ---

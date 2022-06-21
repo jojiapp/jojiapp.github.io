@@ -1,7 +1,7 @@
 ---
 title: Chapter 6. 스트림으로 데이터 수집
 date: '2022-04-23'
-tags: ['TIL', 'Java', 'Modern Java In Action']
+tags: ['Java', 'Modern Java In Action']
 draft: false
 summary: Chapter 6. 스트림으로 데이터 수집
 ---

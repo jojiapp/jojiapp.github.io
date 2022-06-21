@@ -1,7 +1,7 @@
 ---
 title: Chapter 3. 람다 표현식
 date: '2022-04-13'
-tags: ['TIL', 'Java', 'Modern Java In Action']
+tags: ['Java', 'Modern Java In Action']
 draft: false
 summary: Chapter 3. 람다 표현식
 ---

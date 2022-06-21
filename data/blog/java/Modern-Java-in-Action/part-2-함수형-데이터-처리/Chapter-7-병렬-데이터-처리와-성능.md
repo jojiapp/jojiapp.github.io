@@ -1,7 +1,7 @@
 ---
 title: Chapter 7. 병렬 데이터 처리와 성능
 date: '2022-04-25'
-tags: ['TIL', 'Java', 'Modern Java In Action']
+tags: ['Java', 'Modern Java In Action']
 draft: false
 summary: Chapter 7. 병렬 데이터 처리와 성능
 ---

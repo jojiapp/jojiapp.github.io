@@ -1,7 +1,7 @@
 ---
 title: MacOS iTerm2
 date: '2022-01-29'
-tags: ['Blog', 'MacOS', 'Homebrew']
+tags: ['Mac OS', 'Homebrew']
 draft: false
 summary: iTerm2와 oh my zsh를 사용하여 터미널을 커스텀.
 ---

@@ -1,7 +1,7 @@
 ---
 title: IntelliJ Code Style 설정
 date: '2022-02-16'
-tags: ['Blog', 'IntelliJ', 'Code Style']
+tags: ['IntelliJ', 'Code Style']
 draft: false
 summary: IntelliJ에서 Code Style을 설정하여 일관된 코드 스타일 유지하기.
 ---

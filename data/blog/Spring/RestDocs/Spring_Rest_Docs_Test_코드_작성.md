@@ -1,7 +1,7 @@
 ---
 title: Spring Rest Docs Test 코드 작성
 date: '2022-02-28'
-tags: ['Blog', 'Spring', 'Spring Rest Docs', 'Docs']
+tags: ['Spring', 'Spring Rest Docs', 'Docs']
 draft: false
 summary: snippets을 만들기 위해 Test 코드를 작성하는 방법에 대해 알아보겠습니다.
 ---

@@ -12,7 +12,7 @@ import { PostFrontMatter } from 'types/PostFrontMatter'
 interface Props {
   frontMatter: PostFrontMatter
   children: ReactNode
-  folder: 'blog' | 'til'
+  folder: 'blog'
   next?: { slug: string; title: string }
   prev?: { slug: string; title: string }
 }

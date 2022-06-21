@@ -73,7 +73,6 @@ export default function Blog({
         <MDXLayoutRenderer
           layout={frontMatter.layout || DEFAULT_LAYOUT}
           toc={toc}
-          folder="blog"
           mdxSource={mdxSource}
           frontMatter={frontMatter}
           authorDetails={authorDetails}

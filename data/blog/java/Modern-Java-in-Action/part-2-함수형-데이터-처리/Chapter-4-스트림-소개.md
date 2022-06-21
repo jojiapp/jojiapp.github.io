@@ -1,7 +1,7 @@
 ---
 title: Chapter 4. 스트림 소개
 date: '2022-04-15'
-tags: ['TIL', 'Java', 'Modern Java In Action']
+tags: ['Java', 'Modern Java In Action']
 draft: false
 summary: Chapter 4. 스트림 소개
 ---

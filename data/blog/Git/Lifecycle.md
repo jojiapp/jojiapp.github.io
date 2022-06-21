@@ -1,7 +1,7 @@
 ---
 title: Git Lifecycle
 date: '2022-02-01'
-tags: ['Blog', 'Git']
+tags: ['Git']
 draft: false
 summary: Git을 제대로 이해하고 사용하기 위해서는 Lifecycle에 대해서 제대로 이해하기.
 ---

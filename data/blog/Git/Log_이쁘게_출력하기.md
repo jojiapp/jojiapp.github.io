@@ -1,7 +1,7 @@
 ---
 title: Git Log 이쁘게 출력하기
 date: '2022-02-05'
-tags: ['Blog', 'Git']
+tags: ['Git']
 draft: false
 summary: Git에서 Log를 이쁘게 출력하는 방법.
 ---

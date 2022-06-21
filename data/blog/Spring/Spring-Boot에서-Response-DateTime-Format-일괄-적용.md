@@ -1,7 +1,7 @@
 ---
 title: Spring Boot에서 Response DateTime Format 일괄 적용
 date: '2022-05-18'
-tags: ['TIL', 'Java', 'Spring', 'DateTime']
+tags: ['Java', 'Spring', 'JSON', 'DateTime']
 draft: false
 summary: Spring Boot에서 Response DateTime Format 일괄 적용
 ---

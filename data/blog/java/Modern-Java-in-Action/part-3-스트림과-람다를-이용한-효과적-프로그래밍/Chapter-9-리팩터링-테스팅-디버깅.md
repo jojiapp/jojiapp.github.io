@@ -1,7 +1,7 @@
 ---
 title: Chapter 9. 리팩터링, 테스팅, 디버깅
 date: '2022-06-20'
-tags: ['TIL', 'Java', 'Modern Java In Action']
+tags: ['Java', 'Modern Java In Action']
 draft: false
 summary: Chapter 9. 리팩터링, 테스팅, 디버깅
 ---

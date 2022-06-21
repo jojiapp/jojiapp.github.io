@@ -1,7 +1,7 @@
 ---
 title: IntelliJ 터미널에서 IntelliJ 열기
 date: '2022-01-21'
-tags: ['Blog', 'IntelliJ', 'Git']
+tags: ['IntelliJ', 'Git']
 draft: false
 summary: 터미널에서 IntelliJ를 실행 할 수 있도록 설정하기.
 ---

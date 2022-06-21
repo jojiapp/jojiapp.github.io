@@ -1,7 +1,7 @@
 ---
 title: Chapter 5. 스트림 활용
 date: '2022-04-18'
-tags: ['TIL', 'Java', 'Modern Java In Action']
+tags: ['Java', 'Modern Java In Action']
 draft: false
 summary: Chapter 5. 스트림 활용
 ---

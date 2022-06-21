@@ -1,7 +1,7 @@
 ---
 title: Chapter 8. 컬렉션 API 개선
 date: '2022-06-14'
-tags: ['TIL', 'Java', 'Modern Java In Action']
+tags: ['Java', 'Modern Java In Action']
 draft: false
 summary: Chapter 8. 컬렉션 API 개선
 ---

@@ -1,7 +1,7 @@
 ---
 title: IntelliJ Git 설정
 date: '2022-01-20'
-tags: ['Blog', 'IntelliJ', 'Git']
+tags: ['IntelliJ', 'Git']
 draft: false
 summary: IntelliJ 에서 로컬에 설치한 Git 사용하도록 설정하기.
 ---

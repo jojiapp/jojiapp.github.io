@@ -4,7 +4,6 @@ import { ComponentProps, useState } from 'react'
 import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
 import { PostFrontMatter } from 'types/PostFrontMatter'
-
 interface Props {
   posts: PostFrontMatter[]
   title: string
@@ -57,7 +56,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => {
-            const { slug, date, folder, title, summary, tags } = frontMatter
+            const { slug, date, title, summary, tags } = frontMatter
             return (
               <li key={slug} className="py-4">
                 <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
@@ -70,10 +69,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                   <div className="space-y-3 xl:col-span-3">
                     <div>
                       <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                        <Link
-                          href={`/${folder}/${slug}`}
-                          className="text-gray-900 dark:text-gray-100"
-                        >
+                        <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
                           {title}
                         </Link>
                       </h3>
@@ -94,11 +90,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
         </ul>
       </div>
       {pagination && pagination.totalPages > 1 && !searchValue && (
-        <Pagination
-          folder={pagination.folder}
-          currentPage={pagination.currentPage}
-          totalPages={pagination.totalPages}
-        />
+        <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
       )}
     </>
   )

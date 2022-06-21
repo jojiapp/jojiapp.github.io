@@ -1,7 +1,7 @@
 ---
 title: QueryDSL Support Custom 하기
 date: '2022-05-15'
-tags: ['TIL', 'Java', 'JPA', 'QueryDSL']
+tags: ['Java', 'JPA', 'QueryDSL']
 draft: false
 summary: QueryDSL Support Custom 하기
 ---
