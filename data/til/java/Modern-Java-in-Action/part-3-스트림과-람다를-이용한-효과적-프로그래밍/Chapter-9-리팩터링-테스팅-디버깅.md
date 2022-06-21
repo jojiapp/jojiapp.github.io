@@ -24,17 +24,17 @@ summary: Chapter 9. 리팩터링, 테스팅, 디버깅
 
 ```java
 public class FooTest {
-	@Test
-	@DisplayName("익명클래스를 람다로 변경")
-	void test1() throws Exception {
-		Runnable hello1 = new Runnable() {
-			@Override
-			public void run() {
-				System.out.println("hello");
-			}
-		};
-		Runnable hello2 = () -> System.out.println("hello");
-	}
+    @Test
+    @DisplayName("익명클래스를 람다로 변경")
+    void test1() throws Exception {
+        Runnable hello1 = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("hello");
+            }
+        };
+        Runnable hello2 = () -> System.out.println("hello");
+    }
 }
 ```
 
@@ -44,40 +44,40 @@ public class FooTest {
 
 ```java
 public enum Color {
-	RED,
-	BLUE;
+    RED,
+    BLUE;
 
-	public boolean isRed() {
-		return this == RED;
-	}
+    public boolean isRed() {
+        return this == RED;
+    }
 }
 ```
 
 ```java
 public class FooTest {
-	@Test
-	@DisplayName("람다표현식 대신 메소드참조를 사용")
-	void test2() throws Exception {
-		List<Color> redColor1 = Stream.of(
-						Color.RED,
-						Color.RED,
-						Color.BLUE,
-						Color.BLUE,
-						Color.BLUE
-				)
-				.filter(color -> color.equals(Color.RED))
-				.toList();
+    @Test
+    @DisplayName("람다표현식 대신 메소드참조를 사용")
+    void test2() throws Exception {
+        List<Color> redColor1 = Stream.of(
+                        Color.RED,
+                        Color.RED,
+                        Color.BLUE,
+                        Color.BLUE,
+                        Color.BLUE
+                )
+                .filter(color -> color.equals(Color.RED))
+                .toList();
 
-		List<Color> redColor2 = Stream.of(
-						Color.RED,
-						Color.RED,
-						Color.BLUE,
-						Color.BLUE,
-						Color.BLUE
-				)
-				.filter(Color::isRed)
-				.toList();
-	}
+        List<Color> redColor2 = Stream.of(
+                        Color.RED,
+                        Color.RED,
+                        Color.BLUE,
+                        Color.BLUE,
+                        Color.BLUE
+                )
+                .filter(Color::isRed)
+                .toList();
+    }
 }
 ```
 
@@ -87,14 +87,14 @@ public class FooTest {
 
 ```java
 public class FooTest {
-	@Test
-	@DisplayName("명령형 데이터 처리를 스트림으로 리팩터링하기")
-	void test3() throws Exception {
-		int[] numbers = IntStream.of(1, 2, 3, 4, 5, 6, 7, 8, 9)
-				.filter(num -> num % 2 == 0)
-				.map(num -> num * 2)
-				.toArray();
-	}
+    @Test
+    @DisplayName("명령형 데이터 처리를 스트림으로 리팩터링하기")
+    void test3() throws Exception {
+        int[] numbers = IntStream.of(1, 2, 3, 4, 5, 6, 7, 8, 9)
+                .filter(num -> num % 2 == 0)
+                .map(num -> num * 2)
+                .toArray();
+    }
 }
 ```
 
@@ -106,11 +106,11 @@ public class FooTest {
 
 ```java
 class Foo {
-	public static void main(String[] args) {
-		if (logger.isLoggable(Log.FINER)) {
-			logger.finer("Problem: " + generateDiagnostic());
-		}
-	}
+    public static void main(String[] args) {
+        if (logger.isLoggable(Log.FINER)) {
+            logger.finer("Problem: " + generateDiagnostic());
+        }
+    }
 }
 
 ```
@@ -120,9 +120,9 @@ class Foo {
 
 ```java
 class Foo {
-	public static void main(String[] args) {
-		logger.log(Level.FINER, "Problem: " + generateDiagnostic());
-	}
+    public static void main(String[] args) {
+        logger.log(Level.FINER, "Problem: " + generateDiagnostic());
+    }
 }
 ```
 
@@ -130,15 +130,15 @@ class Foo {
 
 ```java
 class Foo {
-	public void log(Level level, Supplier<String> msgSupplier) {
-		if (logger.isLoggable(level)) {
-			log(level, msgSupplier.get());
-		}
-	}
+    public void log(Level level, Supplier<String> msgSupplier) {
+        if (logger.isLoggable(level)) {
+            log(level, msgSupplier.get());
+        }
+    }
 
-	public static void main(String[] args) {
-		logger.log(Level.FINER, () -> "Problem: " + generateDiagnostic());
-	}
+    public static void main(String[] args) {
+        logger.log(Level.FINER, () -> "Problem: " + generateDiagnostic());
+    }
 }
 ```
 
@@ -173,7 +173,7 @@ class Foo {
 
 @FunctionalInterface
 public interface Calculator {
-	int calc(int num1, int num2);
+    int calc(int num1, int num2);
 }
 ```
 
@@ -181,24 +181,24 @@ public interface Calculator {
 
 @RequiredArgsConstructor
 public class Service {
-	private final Calculator calculator;
+    private final Calculator calculator;
 
-	public void print() {
-		calculator.calc(5, 2);
-	}
+    public void print() {
+        calculator.calc(5, 2);
+    }
 }
 ```
 
 ```java
 public class FooTest {
-	@Test
-	@DisplayName("전략패턴 람다로 구현")
-	void test4() throws Exception {
-		Service service1 = new Service((num1, num2) -> num1 + num2);
-		Service service2 = new Service((num1, num2) -> num1 - num2);
-		Service service3 = new Service((num1, num2) -> num1 * num2);
-		Service service4 = new Service((num1, num2) -> num1 / num2);
-	}
+    @Test
+    @DisplayName("전략패턴 람다로 구현")
+    void test4() throws Exception {
+        Service service1 = new Service((num1, num2) -> num1 + num2);
+        Service service2 = new Service((num1, num2) -> num1 - num2);
+        Service service3 = new Service((num1, num2) -> num1 * num2);
+        Service service4 = new Service((num1, num2) -> num1 / num2);
+    }
 }
 ```
 
@@ -211,31 +211,31 @@ public class FooTest {
 ```java
 public abstract class Animal {
 
-	public void print() {
-		System.out.printf("울음소리: %s%n", crying());
-	}
+    public void print() {
+        System.out.printf("울음소리: %s%n", crying());
+    }
 
-	abstract String crying();
+    abstract String crying();
 }
 ```
 
 ```java
 public class Dog extends Animal {
-	@Override
-	String crying() {
-		return "멍멍";
-	}
+    @Override
+    String crying() {
+        return "멍멍";
+    }
 }
 ```
 
 ```java
 public class FooTest {
-	@Test
-	@DisplayName("템플릿 메소드")
-	void test5() throws Exception {
-		Animal dog = new Dog();
-		dog.print();
-	}
+    @Test
+    @DisplayName("템플릿 메소드")
+    void test5() throws Exception {
+        Animal dog = new Dog();
+        dog.print();
+    }
 }
 ```
 
@@ -244,20 +244,20 @@ public class FooTest {
 ```java
 public class Animal {
 
-	public void print(Supplier<String> crying) {
-		System.out.printf("울음소리: %s%n", crying.get());
-	}
+    public void print(Supplier<String> crying) {
+        System.out.printf("울음소리: %s%n", crying.get());
+    }
 }
 ```
 
 ```java
 public class FooTest {
-	@Test
-	@DisplayName("템플릿 메소드")
-	void test5() throws Exception {
-		Animal animal = new Animal();
-		animal.print(() -> "멍멍");
-	}
+    @Test
+    @DisplayName("템플릿 메소드")
+    void test5() throws Exception {
+        Animal animal = new Animal();
+        animal.print(() -> "멍멍");
+    }
 }
 ```
 
@@ -269,7 +269,7 @@ public class FooTest {
 
 ```java
 public interface Observer {
-	void notify(String tweet);
+    void notify(String tweet);
 }
 ```
 
@@ -277,23 +277,23 @@ public interface Observer {
 
 ```java
 public interface Subject {
-	void registerObserver(Observer observer);
+    void registerObserver(Observer observer);
 
-	void notifyObservers(String tweet);
+    void notifyObservers(String tweet);
 }
 
 public class Feed implements Subject {
-	private final List<Observer> observers = new ArrayList<>();
+    private final List<Observer> observers = new ArrayList<>();
 
-	@Override
-	public void registerObserver(Observer observer) {
-		observers.add(observer);
-	}
+    @Override
+    public void registerObserver(Observer observer) {
+        observers.add(observer);
+    }
 
-	@Override
-	public void notifyObservers(String tweet) {
-		observers.forEach(o -> o.notify(tweet));
-	}
+    @Override
+    public void notifyObservers(String tweet) {
+        observers.forEach(o -> o.notify(tweet));
+    }
 }
 ```
 
@@ -301,17 +301,17 @@ public class Feed implements Subject {
 
 ```java
 public class FooTest {
-	@Test
-	@DisplayName("옵저버 패턴 람다로 구현")
-	void test6() throws Exception {
-		Feed feed = new Feed();
-		feed.registerObserver(tweet -> {
-			if (tweet.contains("money")) System.out.println("money");
-		});
-		feed.registerObserver(tweet -> {
-			if (tweet.contains("queen")) System.out.println("queen");
-		});
-	}
+    @Test
+    @DisplayName("옵저버 패턴 람다로 구현")
+    void test6() throws Exception {
+        Feed feed = new Feed();
+        feed.registerObserver(tweet -> {
+            if (tweet.contains("money")) System.out.println("money");
+        });
+        feed.registerObserver(tweet -> {
+            if (tweet.contains("queen")) System.out.println("queen");
+        });
+    }
 }
 ```
 
@@ -321,38 +321,38 @@ public class FooTest {
 
 ```java
 public abstract class ProcessingObject<T> {
-	protected ProcessingObject<T> successor;
+    protected ProcessingObject<T> successor;
 
-	public void setSuccessor(ProcessingObject<T> successor) {
-		this.successor = successor;
-	}
+    public void setSuccessor(ProcessingObject<T> successor) {
+        this.successor = successor;
+    }
 
-	public T handle(T input) {
-		T t = handleWork(input);
-		if (successor != null) {
-			return successor.handle(t);
-		}
-		return t;
-	}
+    public T handle(T input) {
+        T t = handleWork(input);
+        if (successor != null) {
+            return successor.handle(t);
+        }
+        return t;
+    }
 
-	abstract protected T handleWork(T input);
+    abstract protected T handleWork(T input);
 }
 ```
 
 ```java
 public class FooTest {
-	@Test
-	@DisplayName("의무 체인 람다 구현")
-	void test7() throws Exception {
-		UnaryOperator<String> headerProcessing =
-				s -> "From Raoul, Mario and Alan: " + s;
+    @Test
+    @DisplayName("의무 체인 람다 구현")
+    void test7() throws Exception {
+        UnaryOperator<String> headerProcessing =
+                s -> "From Raoul, Mario and Alan: " + s;
 
-		UnaryOperator<String> spellCheckerProcessing =
-				s -> s.replaceAll("labda", "lambda");
+        UnaryOperator<String> spellCheckerProcessing =
+                s -> s.replaceAll("labda", "lambda");
 
-		Function<String, String> pipeline = headerProcessing.andThen(spellCheckerProcessing);
-		String result = pipeline.apply("Aren't labdas really sexy?");
-	}
+        Function<String, String> pipeline = headerProcessing.andThen(spellCheckerProcessing);
+        String result = pipeline.apply("Aren't labdas really sexy?");
+    }
 }
 ```
 
@@ -362,19 +362,19 @@ public class FooTest {
 
 ```java
 public class ProductFactory {
-	private static final Map<String, Supplier<Product>> map = new HashMap<>();
+    private static final Map<String, Supplier<Product>> map = new HashMap<>();
 
-	static {
-		map.put("loan", Loan::new);
-		map.put("stock", Stock::new);
-		map.put("bond", Bond::new);
-	}
+    static {
+        map.put("loan", Loan::new);
+        map.put("stock", Stock::new);
+        map.put("bond", Bond::new);
+    }
 
-	public Product createProduct(final String name) {
-		Supplier<Product> p = map.get(name);
-		if (p == null) throw new IllegalArgumentException("존재하지 않음");
-		return p.get();
-	}
+    public Product createProduct(final String name) {
+        Supplier<Product> p = map.get(name);
+        if (p == null) throw new IllegalArgumentException("존재하지 않음");
+        return p.get();
+    }
 }
 
 class Product {}
@@ -388,11 +388,109 @@ class Bond extends Product {}
 
 ```java
 public class FooTest {
-	@Test
-	@DisplayName("팩토리 패턴 람다로 구현")
-	void test8() throws Exception {
-		ProductFactory productFactory = new ProductFactory();
-		Product stock = productFactory.createProduct("stock");
-	}
+    @Test
+    @DisplayName("팩토리 패턴 람다로 구현")
+    void test8() throws Exception {
+        ProductFactory productFactory = new ProductFactory();
+        Product stock = productFactory.createProduct("stock");
+    }
 }
 ```
+
+## 9.3 람다 테스팅
+
+### 9.3.1 보이는 람다 표현식의 동작 테스팅
+
+일반적인 `public 메소드`의 경우 해당 메소드를 호출하여 기대하는 결과값으로 테스트를 진행할 수 있습니다.
+
+하지만, `람다`의 경우 익명이므로 테스트 코드에서 호출할 수가 없습니다.
+
+> static 메소드로 선언하는 등과 같은 방식으로 사용할 수는 있지만 그렇게 좋아보이지는 않습니다.
+
+### 9.3.2 람다를 사용하는 메소드의 동작에 집중하라
+
+`람다의 목표`는 정해진 동작을 다른 메소드에서 사용할 수 있도록 `하나의 조각으로 캡슐화하는 것`입니다.
+
+`람다 표현식`을 `사용하는 메소드의 동작을 테스트`함으로써 람다를 공개하지 않으면서도 람다 표현식을 검증할 수 있습니다.
+
+### 9.3.3 복잡한 람다를 개별 메소드로 분할하기
+
+람다 표현식이 복잡해지면 `메소드 참조로 변경`하여 사용하면 됩니다. 메소드 참조로 변경하면 일반 메소드를 테스트 하듯 테스드할 수 있습니다.
+
+### 9.3.4 고차원 함수 테스팅
+
+함수형 인터페이스의 `인스턴스로 간주`하고 `함수의 동작을 테스트`할 수 있습니다.
+
+> 함수를 인수로 받거나 다른 함수를 반환하는 메소드를 `고차원 함수`라고 합니다.
+
+## 9.4 디버깅
+
+문제가 발생하면 2가지를 먼저 확인해야 합니다.
+
+- 스택 트레이스
+- 로깅
+
+하지만 `람다 표현식`과 `스트림`은 기존의 디버깅 기법을 무력화 시킵니다.
+
+### 9.4.1 스택 트레이스 확인
+
+프로그램이 메소드를 호출할 떄마다 프로그램에서의 호출 위치, 호출할 떄의 인수값, 호출된 메소드의 지역 변수 등을 포함한 호출 정보가 생성되고 이 정보는 `스택 프레임`에 `저장`됩니다.
+
+따라서, 프로그램이 멈췄다면 어떻게 멈추게 되었는지 프레임별로 보여주는 `스택 트레이스`를 얻을 수 있습니다.
+
+#### 💡 람다와 스택 트레이스
+
+`람다 표현식`은 `익명`이기 떄문에 `임의의 값`이 출력됩니다. 어떤 메소드에서 예외가 발생한지 까지는 알수 있지만, 여러 람다 표현식이 있다면 어디서 발생했는지 추적하기는 쉽지 않습니다.
+
+`메소드 참조`를 사용해도 스택 트레이스에는 `메소드명이 남지 않습니다.`  
+하지만, 또 `메소드 참조를 사용하는 클래스와 동일한 곳에 선언`되어 있는 `메소드를 참조`할 떄는 `메소드 참조 이름이 스택 트레이스에 나타납니다.`
+
+> 즉, 람다 표현식과 관련한 스택 트레이스는 이해하기 어렵습니다.
+
+### 9.4.2 정보 로깅
+
+스트림에서 로깅을 할려면 출력을 위해 `forEach`를 사용할 것입니다.
+
+```java
+class Foo {
+    public static void main(String[] args) {
+        IntStream.of(1, 2, 3, 4, 5)
+                .filter(num -> num % 2 == 0)
+                .map(num -> num * 2)
+                .forEach(System.out::println);
+    }
+}
+```
+
+위처럼 구성을 하게 될텐데, 이럴경우 `forEach`가 최종연산이 되어 `List`로 반환을 한다거나, 또는 `filter`와 `map`사이를 로깅해본다거나 그럴 수가 없습니다.
+
+이떄 사용하는 것이 `peek`이라는 스트림 연산입니다.
+
+`peek`연산은 스트림을 소비하지 않고 그대로 다음 연산으로 전달합니다.
+
+```java
+class Foo {
+    public static void main(String[] args) {
+        IntStream.of(1, 2, 3, 4, 5)
+                .filter(num -> num % 2 == 0)
+                .peek(System.out::println)
+                .map(num -> num * 2)
+                .peek(System.out::println)
+                .toArray();
+    }
+}
+```
+
+위처럼 스트림 연산을 소비하지 않기 떄문에 중간연산으로 자유롭게 넣을 수 있습니다.
+
+## 9.5 마치며
+
+- `람다 표현식`으로 `가독성`이 좋고 더 `유연한 코드`를 만들 수 있다.
+- `익명 클래스`는 `람다 표현식`으로 바꾸는 것이 좋다. 하지만 `this`, `변수 섀도` 등 미묘하게 의미상 다른 내용이 있음을 `주의`
+- `메소드 참조`로 `람다 표현식`보다 더 `가독성이 좋은 코드를 구현`할 수 있다.
+- `반복적으로 컬렉션`을 처리하는 루틴은 `스트림 API로 대체`할 수 있을지 고려하는 것이 좋다.
+- `람다 표현식`으로 `객체지향 디자인 패턴`에서 발생하는 `불필요한 코드를 제거`할 수 있다.
+- 람다 표현식도 테스트를 할 수는 있지만, `테스트는 메소드의 동작을 테스트하는 것이 바람직`하다.
+- `복잡한 람다 표현식`은 일반 메소드로 재구현하여 `메소드 참조로 사용`하는것이 좋다.
+- 람다 표현식을 사용하면 `스택 트레이스를 이해하기 어렵다.`
+- 스트림 파이프라인에서 `peek메소드를 이용하여 중간 값을 확인`할 수 있다.
