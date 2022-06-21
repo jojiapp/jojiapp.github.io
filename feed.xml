@@ -3,7 +3,7 @@
     <channel>
       <title>JLOG</title>
       <link>https://jojiapp.github.io/blog</link>
-      <description>매일 공부한 것을 TIL에 기록하고 정리하여 블로그에 작성중입니다.</description>
+      <description>매일 공부한 것을 정리하여 블로그를 작성중입니다.</description>
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
@@ -17,7 +17,7 @@
     <description>Chapter 9. 리팩터링, 테스팅, 디버깅</description>
     <pubDate>Mon, 20 Jun 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
-    <category>TIL</category><category>Java</category><category>Modern Java In Action</category>
+    <category>Java</category><category>Modern Java In Action</category>
   </item>
 
   <item>
@@ -27,37 +27,37 @@
     <description>Chapter 8. 컬렉션 API 개선</description>
     <pubDate>Tue, 14 Jun 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
-    <category>TIL</category><category>Java</category><category>Modern Java In Action</category>
+    <category>Java</category><category>Modern Java In Action</category>
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/spring/Template-Engine을-사용하여-PDF파일로-변환하기</guid>
+    <guid>https://jojiapp.github.io/blog/Spring/Template-Engine을-사용하여-PDF파일로-변환하기</guid>
     <title>Template Engine(with Thymeleaf)을 사용하여 PDF파일로 변환하기</title>
-    <link>https://jojiapp.github.io/blog/spring/Template-Engine을-사용하여-PDF파일로-변환하기</link>
+    <link>https://jojiapp.github.io/blog/Spring/Template-Engine을-사용하여-PDF파일로-변환하기</link>
     <description>Spring Boot에서 Template Engin를 사용하여 PDF파일</description>
     <pubDate>Thu, 19 May 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
-    <category>TIL</category><category>Java</category><category>Spring</category><category>Template Engine</category><category>Thymeleaf</category>
+    <category>Java</category><category>Spring</category><category>Template Engine</category><category>Thymeleaf</category>
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/spring/Spring-Boot에서-Response-DateTime-Format-일괄-적용</guid>
+    <guid>https://jojiapp.github.io/blog/Spring/Spring-Boot에서-Response-DateTime-Format-일괄-적용</guid>
     <title>Spring Boot에서 Response DateTime Format 일괄 적용</title>
-    <link>https://jojiapp.github.io/blog/spring/Spring-Boot에서-Response-DateTime-Format-일괄-적용</link>
+    <link>https://jojiapp.github.io/blog/Spring/Spring-Boot에서-Response-DateTime-Format-일괄-적용</link>
     <description>Spring Boot에서 Response DateTime Format 일괄 적용</description>
     <pubDate>Wed, 18 May 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
-    <category>TIL</category><category>Java</category><category>Spring</category><category>DateTime</category>
+    <category>Java</category><category>Spring</category><category>JSON</category><category>DateTime</category>
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/spring/Binding-Error-Properties-Message-적용</guid>
+    <guid>https://jojiapp.github.io/blog/Spring/Binding-Error-Properties-Message-적용</guid>
     <title>Binding Error Properties Message 적용</title>
-    <link>https://jojiapp.github.io/blog/spring/Binding-Error-Properties-Message-적용</link>
+    <link>https://jojiapp.github.io/blog/Spring/Binding-Error-Properties-Message-적용</link>
     <description>Binding Error Properties Message 적용</description>
     <pubDate>Mon, 16 May 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
-    <category>TIL</category><category>Java</category><category>Spring</category><category>Error</category>
+    <category>Java</category><category>Spring</category><category>Error</category>
   </item>
 
   <item>
@@ -67,7 +67,7 @@
     <description>QueryDSL Support Custom 하기</description>
     <pubDate>Sun, 15 May 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
-    <category>TIL</category><category>Java</category><category>JPA</category><category>QueryDSL</category>
+    <category>Java</category><category>JPA</category><category>QueryDSL</category>
   </item>
 
   <item>
@@ -77,7 +77,7 @@
     <description>Chapter 7. 병렬 데이터 처리와 성능</description>
     <pubDate>Mon, 25 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
-    <category>TIL</category><category>Java</category><category>Modern Java In Action</category>
+    <category>Java</category><category>Modern Java In Action</category>
   </item>
 
   <item>
@@ -87,7 +87,7 @@
     <description>Chapter 6. 스트림으로 데이터 수집</description>
     <pubDate>Sat, 23 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
-    <category>TIL</category><category>Java</category><category>Modern Java In Action</category>
+    <category>Java</category><category>Modern Java In Action</category>
   </item>
 
   <item>
@@ -97,7 +97,7 @@
     <description>Chapter 5. 스트림 활용</description>
     <pubDate>Mon, 18 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
-    <category>TIL</category><category>Java</category><category>Modern Java In Action</category>
+    <category>Java</category><category>Modern Java In Action</category>
   </item>
 
   <item>
@@ -107,7 +107,7 @@
     <description>Chapter 4. 스트림 소개</description>
     <pubDate>Fri, 15 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
-    <category>TIL</category><category>Java</category><category>Modern Java In Action</category>
+    <category>Java</category><category>Modern Java In Action</category>
   </item>
 
   <item>
@@ -117,7 +117,7 @@
     <description>Chapter 3. 람다 표현식</description>
     <pubDate>Wed, 13 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
-    <category>TIL</category><category>Java</category><category>Modern Java In Action</category>
+    <category>Java</category><category>Modern Java In Action</category>
   </item>
 
   <item>
@@ -127,7 +127,7 @@
     <description>Chapter 2. 동작 파라미터화 코드 전달하기</description>
     <pubDate>Thu, 07 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
-    <category>TIL</category><category>Java</category><category>Modern Java In Action</category>
+    <category>Java</category><category>Modern Java In Action</category>
   </item>
 
   <item>
@@ -137,7 +137,147 @@
     <description>Chapter 1. 자바 8, 9, 10, 11: 무슨 일이 일어나고 있는가?</description>
     <pubDate>Fri, 01 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
-    <category>TIL</category><category>Java</category><category>Modern Java In Action</category>
+    <category>Java</category><category>Modern Java In Action</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/Spring/RestDocs/Spring_Rest_Docs_Asciidoc_작성</guid>
+    <title>Spring Rest Docs Asciidoc 작성 방법</title>
+    <link>https://jojiapp.github.io/blog/Spring/RestDocs/Spring_Rest_Docs_Asciidoc_작성</link>
+    <description>생성된 snippets를 이용하여 문서를 만들어 보도록 하겠습니다.</description>
+    <pubDate>Wed, 16 Mar 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Spring</category><category>Spring Rest Docs</category><category>Docs</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/Spring/RestDocs/Spring_Rest_Docs_Test_코드_작성</guid>
+    <title>Spring Rest Docs Test 코드 작성</title>
+    <link>https://jojiapp.github.io/blog/Spring/RestDocs/Spring_Rest_Docs_Test_코드_작성</link>
+    <description>snippets을 만들기 위해 Test 코드를 작성하는 방법에 대해 알아보겠습니다.</description>
+    <pubDate>Mon, 28 Feb 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Spring</category><category>Spring Rest Docs</category><category>Docs</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/Spring/RestDocs/Spring_Rest_Docs_Gradle_설정</guid>
+    <title>Spring Rest Docs Gradle 설정</title>
+    <link>https://jojiapp.github.io/blog/Spring/RestDocs/Spring_Rest_Docs_Gradle_설정</link>
+    <description>문서 자동화를 위해 Spring에서 공식 지원하는 Spring Rest Docs애 대해 알아보고 Gradle 설정 방법을 알아보자.</description>
+    <pubDate>Sat, 26 Feb 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Spring</category><category>Spring Rest Docs</category><category>Docs</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/IntelliJ/Code_Style_설정</guid>
+    <title>IntelliJ Code Style 설정</title>
+    <link>https://jojiapp.github.io/blog/IntelliJ/Code_Style_설정</link>
+    <description>IntelliJ에서 Code Style을 설정하여 일관된 코드 스타일 유지하기.</description>
+    <pubDate>Wed, 16 Feb 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>IntelliJ</category><category>Code Style</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/Git/설정</guid>
+    <title>Git 설정</title>
+    <link>https://jojiapp.github.io/blog/Git/설정</link>
+    <description>Git 설정하는 방법.</description>
+    <pubDate>Mon, 07 Feb 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Git</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/Git/Log_이쁘게_출력하기</guid>
+    <title>Git Log 이쁘게 출력하기</title>
+    <link>https://jojiapp.github.io/blog/Git/Log_이쁘게_출력하기</link>
+    <description>Git에서 Log를 이쁘게 출력하는 방법.</description>
+    <pubDate>Sat, 05 Feb 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Git</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/Git/기본_명령어</guid>
+    <title>Git 기본 명령어</title>
+    <link>https://jojiapp.github.io/blog/Git/기본_명령어</link>
+    <description>가장 많이 사용되고 있는 VCS(버전 관리 시스템)인 Git의 기본 명령어.</description>
+    <pubDate>Fri, 04 Feb 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Git</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/Git/Lifecycle</guid>
+    <title>Git Lifecycle</title>
+    <link>https://jojiapp.github.io/blog/Git/Lifecycle</link>
+    <description>Git을 제대로 이해하고 사용하기 위해서는 Lifecycle에 대해서 제대로 이해하기.</description>
+    <pubDate>Tue, 01 Feb 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Git</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/Git/Git_이란</guid>
+    <title>Git 이란?</title>
+    <link>https://jojiapp.github.io/blog/Git/Git_이란</link>
+    <description>버전 관리 시스템(VCS)중에 가장 많이 사용되는 Git에 대해 알아보기.</description>
+    <pubDate>Mon, 31 Jan 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Git</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/Git/GitHub_SSH_연결</guid>
+    <title>GitHub(원격저장소) SSH 연결</title>
+    <link>https://jojiapp.github.io/blog/Git/GitHub_SSH_연결</link>
+    <description>GitHub에 SSH를 연결하여 사용하기.</description>
+    <pubDate>Sun, 30 Jan 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Git</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/MacOS/iTerm2</guid>
+    <title>MacOS iTerm2</title>
+    <link>https://jojiapp.github.io/blog/MacOS/iTerm2</link>
+    <description>iTerm2와 oh my zsh를 사용하여 터미널을 커스텀.</description>
+    <pubDate>Sat, 29 Jan 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Mac OS</category><category>Homebrew</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/MacOS/Homebrew</guid>
+    <title>MacOS Homebrew</title>
+    <link>https://jojiapp.github.io/blog/MacOS/Homebrew</link>
+    <description>Homebrew 설치 및 사용법 알아보기.</description>
+    <pubDate>Fri, 28 Jan 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Mac OS</category><category>Homebrew</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/IntelliJ/터미널에서_IntelliJ_열기</guid>
+    <title>IntelliJ 터미널에서 IntelliJ 열기</title>
+    <link>https://jojiapp.github.io/blog/IntelliJ/터미널에서_IntelliJ_열기</link>
+    <description>터미널에서 IntelliJ를 실행 할 수 있도록 설정하기.</description>
+    <pubDate>Fri, 21 Jan 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>IntelliJ</category><category>Git</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/IntelliJ/Git_설정</guid>
+    <title>IntelliJ Git 설정</title>
+    <link>https://jojiapp.github.io/blog/IntelliJ/Git_설정</link>
+    <description>IntelliJ 에서 로컬에 설치한 Git 사용하도록 설정하기.</description>
+    <pubDate>Thu, 20 Jan 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>IntelliJ</category><category>Git</category>
   </item>
 
     </channel>

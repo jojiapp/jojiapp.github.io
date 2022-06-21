@@ -1,0 +1,104 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>JLOG</title>
+      <link>https://jojiapp.github.io/blog</link>
+      <description>매일 공부한 것을 정리하여 블로그를 작성중입니다.</description>
+      <language>ko</language>
+      <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
+      <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
+      <lastBuildDate>Mon, 20 Jun 2022 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://jojiapp.github.io/tags/modern-java-in-action/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-9-리팩터링-테스팅-디버깅</guid>
+    <title>Chapter 9. 리팩터링, 테스팅, 디버깅</title>
+    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-9-리팩터링-테스팅-디버깅</link>
+    <description>Chapter 9. 리팩터링, 테스팅, 디버깅</description>
+    <pubDate>Mon, 20 Jun 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Modern Java In Action</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-8-컬렉션-API-개선</guid>
+    <title>Chapter 8. 컬렉션 API 개선</title>
+    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-8-컬렉션-API-개선</link>
+    <description>Chapter 8. 컬렉션 API 개선</description>
+    <pubDate>Tue, 14 Jun 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Modern Java In Action</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-7-병렬-데이터-처리와-성능</guid>
+    <title>Chapter 7. 병렬 데이터 처리와 성능</title>
+    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-7-병렬-데이터-처리와-성능</link>
+    <description>Chapter 7. 병렬 데이터 처리와 성능</description>
+    <pubDate>Mon, 25 Apr 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Modern Java In Action</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-6-스트림으로-데이터-수집</guid>
+    <title>Chapter 6. 스트림으로 데이터 수집</title>
+    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-6-스트림으로-데이터-수집</link>
+    <description>Chapter 6. 스트림으로 데이터 수집</description>
+    <pubDate>Sat, 23 Apr 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Modern Java In Action</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-5-스트림-활용</guid>
+    <title>Chapter 5. 스트림 활용</title>
+    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-5-스트림-활용</link>
+    <description>Chapter 5. 스트림 활용</description>
+    <pubDate>Mon, 18 Apr 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Modern Java In Action</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-4-스트림-소개</guid>
+    <title>Chapter 4. 스트림 소개</title>
+    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-4-스트림-소개</link>
+    <description>Chapter 4. 스트림 소개</description>
+    <pubDate>Fri, 15 Apr 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Modern Java In Action</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-1-기초/Chapter-3-람다-표현식</guid>
+    <title>Chapter 3. 람다 표현식</title>
+    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-1-기초/Chapter-3-람다-표현식</link>
+    <description>Chapter 3. 람다 표현식</description>
+    <pubDate>Wed, 13 Apr 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Modern Java In Action</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-1-기초/Chapter-2-동작-파라미터화-코드-전달하기</guid>
+    <title>Chapter 2. 동작 파라미터화 코드 전달하기</title>
+    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-1-기초/Chapter-2-동작-파라미터화-코드-전달하기</link>
+    <description>Chapter 2. 동작 파라미터화 코드 전달하기</description>
+    <pubDate>Thu, 07 Apr 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Modern Java In Action</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-1-기초/Chapter-1-자바-8-9-10-11-무슨-일이-일어나고-있는가</guid>
+    <title>Chapter 1. 자바 8, 9, 10, 11: 무슨 일이 일어나고 있는가?</title>
+    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-1-기초/Chapter-1-자바-8-9-10-11-무슨-일이-일어나고-있는가</link>
+    <description>Chapter 1. 자바 8, 9, 10, 11: 무슨 일이 일어나고 있는가?</description>
+    <pubDate>Fri, 01 Apr 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Modern Java In Action</category>
+  </item>
+
+    </channel>
+  </rss>
