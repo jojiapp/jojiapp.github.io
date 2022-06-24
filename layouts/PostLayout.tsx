@@ -27,7 +27,6 @@ const postDateTemplate: Intl.DateTimeFormatOptions = {
 interface Props {
   frontMatter: PostFrontMatter
   authorDetails: AuthorFrontMatter[]
-  folder: 'blog'
   next?: { slug: string; title: string }
   prev?: { slug: string; title: string }
   children: ReactNode

@@ -12,17 +12,16 @@ import { PostFrontMatter } from 'types/PostFrontMatter'
 interface Props {
   frontMatter: PostFrontMatter
   children: ReactNode
-  folder: 'blog'
   next?: { slug: string; title: string }
   prev?: { slug: string; title: string }
 }
 
-export default function PostLayout({ frontMatter, next, folder, prev, children }: Props) {
+export default function PostLayout({ frontMatter, next, prev, children }: Props) {
   const { slug, date, title } = frontMatter
 
   return (
     <SectionContainer>
-      <BlogSEO url={`${siteMetadata.siteUrl}/${folder}/${slug}`} {...frontMatter} />
+      <BlogSEO url={`${siteMetadata.siteUrl}/blog/${slug}`} {...frontMatter} />
       <ScrollTopAndComment />
       <article>
         <div>
@@ -54,7 +53,7 @@ export default function PostLayout({ frontMatter, next, folder, prev, children }
                 {prev && (
                   <div className="pt-4 xl:pt-8">
                     <Link
-                      href={`/${folder}/${prev.slug}`}
+                      href={`/blog/${prev.slug}`}
                       className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                     >
                       &larr; {prev.title}
@@ -64,7 +63,7 @@ export default function PostLayout({ frontMatter, next, folder, prev, children }
                 {next && (
                   <div className="pt-4 xl:pt-8">
                     <Link
-                      href={`/${folder}/${next.slug}`}
+                      href={`/blog/${next.slug}`}
                       className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                     >
                       {next.title} &rarr;
