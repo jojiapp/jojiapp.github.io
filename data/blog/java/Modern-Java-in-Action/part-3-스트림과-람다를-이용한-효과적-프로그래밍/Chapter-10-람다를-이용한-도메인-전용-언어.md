@@ -588,3 +588,144 @@ public class StockBuilder {
 	}
 }
 ```
+
+### 10.3.5 DSL에 메소드 참조 사용하기
+
+```java
+
+public class Tax {
+	public static double regional(double value) {
+		return value * 1.1;
+	}
+
+	public static double general(double value) {
+		return value * 1.3;
+	}
+
+	public static double surcharge(double value) {
+		return value * 1.05;
+	}
+
+	public static double calculate(Order order, boolean useRegional, boolean useGeneral, boolean useSurcharge) {
+		double value = order.getValue();
+		if (useRegional) value = Tax.regional(value);
+		if (useGeneral) value = Tax.general(value);
+		if (useSurcharge) value = Tax.surcharge(value);
+		return value;
+	}
+}
+```
+
+```java
+class Foo {
+	public static void main(String[] args) {
+		double value = calculate(order, true, false, true);
+	}
+}
+```
+
+위 구현의 가독성 문제는 쉽게 알수 있습니다.
+
+우선, `boolean`의 순서도 기억하기 어려우며 어떤 세금이 적용되었는지도 파악하기 어렵습니다.
+
+```java
+public class TaxCalculator {
+	private boolean useRegional;
+	private boolean useGeneral;
+	private boolean useSurcharge;
+
+	public TaxCalculator withTaxRegional() {
+		useRegional = true;
+		return this;
+	}
+
+	public TaxCalculator withTaxGeneral() {
+		useGeneral = true;
+		return this;
+	}
+
+	public TaxCalculator withTaxSurcharge() {
+		useSurcharge = true;
+		return this;
+	}
+
+	public double calculate(Order order) {
+		return calculate(order, useRegional, useGeneral, useSurcharge);
+	}
+}
+```
+
+```java
+class Foo {
+	public static void main(String[] args) {
+		double value = new TaxCalculator()
+			.withTaxRegional()
+			.withTaxSurcharge()
+			.calculate(order);
+	}
+}
+```
+
+위의 코드는 지역 세금과 추가 요금은 주문에 추가하고 싶다는 점을 명확하게 보여줍니다.
+
+하지만, 위의 구현은 코드가 장황하다는 점이 이 기법의 문제입니다. 또한, 도메인의 각 세금에 해당하는 `boolean` 필드가 필요하므로 확장성도 제한적입니다.
+
+```java
+public class TaxCalculator {
+	private DoubleUnaryOperator taxFunction = d -> d;
+
+	public TaxCalculator with(DoubleUnaryOperator f) {
+		taxFunction = taxFunction.andThen(f);
+		return this;
+	}
+
+	public double calculate(Order order) {
+		return taxFunction.applyAsDouble(order.getValue());
+	}
+}
+```
+
+```java
+class Foo {
+	public static void main(String[] args) {
+		double value = new TaxCalculator()
+			.with(Tax::regional)
+			.with(Tax::surcharge)
+			.calculate(order);
+	}
+}
+```
+
+위 코드처럼 `메소드 참조`를 이용하여 `읽기 쉽고 코드를 간결`하게 만들 수 있습니다.
+
+## 10.4 실생활의 자바 8 DSL
+
+| 패턴 이름                   | 장점                                                           | 단점                                                 |
+| --------------------------- | -------------------------------------------------------------- | ---------------------------------------------------- |
+| `메소드 체인`               | 메소드 이름이 키워드 인수 역할을 한다.                         | 구현이 장황하다.                                     |
+|                             | 선택형 파라미터와 잘 동작한다.                                 | 빌드를연결하는 접착 코드가 필요하다.                 |
+|                             | DSL 사용자가 정해진 순서로 메소드를 호출하도록 강제할 수 있다. | 들여쓰기 규칙으로만 도메인 객체 계층을 정의한다.     |
+|                             | 정적 메소드를 최소화하거나 업앨 수 있다.                       |                                                      |
+|                             | 문법적 잡음을 최소화한다.                                      |                                                      |
+| `중첩함수`                  | 구현의 장황함을 줄일 수 있다.                                  | 정적 메소드의 사용이 빈번하다.                       |
+|                             | 함수중첩으로 도메인 객체 계층을 반영한다.                      | 이름이 아닌 위치로 인수를 정의한다.                  |
+|                             |                                                                | 선택형 파라미터를 처리할 메소드 오버로딩이 필요하다. |
+| `람다를 이용한 함수 시퀀싱` | 선택형 파라미터와 잘 동작한다.                                 | 구현이 장황하다.                                     |
+|                             | 정적 메소드를 최소화하거나 없앨 수 있다.                       | 람다 표현식으로 인한 문법적 잡음이 DSL에 존재한다.   |
+|                             | 람다 중첩으로 도메인 객체 계층을 반영한다.                     |                                                      |
+|                             | 빌더의 접착 코드가 없다.                                       |                                                      |
+
+## 10.5 마치며
+
+- `DSL`의 `주요 기능`은 개발자와 도메인 전문가 사이의 간격을 좁히는 것
+- `DSL`은 크게 내부적 DSL과 외부적 DSL로 나뉨
+  - `내부적 DSL`: DSL이 사용될 애플리케이션을 개발한 언어를 그대로 활용
+  - `외부적 DSL`: 직접 언어를 설계
+- `JVM`에서 이용할 수 있는 스칼라, 그루비 등의 다른 언어로 `다중 DSL을 개발`할 수 있음  
+  하지만 자바와 통합하려면 `빌드 과정이 복잡`해지며 자바와의 `상호 호환성 문제`도 생길 수 있음
+- `자바`의 장황함과 문법적 엄격함 떄문에 `내부적 DSL을 개발하는 언어로는 적합하지 않음`  
+  하지만 `람다 표현식`과 `메소드 참조` 덕분에 많이 `개선` 됨
+- 최신 자바는 자체 API에 작은 DSL 제공
+- 자바로 DSL을 구현할 때 보통 `메소드 체인`, `중첩 함수`, `함수 시퀀싱` 세 가지 패턴이 사용 됨  
+  각각의 장단점이 있지만 `모두 합쳐 하나의 DSL로 장점만을 누릴 수 있음`
+- 많은 자바 프레임워크와 라이브러리를 DSL을 통해 이용할 수 있음
