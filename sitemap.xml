@@ -138,6 +138,12 @@
 
   <url>
     <loc
+      >https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-10-람다를-이용한-도메인-전용-언어</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-8-컬렉션-API-개선</loc
     >
   </url>

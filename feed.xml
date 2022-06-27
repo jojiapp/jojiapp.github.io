@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Mon, 20 Jun 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Mon, 27 Jun 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-10-람다를-이용한-도메인-전용-언어</guid>
+    <title>Chapter 10. 람다를 이용한 도메인 전용 언어</title>
+    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-10-람다를-이용한-도메인-전용-언어</link>
+    <description>Chapter 10. 람다를 이용한 도메인 전용 언어</description>
+    <pubDate>Mon, 27 Jun 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Modern Java In Action</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-9-리팩터링-테스팅-디버깅</guid>
     <title>Chapter 9. 리팩터링, 테스팅, 디버깅</title>
