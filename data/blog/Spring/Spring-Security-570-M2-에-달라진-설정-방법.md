@@ -1,8 +1,8 @@
 ---
 title: Spring Security 5.7.0-M2 부터 변경된 설정 방법
-date: '2022-06-22'
+date: '2022-06-30'
 tags: ['Spring', 'Spring Security', 'Config']
-draft: true
+draft: false
 summary: Spring Security 5.7.0-M2 부터 변경된 설정 방법
 ---
 
@@ -233,6 +233,126 @@ public class SecurityConfig {
 이렇게 간단하게 될줄 알았지만 여전히 `AuthenticationManager`에 등록이 되지 않았습니다.
 
 그래서 디버깅을 해보기로 했습니다.
+
+```java
+
+@EnableWebSecurity
+@RequiredArgsConstructor
+public class SecurityConfig {
+
+	private final AuthenticationConfiguration authenticationConfiguration;
+	private final LoginAuthenticationProvider loginAuthenticationProvider;
+	private final JWTAuthorizationProvider jwtAuthorizationProvider;
+
+	@Bean
+	public AuthenticationManager authenticationManager() throws Exception {
+		return authenticationConfiguration.getAuthenticationManager();
+	}
+
+	@Bean
+	public SecurityFilterChain filterChain(final HttpSecurity http) throws Exception {
+		return http
+			.formLogin()
+			.disable()
+			.csrf()
+			.disable()
+			.cors()
+			.configurationSource(corsConfigurationSource)
+			.and()
+			.sessionManagement()
+			.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+			.and()
+			.headers()
+			.frameOptions()
+			.disable()
+			.and()
+			.authorizeRequests(authz -> {
+				authz.antMatchers(API_PUBLIC)
+					.permitAll()
+					.anyRequest().authenticated();
+			})
+			.authenticationProvider(loginAuthenticationProvider) // 추가
+			.authenticationProvider(jwtAuthorizationProvider) // 추가
+			.addFilterBefore(jwtAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
+			.build();
+	}
+}
+```
+
+![HttpSecurity authenticationProvider 디버깅 포인트](/data/blog/Spring/Security/1.png)
+![AuthenticationManagerBuilder authenticationProvider 디버깅 포인트](/data/blog/Spring/Security/2.png)
+
+디버깅을 돌려보면 `AuthenticationConfiguration`객체안에 `AuthenticationManagerBuilder`가 있음을 알 수 있고, `AuthenticationManagerBuilder`
+안의 `AuthenticationProviders`필드에 `DaoAuthenticationProvider`가 추가되는 것을 확인할 수 있습니다.
+
+![AuthenticationConfiguration의 AuthenticationManagerBuilder에 DaoAuthenticationProvider주입](/data/blog/Spring/Security/3.png)
+
+이후, 추가된 `AuthenticationProviders`와 `AuthenticationManager`를 가지고 `ProviderManager`를 생성합니다.
+
+![ProviderManager 생성](/data/blog/Spring/Security/4.png)
+
+`ProviderManager`는 추후 `AuthenticationManager`를 통해 `authenticate`를 실행 하면 넘어온 `Authentication` 객체 타입을
+지원하는 `AuthenticationProvider`를 실행합니다.
+
+![ProviderManager authenticate](/data/blog/Spring/Security/5.png)
+
+이어서 진행을 해보면 `HttpSecurity`객체를 통해 `LoginAuthenticationProvider`와 `JwtAuthenticationProvider`가 주입되는 것을 알 수 있습니다.  
+즉, 이 부분이 `SecurityFilterChain`를 통해 주입시켰을 때 `Provider`가 주입되는 과정입니다.
+
+![HttpSecurity객체를 통해 AuthenticationManagerBuilder에 LoginAuthenticationProvider주입](/data/blog/Spring/Security/6.png)
+![WebSecurityConfigurerAdapter의 AuthenticationManagerBuilder에 LoginAuthenticationProvider주입](/data/blog/Spring/Security/7.png)
+
+여기서 중요하게 봐야할 점은 `WebSecurityConfigurerAdapter`객체의 `AuthenticationManagerBuilder`의 `authenticationProviders`필드에 주입을 한다는
+점입니다.
+
+**즉, 2개는 별도의 객체라는 것 입니다.**
+
+`SecurityFilterChain`를 통해 주입한 `AuthenticationProvider`객체들은 `WebSecurityConfigurerAdapter`객체에 주입이 되고
+`Bean`으로 생성한 `AuthenticationManager`은 `AuthenticationConfiguration`의 `AuthenticationManager`이기
+떄문에 `DaoAuthenticationProvider`만 존재하는 것입니다.
+
+> `LoginAuthenticationProvider`만 캡쳐하였지만 `JwtAuthenticationProvider`또한 동일하게 생성됩니다.
+
+### 생각해볼만한 대안들
+
+#### 1. SecurityFilterChain에 주입하고 WebSecurityConfigurerAdapter객체를 통해 AuthenticationManager를 Bean으로 등록하기
+
+이렇게 생성할수도 있겠지만 `WebSecurityConfigurerAdapter`가 `Deprecated`당했기 때문에 좋은 방법은 아닌거 같습니다.
+
+#### 2. AuthenticationConfiguration객체를 통해 AuthenticationManager를 Bean으로 등록하기
+
+`AuthenticationConfiguration`를 통해 `AuthenticationManager`를 `Bean`으로 등록하여 사용할려면 `AuthenticationProvider`를 주입시킬 방법이 필요합니다.
+
+![AuthenticationConfiguration에서 AuthenticationManagerBuilder Bean 등록](/data/blog/Spring/Security/8.png)
+
+`AuthenticationConfiguration`객체를 보면 `AuthenticationManagerBuilder`를 `Bean`으로 등록한다는 것을 알 수 있습니다.
+
+그렇다면, `AuthenticationManagerBuilder`를 주입받아 `AuthenticationProvider`를 추가시켜 주면 됩니다.
+
+```java
+
+@EnableWebSecurity
+@RequiredArgsConstructor
+public class SecurityConfig {
+
+	private final AuthenticationManagerBuilder authenticationManagerBuilder;
+	private final AuthenticationConfiguration authenticationConfiguration;
+	private final LoginAuthenticationProvider loginAuthenticationProvider;
+	private final JWTAuthorizationProvider jwtAuthorizationProvider;
+
+	@Bean
+	public AuthenticationManager authenticationManager() throws Exception {
+		authenticationManagerBuilder.authenticationProvider(loginAuthenticationProvider);
+		authenticationManagerBuilder.authenticationProvider(jwtAuthorizationProvider);
+		return authenticationConfiguration.getAuthenticationManager();
+	}
+}
+```
+
+![AuthenticationConfiguration에 AuthenticationProvider 정상 등록](/data/blog/Spring/Security/9.png)
+
+`AuthenticationConfiguration`객체의 `AuthenticationManagerBuilder`에 정상적으로 `LoginAuthenticationProvider`가 추가되는 것을 확인할 수
+있습니다.
 
 ## 참고 사이트
 
