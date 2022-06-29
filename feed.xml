@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Mon, 27 Jun 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Thu, 30 Jun 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/Spring/Spring-Security-570-M2-에-달라진-설정-방법</guid>
+    <title>Spring Security 5.7.0-M2 부터 변경된 설정 방법</title>
+    <link>https://jojiapp.github.io/blog/Spring/Spring-Security-570-M2-에-달라진-설정-방법</link>
+    <description>Spring Security 5.7.0-M2 부터 변경된 설정 방법</description>
+    <pubDate>Thu, 30 Jun 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Spring</category><category>Spring Security</category><category>Config</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-10-람다를-이용한-도메인-전용-언어</guid>
     <title>Chapter 10. 람다를 이용한 도메인 전용 언어</title>

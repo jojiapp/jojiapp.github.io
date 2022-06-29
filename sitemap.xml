@@ -75,6 +75,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/Spring/Spring-Security-570-M2-에-달라진-설정-방법</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/Spring/Template-Engine을-사용하여-PDF파일로-변환하기</loc>
   </url>
 
@@ -159,6 +163,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/tags/config</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/tags/datetime</loc>
   </url>
 
@@ -212,6 +220,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/spring-rest-docs</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/spring-security</loc>
   </url>
 
   <url>

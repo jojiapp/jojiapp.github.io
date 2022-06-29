@@ -1,0 +1,24 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>JLOG</title>
+      <link>https://jojiapp.github.io/blog</link>
+      <description>매일 공부한 것을 정리하여 블로그를 작성중입니다.</description>
+      <language>ko</language>
+      <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
+      <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
+      <lastBuildDate>Thu, 30 Jun 2022 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://jojiapp.github.io/tags/spring-security/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://jojiapp.github.io/blog/Spring/Spring-Security-570-M2-에-달라진-설정-방법</guid>
+    <title>Spring Security 5.7.0-M2 부터 변경된 설정 방법</title>
+    <link>https://jojiapp.github.io/blog/Spring/Spring-Security-570-M2-에-달라진-설정-방법</link>
+    <description>Spring Security 5.7.0-M2 부터 변경된 설정 방법</description>
+    <pubDate>Thu, 30 Jun 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Spring</category><category>Spring Security</category><category>Config</category>
+  </item>
+
+    </channel>
+  </rss>
