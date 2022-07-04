@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Thu, 30 Jun 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Mon, 04 Jul 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-4-매일-자바와-함께/Chapter-11-null-대신-Optional-클래스</guid>
+    <title>Chapter 11. null 대신 Optional 클래스</title>
+    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-4-매일-자바와-함께/Chapter-11-null-대신-Optional-클래스</link>
+    <description>Chapter 11. null 대신 Optional 클래스</description>
+    <pubDate>Mon, 04 Jul 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Modern Java In Action</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/Spring/Spring-Security-570-M2-에-달라진-설정-방법</guid>
     <title>Spring Security 5.7.0-M2 부터 변경된 설정 방법</title>
