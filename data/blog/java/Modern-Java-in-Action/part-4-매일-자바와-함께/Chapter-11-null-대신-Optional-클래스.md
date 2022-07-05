@@ -21,30 +21,30 @@ summary: Chapter 11. null 대신 Optional 클래스
 
 @Getter
 public class Person {
-	private Car car;
+    private Car car;
 }
 
 @Getter
 class Car {
-	private Insurance insurance;
+    private Insurance insurance;
 }
 
 @Getter
 class Insurance {
-	private String name;
+    private String name;
 }
 ```
 
 ```java
 public class Chap11 {
 
-	@Test
-	@DisplayName("NullPointerException 발생 경우")
-	void test1() throws Exception {
-		Person person = new Person();
-		assertThatThrownBy(() -> person.getCar().getInsurance().getName())
-			.isInstanceOf(NullPointerException.class);
-	}
+    @Test
+    @DisplayName("NullPointerException 발생 경우")
+    void test1() throws Exception {
+        Person person = new Person();
+        assertThatThrownBy(() -> person.getCar().getInsurance().getName())
+                .isInstanceOf(NullPointerException.class);
+    }
 }
 ```
 
@@ -74,10 +74,10 @@ public class Chap11 {
 
 ```kotlin
 class Kotlin {
-	fun test1() {
-		val person = Person()
-		person?.car?.insurance?.name
-	}
+    fun test1() {
+        val person = Person()
+        person?.car?.insurance?.name
+    }
 
 }
 ```
@@ -86,8 +86,8 @@ class Kotlin {
 
 ```kotlin
 class Kotlin {
-	private val car: Car? // null 허용
-	private val insurance: Insurance // null 허용 안함
+    private val car: Car? // null 허용
+    private val insurance: Insurance // null 허용 안함
 }
 ```
 
@@ -113,9 +113,9 @@ class Kotlin {
 
 ```java
 public class Chap11 {
-	void test2() throws Exception {
-		Optional<Object> empty = Optional.empty();
-	}
+    void test2() throws Exception {
+        Optional<Object> empty = Optional.empty();
+    }
 }
 ```
 
@@ -125,10 +125,10 @@ public class Chap11 {
 
 ```java
 public class Chap11 {
-	void test2() throws Exception {
-		Person person = new Person();
-		Optional<Person> optionalPerson = Optional.of(person);
-	}
+    void test2() throws Exception {
+        Person person = new Person();
+        Optional<Person> optionalPerson = Optional.of(person);
+    }
 }
 ```
 
@@ -140,10 +140,10 @@ public class Chap11 {
 
 ```java
 public class Chap11 {
-	void test2() throws Exception {
-		Person person = null;
-		Optional<Person> optionalPerson = Optional.ofNullable(person);
-	}
+    void test2() throws Exception {
+        Person person = null;
+        Optional<Person> optionalPerson = Optional.ofNullable(person);
+    }
 }
 ```
 
@@ -155,11 +155,11 @@ public class Chap11 {
 
 ```java
 public class Chap11 {
-	void test2() throws Exception {
-		Insurance insurance = new Insurance();
-		Optional<Insurance> optionalInsurance = Optional.ofNullable(insurance);
-		Optional<String> optionalName = optionalInsurance.map(Insurance::getName);
-	}
+    void test2() throws Exception {
+        Insurance insurance = new Insurance();
+        Optional<Insurance> optionalInsurance = Optional.ofNullable(insurance);
+        Optional<String> optionalName = optionalInsurance.map(Insurance::getName);
+    }
 }
 ```
 
@@ -171,12 +171,12 @@ public class Chap11 {
 
 ```java
 public class Chap11 {
-	void test2() throws Exception {
-		Optional<Person> person = Optional.empty();
-		Optional<Optional<Optional<String>>> optional = person.map(Person::getCar)
-			.map(car -> car.map(Car::getInsurance))
-			.map(car -> car.map(insurance -> insurance.map(Insurance::getName)));
-	}
+    void test2() throws Exception {
+        Optional<Person> person = Optional.empty();
+        Optional<Optional<Optional<String>>> optional = person.map(Person::getCar)
+                .map(car -> car.map(Car::getInsurance))
+                .map(car -> car.map(insurance -> insurance.map(Insurance::getName)));
+    }
 }
 ```
 
@@ -184,11 +184,11 @@ public class Chap11 {
 
 ```java
 public class Chap11 {
-	void test2() throws Exception {
-		person.flatMap(Person::getCar)
-			.flatMap(Car::getInsurance)
-			.map(Insurance::getName);
-	}
+    void test2() throws Exception {
+        person.flatMap(Person::getCar)
+                .flatMap(Car::getInsurance)
+                .map(Insurance::getName);
+    }
 }
 ```
 
@@ -199,3 +199,76 @@ public class Chap11 {
 > `Optional 클래스`는 필드 형식을 사용할 것을 가정하지 않았으므로 `Serializable` 인터페이스를 구현하지 않기 때문에 직렬화할 수 없습니다.
 >
 > 그렇기 때문에 필요에 따라 `Optional 클래스`로 `감싼 객체`를 반환하는 `Getter`를 만드는 것을 `권장`합니다.
+
+### 11.3.4 Optional 스트림 조작
+
+`Java 9`에서는 `Opiotnal`을 포함하는 `Stream`을 쉽게 처리할 수 있도록 `Optional`에 `stream()` 메소드를 추가했습니다.
+
+```java
+public class Chap11 {
+    void test1() throws Exception {
+        List<Person> people = List.of(new Person());
+        List<String> strings = people.stream()
+                .map(Person::getCar)
+                .map(optCar -> optCar.flatMap(Car::getInsurance))
+                .map(optIns -> optIns.map(Insurance::getName))
+                .flatMap(Optional::stream)
+                .toList();
+    }
+
+}
+```
+
+`Optional`에 있는 `stream()` 메소드는 `Optional`을 `Stream`으로 변환합니다.
+
+이 때, `Optional.empty`는 `Stream.empty`로 `변환`되기 때문에 `최종 연산`에서 `제외`되게 됩니다.
+
+```java
+public final class Optional<T> {
+    public Stream<T> stream() {
+        if (!isPresent()) {
+            return Stream.empty();
+        } else {
+            return Stream.of(value);
+        }
+    }
+}
+```
+
+### 11.3.5 디폴트 액션과 Optional 언랩
+
+- `get()`: `Optional`에서 값을 꺼내지만, 값이 없으면 `NoSuchElementException`이 발생
+- `orElse`: 값이 없으면 가져올 기본값 제공
+- `orElseGet`: `orElse`에 대응하는 `Lazy` 버전의 메소드 입니다. 값이 없을 떄만 `Supplier` 함수가 실행
+- `orElseThrow`: 값이 존재하지 않을 시, 발생시킬 예외를 지정할 수 있음
+- `ifPresent`: 값이 존재하면 실행
+- `ifPresentOrElse`: 첫 번째 함수는 값이 있으면 실행, 두 번쨰 함수는 값이 없을 경우 실행
+
+### 11.3.6 두 Optional 합치기
+
+```java
+public class Chap11 {
+
+    public Optional<Insurance> nullSafeFindCheapestInsurance(
+            Optional<Person> person,
+            Optional<Car> car
+    ) {
+        return person.flatMap(p -> car.map(c -> findCheapestInsurance(p, c)));
+    }
+
+    private Insurance findCheapestInsurance(Person person, Car car) {
+        // 다양한 보험회사가 제공하는 서비스 조회
+        // 모든 결과 데이터 비교
+        return chapestCompany;
+    }
+
+}
+```
+
+`person`의 `flatMap`을 호출함으로써 `person`이 `값이 존재`해야 `실행`이 될것이고, `car`의 `map`을 호출함으로써 `값이 존재하지 않으면 empty`를 `반환`하게 됩니다.
+
+즉, 두 가지 모두 값이 존재하지 않으면 `empty를 반환`하게 됩니다.
+
+### 11.3.7 필터로 특정값 거르기
+
+`filter` 메소드를 통해 특정 조건에 해당하지 않으면 `empty`를 반환하도록 할 수 있습니다.
