@@ -34,7 +34,7 @@ summary: Chapter 12. 새로운 날짜와 시간 API
 #### 💡 `LocalDate`: 날짜
 
 ```java
-public class Chap11 {
+public class Chap12 {
 	void test() throws Exception {
 		LocalDate date = LocalDate.of(2017, 9, 21); // 2017-09-21
 		int year = date.getYear(); // 2017
@@ -53,7 +53,7 @@ public class Chap11 {
 `ChronoField`는 `TemporalField` 인터페이스를 정의하므로 아래처럼 값을 가져올수 있습니다.
 
 ```java
-public class Chap11 {
+public class Chap12 {
 	void test() throws Exception {
 		LocalDate date = LocalDate.of(2017, 9, 21); // 2017-09-21
 		date.get(ChronoField.YEAR);
@@ -64,7 +64,7 @@ public class Chap11 {
 `LocalDate`에서 제공하는 내장함수를 이용하여 가독성을 더 높일 수 있습니다.
 
 ```java
-public class Chap11 {
+public class Chap12 {
 	void test() throws Exception {
 		LocalDate date = LocalDate.of(2017, 9, 21); // 2017-09-21
 		date.getYear();
@@ -75,7 +75,7 @@ public class Chap11 {
 #### 💡 `LocalTime`: 시간
 
 ```java
-public class Chap11 {
+public class Chap12 {
 	void test() throws Exception {
 		LocalTime time = LocalTime.of(13, 35, 20);
 		int hour = time.getHour();
@@ -92,7 +92,7 @@ public class Chap11 {
 `LocalDateTime`은 `LocalDate`와 `LocalTime`을 모두 갖는 클래스입니다.
 
 ```java
-public class Chap11 {
+public class Chap12 {
 	void test() throws Exception {
 		LocalDate date = LocalDate.of(2017, Month.SEPTEMBER, 21);
 		LocalTime time = LocalTime.of(13, 34, 20);
@@ -118,7 +118,7 @@ public class Chap11 {
 팩토리 메소드인 `ofEpochSecond()`에 초를 넘겨줘서 `Instant` 클래스 인스턴스를 만들 수 있습니다.
 
 ```java
-public class Chap11 {
+public class Chap12 {
 	void test() throws Exception {
 		Instant instant1 = Instant.ofEpochSecond(3);
 		Instant instant2 = Instant.ofEpochSecond(2, 1_000_000_000); // 2초 이후의 1억 나노초(1초)
@@ -139,7 +139,7 @@ public class Chap11 {
 - 두 시간 사이의 시간 차
 
 ```java
-public class Chap11 {
+public class Chap12 {
 	void test() throws Exception {
 		LocalTime startTime = LocalTime.of(10, 0);
 		LocalTime endTime = LocalTime.of(12, 0);
@@ -156,7 +156,7 @@ public class Chap11 {
 - 두 날짜 사이의 기간 차
 
 ```java
-public class Chap11 {
+public class Chap12 {
 	void test() throws Exception {
 		LocalDate startDate = LocalDate.of(2020, 2, 2);
 		LocalDate endDate = LocalDate.of(2021, 2, 2);
@@ -173,7 +173,7 @@ public class Chap11 {
 `withXXX` 메소드로 기존의 `LocalDate`를 변경한 버전을 쉽게 만들 수 있습니다.
 
 ```java
-public class Chap11 {
+public class Chap12 {
 	void test() throws Exception {
 		LocalDate date1 = LocalDate.of(2017, 9, 21);
 		LocalDate date2 = date1.withYear(2011); // 2011-09-21
@@ -188,7 +188,7 @@ public class Chap11 {
 `plusXXX`, `minusXXX` 메소드를 사용하여 상대적으로 값을 변경할 수 있습니다.
 
 ```java
-public class Chap11 {
+public class Chap12 {
 	void test() throws Exception {
 		LocalDate date1 = LocalDate.of(2017, 9, 21);
 		LocalDate date2 = date1.plusDays(3); // 2017-09-24
@@ -196,3 +196,162 @@ public class Chap11 {
 	}
 }
 ```
+
+### 12.2.1 TemporalAdjusters 사용하기
+
+다음 주 일요일 혹은 해달 달의 마지막 날 등 조금 더 복잡한 기능들을 `TemporalAdjusters`의 `정적 메소드`를 사용하면 쉽게 구현할 수 있습니다.
+
+```java
+public class Chap12 {
+	public void test() throws Exception {
+		LocalDate date = LocalDate.of(2014, 3, 18);
+		LocalDate sunday = date.with(nextOrSame(DayOfWeek.SUNDAY));
+		LocalDate lastDay = date.with(lastDayOfMonth());
+	}
+}
+```
+
+- 모든 반환값은 `TemporalAdjuster` 입니다.
+
+| 메소드                         | 설명                                                                       |
+| ------------------------------ | -------------------------------------------------------------------------- |
+| `dayOfWeekInMonth`             | 서수 요일에 해당하는 날짜를 반환 (음수를 사용하면 월의 끝에서 거꾸로 계산) |
+| `firstDayOfMonth`              | 현재 달의 첫 번쨰 날짜를 반환                                              |
+| `firstDayOfNextMonth`          | 다음 달의 첫 번쨰 날짜를 반환                                              |
+| `firstDayOfNextYear`           | 내년의 첫 번쨰 날짜를 반환                                                 |
+| `firstDayOfYear`               | 올해의 첫 번쨰 날짜를 반환                                                 |
+| `firstInMonth`                 | 현재 달의 첫 번쨰 요일에 해당하는 날짜를 반환                              |
+| `lastDayOfMonth`               | 현재 달의 마지막 날짜를 반환                                               |
+| `lastDayOfNextMonth`           | 다음 달의 마지막 날짜를 반환                                               |
+| `lastDayOfNextYear`            | 내년의 마지막 날짜를 반환                                                  |
+| `lastDayOfYear`                | 올해의 마지막 날짜를 반환                                                  |
+| `lastInMonth`                  | 현재 달의 마지막 요일에 해당하는 날짜를 반환                               |
+| `next`, `previous`             | 현재 달에서 현재 날짜 이후로 지정한 요일이 처음으로 나타나는 날짜를 반환   |
+| `nextOrSame`, `previousOrSame` | 현재 날짜 이후로 지정한 요일이 처음/이전으로 나타나는 날짜를 반환          |
+
+### 12.2.2 날짜와 시간 객체 출력과 파싱
+
+`java.time.format` 패키지가 추가 될 정도로 날짜와 시간 관련 작업에서 `포매팅`과 `파싱`은 서로 떨어질 수 없는 관계 입니다.
+
+해당 패키지에서 가장 중요한 클래스는 `DateTimeFormatter`입니다.
+
+`DateFormat` 클래스와는 다르게 `DateTimeFormatter` 클래스는 스레드에 안전합니다
+
+정적 메소드를 이용하여 `포맷팅`하거나 `파싱`할 수 있습니다.
+
+```java
+public class Chap12 {
+	public void test() throws Exception {
+		LocalDate date = LocalDate.of(2014, 3, 18);
+		String basic = date.format(DateTimeFormatter.BASIC_ISO_DATE); // 20140318
+		String isoLocal = date.format(DateTimeFormatter.ISO_LOCAL_DATE); // 2014-03-18
+
+		LocalDate parse = LocalDate.parse(isoLocal, DateTimeFormatter.ISO_LOCAL_DATE);
+	}
+}
+```
+
+또는 `직접 형식을 지정`하여 사용할 수도 있습니다.
+
+```java
+public class Chap12 {
+	public void test() throws Exception {
+		LocalDate date = LocalDate.of(2014, 3, 18);
+		String format = date.format(DateTimeFormatter.ofPattern("yyyy/MM/dd")); // 2014/03/18
+	}
+}
+```
+
+## 12.3 다양한 시간대와 캘린더 활용 방법
+
+기존의 `TimeZone`을 대체할 수 있는 `ZoneId` 클래스가 추가되었습니다.
+
+`ZoneId` 클래스도 불변 클래스입니다.
+
+### 12.3.1 시간대 사용하기
+
+표준 시간이 같은 지역을 묶어서 `시간대 규칙 집합`을 `정의`합니다.
+
+```java
+public class Chap12 {
+	public void test() throws Exception {
+		ZoneId.of("Europe/Rome");
+	}
+}
+```
+
+`지역 ID`는 `[지역]/[도시]` 형식으로 이루어지며 [IANA Time ZOne Database](https://www.iana.org/time-zones)에서 제공하는 지역 집합 정보를 사용합니다.
+
+```java
+public class Chap12 {
+	public void test() throws Exception {
+		ZoneId zoneId = TimeZone.getDefault().toZoneId();
+	}
+}
+```
+
+기존의 `TimeZone`도 `toZoneId()`를 사용하여 `ZoneId`로 변환핧 수 있습니다.
+
+`LocalDate`, `LocalDateTime`를 `Instant`를 이용해서 `ZonedDateTime`으로 변환할 수 있습니다.
+
+### 12.3.2 UTC/Greenwich 기준의 고정 오프셋
+
+때로는 `UTC(협정 세계시)`/`GMT(그리니치 표준시)`를 기준으로 시간대를 표현하기도 합니다.
+
+예를 들어 뉴욕은 런던보다 5시간 느리다라고 표현할 수 있습니다.
+
+`ZoneId`의 서브 클래스인 `ZoneOffset` 클래스로 그리니치 0도 자오선과 시간값의 차이를 표현할 수 있습니다.
+
+```java
+public class Chap12 {
+	public void test() throws Exception {
+		ZoneOffset newYorkOffset = ZoneOffset.of("-05:00");
+	}
+}
+```
+
+위 방식은 서머타임을 제대로 처리할 수 없으므로 권장하지 않는 방식입니다.
+
+```java
+public class Chap12 {
+	public void test() throws Exception {
+		ZoneOffset newYorkOffset = ZoneOffset.of("-05:00");
+		LocalDateTime now = LocalDateTime.now();
+		OffsetDateTime offsetDateTime = OffsetDateTime.of(now, newYorkOffset);
+	}
+}
+```
+
+위 처럼 날짜와 시간을 표현하는 `OffsetDateTime`을 만들 수 있습니다.
+
+새로운 날짜와 시간 API는 ISO 캘린더 시스템에 기반하지 않은은 정보도 처리할 수 있는 기능을 제공합니다.
+
+### 12.3.3 대안 캘린더 시스템 사용하기
+
+`ISO-8601` 캘린더 시스템은 실질적으로 전 세계에서 통용됩니다.
+
+하지만 `Java 8`에서는 4개의 추가 캘린더 시스템 (`ThaiBuddhistDate`, `MinguoDate`, `JapaneseDate`, `HijrahDate`)을 제공합니다.
+
+위 4개의 클래스와 `LocalDate` 클래스는 `ChronoLocalDate` 인터페이스를 상속 받습니다.
+
+`LocalDate`는 이를 이용해서 위의 4개의 클래스 중 하나의 인스턴스를 만들 수 있습니다.
+
+```java
+public class Chap12 {
+	public void test() throws Exception {
+		LocalDateTime now = LocalDateTime.now();
+		JapaneseDate japaneseDate = JapaneseDate.from(now);
+	}
+}
+```
+
+## 12.4 마치며
+
+- `Java 8` 이전에 제공하던 `Date`클래스는 여러 불일치점, 가변성, 어설픈 오프셋, 기본값, 잘못된 이름 결정 등 설계 결함이 존재
+- 새로운 날짜와 시간 API에서 `날짜`와 `시간` 객체는 모두 `불변`
+- 새로운 API는 각각 `사람과 기계`가 편리하게 날짜와 시간 정보를 관리할 수 있도록 `두 가지 표현 방식을 제공`
+- 날짜와 시간 객체를 절대적인 방법과 상대적인 방법으로 처리할 수 있음
+- `TemporalAdjuster`를 이용하면 단순히 값을 바꾸는 것 이상의 복잡한 동작을 수행할 수 있음
+- 날짜와 시간 객체를 특정 포맷으로 출력하고 파싱하는 포매터를 정의할 수 있으며, 포매터는 `스레드 안정성`을 `보장`
+- 특정 `지역/장소`에 상대적인 시간대 또는 UTC/GMT 기준의 오프셋을 이용해서 시간대를 정의할 수 있으며 이 시간대를 날짜와 시간 객체에 적용해서 지역화할 수 있다.
+- `ISO-8601` 표준 시스템을 준수하지 않는 캘린더 시스템도 사용할 수 있다.
