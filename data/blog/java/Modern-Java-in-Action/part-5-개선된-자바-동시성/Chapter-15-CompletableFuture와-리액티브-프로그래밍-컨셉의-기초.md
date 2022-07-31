@@ -109,7 +109,7 @@ summary: Chapter 15. CompletableFuture와 리액티브 프로그래밍 컨셉의
 ### 15.2.1 Future 형식 API
 
 ```java
-public class Chap16 {
+public class Chap15 {
 
     @Test
     void test() throws Exception {
@@ -148,7 +148,7 @@ public class Chap16 {
 이 부분은 이해하지 못했습니다.
 
 ```java
-public class Chap16 {
+public class Chap15 {
 
     int sum = 0;
 
@@ -183,7 +183,7 @@ public class Chap16 {
 ### 15.2.3 잠자기(그리고 기타 블로킹 동작)는 해로운 것으로 간주
 
 ```java
-public class Chap16 {
+public class Chap15 {
 
     @Test
     void test() throws Exception {
@@ -210,7 +210,7 @@ public class Chap16 {
 이렇게 잠자기를 해버리면 스레드가 해당 자원을 계속 사용중이기 때문에 비효율적입니다.
 
 ```java
-public class Chap16 {
+public class Chap15 {
 
     @Test
     void test() throws Exception {
@@ -262,7 +262,7 @@ public class Chap16 {
 `get()`으로 값을 가져올 수 있습니다.
 
 ```java
-public class Chap16 {
+public class Chap15 {
     @Test
     void test() throws Exception {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
@@ -289,7 +289,7 @@ public class Chap16 {
 `CompletableFuture`의 `thenCombine()`를 이용하여 두 비동기 메소드가 끝났을 때 스레드 풀에서 실행된 연산을 만듭니다. 두 연산이 끝날 때 까지 실행되지 않습니다.
 
 ```java
-public class Chap16 {
+public class Chap15 {
     @Test
     void test() throws Exception {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
