@@ -2,7 +2,7 @@
 title: Chapter 16. CompletableFuture 안정적 비동기 프로그래밍
 date: '2022-08-01'
 tags: ['Java', 'Modern Java In Action']
-drt: false
+draft: false
 summary: Chapter 16. CompletableFuture 안정적 비동기 프로그래밍
 ---
 
