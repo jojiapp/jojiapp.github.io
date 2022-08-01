@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Mon, 18 Jul 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Sun, 31 Jul 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/tags/modern-java-in-action/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-5-개선된-자바-동시성/Chapter-15-CompletableFuture와-리액티브-프로그래밍-컨셉의-기초</guid>
+    <title>Chapter 15. CompletableFuture와 리액티브 프로그래밍 컨셉의 기초</title>
+    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-5-개선된-자바-동시성/Chapter-15-CompletableFuture와-리액티브-프로그래밍-컨셉의-기초</link>
+    <description>Chapter 15. CompletableFuture와 리액티브 프로그래밍 컨셉의 기초</description>
+    <pubDate>Sun, 31 Jul 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Modern Java In Action</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-4-매일-자바와-함께/Chapter-13-디폴트-메소드</guid>
     <title>Chapter 13. 디폴트 메소드</title>

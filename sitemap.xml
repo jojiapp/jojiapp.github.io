@@ -87,15 +87,15 @@
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/blog/Spring/RestDocs/Spring_Rest_Docs_Asciidoc_작성</loc>
+    <loc>https://jojiapp.github.io/blog/Spring/RestDocs/Spring-Rest-Docs-Asciidoc-작성</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/blog/Spring/RestDocs/Spring_Rest_Docs_Gradle_설정</loc>
+    <loc>https://jojiapp.github.io/blog/Spring/RestDocs/Spring-Rest-Docs-Gradle-설정</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/blog/Spring/RestDocs/Spring_Rest_Docs_Test_코드_작성</loc>
+    <loc>https://jojiapp.github.io/blog/Spring/RestDocs/Spring-Rest-Docs-Test-코드-작성</loc>
   </url>
 
   <url>
@@ -173,6 +173,18 @@
   <url>
     <loc
       >https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-4-매일-자바와-함께/Chapter-13-디폴트-메소드</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-5-개선된-자바-동시성/Chapter-15-CompletableFuture와-리액티브-프로그래밍-컨셉의-기초</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-5-개선된-자바-동시성/Chapter-16-CompletableFuture-안정적-비동기-프로그래밍</loc
     >
   </url>
 
