@@ -57,6 +57,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/Linux/tail</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/MacOS/Homebrew</loc>
   </url>
 
@@ -230,6 +234,14 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/json</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/linux</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/log</loc>
   </url>
 
   <url>
