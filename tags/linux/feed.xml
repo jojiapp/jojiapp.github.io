@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Thu, 04 Aug 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Mon, 08 Aug 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/tags/linux/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/Linux/grep</guid>
+    <title>[Linux] grep 명령어</title>
+    <link>https://jojiapp.github.io/blog/Linux/grep</link>
+    <description>grep 명령어를 이용하여 검색 조건 필터링 하기</description>
+    <pubDate>Mon, 08 Aug 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Linux</category><category>log</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/Linux/tail</guid>
     <title>[Linux] tail 명령어</title>

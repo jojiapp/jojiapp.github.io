@@ -1,0 +1,1 @@
+{"pageProps":{"posts":[{"title":"[Linux] grep 명령어","date":"2022-08-08T00:00:00.000Z","tags":["Linux","log"],"draft":false,"summary":"grep 명령어를 이용하여 검색 조건 필터링 하기","slug":"Linux/grep"},{"title":"[Linux] tail 명령어","date":"2022-08-04T00:00:00.000Z","tags":["Linux","log"],"draft":false,"summary":"tail 명령어를 이용하여 로그 파일 읽기","slug":"Linux/tail"}],"tag":"log"},"__N_SSG":true}
