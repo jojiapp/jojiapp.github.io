@@ -2,7 +2,7 @@
 name: 조지헌
 avatar: /static/images/profile.jpeg
 occupation: Backend
-company: TelePIX
+company: Bomapp
 email: jojiapp@gmail.com
 linkedin: https://www.linkedin.com/in/지헌-조-a74333238
 github: https://github.com/jojiapp
