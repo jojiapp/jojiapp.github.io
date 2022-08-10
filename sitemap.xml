@@ -111,6 +111,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/Spring/junit5/MockMvcBuilders</loc>
+  </url>
+
+  <url>
     <loc
       >https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-1-기초/Chapter-1-자바-8-9-10-11-무슨-일이-일어나고-있는가</loc
     >
@@ -207,11 +211,11 @@
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/code-style</loc>
+    <loc>https://jojiapp.github.io/tags/config</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/config</loc>
+    <loc>https://jojiapp.github.io/tags/code-style</loc>
   </url>
 
   <url>
@@ -251,6 +255,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/tags/junit5</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/tags/linux</loc>
   </url>
 
@@ -260,6 +268,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/mac-os</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/mockmvc</loc>
   </url>
 
   <url>
