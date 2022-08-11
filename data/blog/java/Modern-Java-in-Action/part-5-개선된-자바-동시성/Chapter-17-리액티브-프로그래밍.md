@@ -1,6 +1,6 @@
 ---
 title: Chapter 17. 리액티브 프로그래밍
-date: '2022-08-08'
+date: '2022-08-11'
 tags: ['Java', 'Modern Java In Action']
 draft: false
 summary: Chapter 17. 리액티브 프로그래밍
@@ -77,7 +77,8 @@ CPU의 사용률을 극대화 (내부적으로 경쟁하는 CPU의 스레드 사
 
 ```java
 public final class Flow {
-	private Flow() {} // uninstantiable
+	private Flow() {
+	} // uninstantiable
 }
 ```
 
@@ -143,7 +144,8 @@ public static interface Subscription {
 #### 💡 Flow.Processor 인터페이스
 
 ```java
-public static interface Processor<T, R> extends Subscriber<T>, Publisher<R> {}
+public static interface Processor<T, R> extends Subscriber<T>, Publisher<R> {
+}
 ```
 
 `Processor 인터페이스`는 리액티브 스트림에서 처리하는 `이벤트의 변환 단계`를 나타냅니다
@@ -359,3 +361,167 @@ public class Chap17 {
 	}
 }
 ```
+
+### 17.2.4 자바는 왜 플로 API 구현을 제공하지 않는가?
+
+자바 라이브러리는 보통 인터페이스와 구현체를 제공하는 반면, `Flow`는 구현체를 제공하지 않습니다.
+
+그 이유는 `Flow API`를 만들 당시 이미 `Akka`, `RxJava`등 다양한 라이브러리 가 이미 존재했기 때문입니다.
+
+각 라이브러리는 독립적으로 개발되었기 때문에 서로 다른 이름규칙과 API를 사용했습니다.
+`Flow` 인터페이스를 기반으로 리액티브 개념을 구현하도록 진화했고, 이 표준화 작업 덕분에 다양한 라이브러리가 쉽게 협력할 수 있게 되었습니다.
+
+## 17.3 리액티브 라이브러리 RxJava 사용하기
+
+`RxJava`는 `리액티브 애플리케이션`을 구현하는데 사용하는 라이브러리 입니다.
+
+넷플릭스의 `Reactive Extensions(Rx)` 프로젝트의 일부에서 시작되었습니다.
+
+현재는 `Flow`를 지원하도록 `RxJava 2.0`이 개발되었습니다.
+
+`RxJava`는 `Flow.Publisher`를 구현하는 두 클래스를 제공합니다.
+
+- `Flowable`: 역압력(request 메소드)을 지원
+- `Observable`: 역압력 미지원
+
+> `RxJava`는 천 개 이하의 요소를 가진 스트림이나 마우스 움직임, 터치 이벤트 등
+> 역압력을 적용하기 힘든 GUI 이벤트 그리고 자주 발생하지 않는 종류의 이벤트에 역압력을 적용하지 말 것을 권장합니다.
+
+### 17.3.1 Observable 만들고 사용하기
+
+```java
+public class Chap17 {
+	@Test
+	public void test1() throws Exception {
+		Observable<String> just = Observable.just("first", "second");
+	}
+}
+```
+
+구독자는 `onNext("first")`, `onNext("second")`, `onComplete()`의 순서로 메세지를 받습니다.
+
+사용자와 실시간으로 상호작용하면서 지정된 속도로 이벤트를 방출하는 상황에 사용되는 `interval()` 팩토리 메소드도 있습니다.
+
+```java
+public class Chap17 {
+	@Test
+	public void test1() throws Exception {
+		Observable<Long> observable = Observable.interval(1, TimeUnit.SECONDS);
+	}
+}
+```
+
+#### 💡 1초마다 한 개의 온도를 방출하는 Observable 만들기
+
+```java
+public class TempObserver implements Observer<TempInfo> {
+	@Override
+	public void onSubscribe(@NonNull Disposable d) {
+	}
+
+	@Override
+	public void onNext(@NonNull TempInfo tempInfo) {
+		System.out.println(tempInfo);
+	}
+
+	@Override
+	public void onError(@NonNull Throwable e) {
+		System.out.println("Got problem: " + e.getMessage());
+	}
+
+	@Override
+	public void onComplete() {
+		System.out.println("Done!");
+	}
+}
+```
+
+`Observer`의 구현체를 만들어 줍니다.
+
+```java
+public class Chap17 {
+
+	@Test
+	@DisplayName("Flow 예제")
+	void test() throws Exception {
+		Observable<TempInfo> new_tork = getTemperatures("New Tork");
+		new_tork.blockingSubscribe(new TempObserver());
+	}
+
+	private static Observable<TempInfo> getTemperatures(String town) {
+		return Observable.create(emitter ->
+				Observable.interval(1, TimeUnit.SECONDS)
+						.subscribe(i -> {
+									if (!emitter.isDisposed()) {
+										if (i >= 5) {
+											emitter.onComplete();
+										} else {
+											try {
+												emitter.onNext(TempInfo.fetch(town));
+											} catch (Exception e) {
+												emitter.onError(e);
+											}
+										}
+									}
+								}
+						)
+		);
+	}
+}
+```
+
+필요한 이벤트를 전송하는 `ObservableEmitter`를 소비하는 함수로 `Observable`을 만들어 반환합니다.
+
+`ObservableEmitter`은 `Emitter`을 상속합니다.
+
+즉, 구독 된 `Observer`는 `emitter`을 통해 주기적으로 이벤트를 받아 실행합니다.
+
+`emitter.isDisposed()` 메소드를 통해 해당 `Observer`가 이미 ㅖ기 되었는지 확인하여
+폐기되지 않았을 경우 아래 로직을 실행하도록 구현합니다.
+
+```java
+public class Chap17 {
+	@Test
+	@DisplayName("Flow 예제")
+	void test() throws Exception {
+		Observable<TempInfo> merge = Observable.merge(
+				Stream.of("New York", "Korea")
+						.map(Chap17::getTemperatures)
+						.toList()
+		);
+		merge.blockingSubscribe(new TempObserver());
+	}
+}
+```
+
+`Observable.merge()`를 이용하여 여러 도시의 온도를 방출하는 `Observer`로 만들 수도 있습니다.
+
+```java
+public class Chap17 {
+	@Test
+	@DisplayName("Flow 예제")
+	void test() throws Exception {
+		Observable<TempInfo> merge = Observable.merge(
+				Stream.of("New York", "Korea")
+						.map(Chap17::getTemperatures)
+						.toList()
+		);
+		merge.subscribe(new TempObserver());
+		merge.blockingSubscribe(new TempObserver());
+	}
+}
+
+```
+
+위 처럼 사용하여 비동기적으로 두 `Observer`를 사용할 수 있습니다.
+
+## 17.4 마치며
+
+- 리액티브 프로그래밍의 기초 사상은 이미 20~30년 전에 수립되었지만 최근에서야 인기를 얻고 있음
+- 이랙티브 소프트웨어가 지녀야 할 넥 가지 관련 특징 (`반응성`, `회복성`, `탄력성`, `메시지 주도`)을 서술하는 리액티브 매니페스토가 리액티브 프로그래밍 사상을 공식화 함
+- 여러 애플리케이션을 통합하는 리액티브 시스템과 한 개의 애플리케이션을 구현할 때에 각각 다른 접근 방식으로 리액티브 프로그래밍 원칙을 적용할 수 있음
+- 리액티브 애플리케이션은 리액티브 스트림이 전달하는 한 개 이상의 이벤트를 비동기로 처리함을 기본으로 전재 함
+- 리액티브 스트림은 비동기적으로 처리되므로 역압력 기법이 기본적으로 탑재 되어 있음
+- `역압력`은 발행자가 구독자보다 빠른 속도로 아이템을 발행하므로 발생하는 문제를 방지
+- `Java 9`의 `Flow API`는 `Publisher`, `Subscriber`, `Subscription`, `Processor` 네 개의 핵심 인터페이스를 정의 함
+- 가장 흔한 리액티브 프로그래밍 도구로 `RxJava`를 꼽을 수 있으며, 이 라이브러리는 `Flow`의 기본 기능에 더해 다양한 강력한 연산자를 제공
