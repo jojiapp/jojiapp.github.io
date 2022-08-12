@@ -279,28 +279,28 @@ public class SecurityConfig {
 }
 ```
 
-![HttpSecurity authenticationProvider 디버깅 포인트](/data/blog/Spring/Security/1.png)
-![AuthenticationManagerBuilder authenticationProvider 디버깅 포인트](/data/blog/Spring/Security/2.png)
+![HttpSecurity authenticationProvider 디버깅 포인트](/data/blog/java/Spring/Security/1.png)
+![AuthenticationManagerBuilder authenticationProvider 디버깅 포인트](/data/blog/java/Spring/Security/2.png)
 
 디버깅을 돌려보면 `AuthenticationConfiguration`객체안에 `AuthenticationManagerBuilder`가 있음을 알 수 있고, `AuthenticationManagerBuilder`
 안의 `AuthenticationProviders`필드에 `DaoAuthenticationProvider`가 추가되는 것을 확인할 수 있습니다.
 
-![AuthenticationConfiguration의 AuthenticationManagerBuilder에 DaoAuthenticationProvider주입](/data/blog/Spring/Security/3.png)
+![AuthenticationConfiguration의 AuthenticationManagerBuilder에 DaoAuthenticationProvider주입](/data/blog/java/Spring/Security/3.png)
 
 이후, 추가된 `AuthenticationProviders`와 `AuthenticationManager`를 가지고 `ProviderManager`를 생성합니다.
 
-![ProviderManager 생성](/data/blog/Spring/Security/4.png)
+![ProviderManager 생성](/data/blog/java/Spring/Security/4.png)
 
 `ProviderManager`는 추후 `AuthenticationManager`를 통해 `authenticate`를 실행 하면 넘어온 `Authentication` 객체 타입을
 지원하는 `AuthenticationProvider`를 실행합니다.
 
-![ProviderManager authenticate](/data/blog/Spring/Security/5.png)
+![ProviderManager authenticate](/data/blog/java/Spring/Security/5.png)
 
 이어서 진행을 해보면 `HttpSecurity`객체를 통해 `LoginAuthenticationProvider`와 `JwtAuthenticationProvider`가 주입되는 것을 알 수 있습니다.  
 즉, 이 부분이 `SecurityFilterChain`를 통해 주입시켰을 때 `Provider`가 주입되는 과정입니다.
 
-![HttpSecurity객체를 통해 AuthenticationManagerBuilder에 LoginAuthenticationProvider주입](/data/blog/Spring/Security/6.png)
-![WebSecurityConfigurerAdapter의 AuthenticationManagerBuilder에 LoginAuthenticationProvider주입](/data/blog/Spring/Security/7.png)
+![HttpSecurity객체를 통해 AuthenticationManagerBuilder에 LoginAuthenticationProvider주입](/data/blog/java/Spring/Security/6.png)
+![WebSecurityConfigurerAdapter의 AuthenticationManagerBuilder에 LoginAuthenticationProvider주입](/data/blog/java/Spring/Security/7.png)
 
 여기서 중요하게 봐야할 점은 `WebSecurityConfigurerAdapter`객체의 `AuthenticationManagerBuilder`의 `authenticationProviders`필드에 주입을 한다는
 점입니다.
@@ -323,7 +323,7 @@ public class SecurityConfig {
 
 `AuthenticationConfiguration`를 통해 `AuthenticationManager`를 `Bean`으로 등록하여 사용할려면 `AuthenticationProvider`를 주입시킬 방법이 필요합니다.
 
-![AuthenticationConfiguration에서 AuthenticationManagerBuilder Bean 등록](/data/blog/Spring/Security/8.png)
+![AuthenticationConfiguration에서 AuthenticationManagerBuilder Bean 등록](/data/blog/java/Spring/Security/8.png)
 
 `AuthenticationConfiguration`객체를 보면 `AuthenticationManagerBuilder`를 `Bean`으로 등록한다는 것을 알 수 있습니다.
 
@@ -349,7 +349,7 @@ public class SecurityConfig {
 }
 ```
 
-![AuthenticationConfiguration에 AuthenticationProvider 정상 등록](/data/blog/Spring/Security/9.png)
+![AuthenticationConfiguration에 AuthenticationProvider 정상 등록](/data/blog/java/Spring/Security/9.png)
 
 `AuthenticationConfiguration`객체의 `AuthenticationManagerBuilder`에 정상적으로 `LoginAuthenticationProvider`가 추가되는 것을 확인할 수
 있습니다.

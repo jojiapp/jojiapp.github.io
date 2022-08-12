@@ -42,14 +42,14 @@ requestHeaders(
 		)
 ```
 
-![request-headers 예시](/data/blog/Spring/RestDocs/request-headers.png)
+![request-headers 예시](/data/blog/java/Spring/RestDocs/request-headers.png)
 
 ### Path Parameters
 
 - `RequestDocumentation pathParameters`': `Path Parameters`를 정의합니다.
   - `RequestDocumentation.parameterWithName`: 각 `Path Parameter`에 대해 정의합니다.
 
-![path-parameters 예시](/data/blog/Spring/RestDocs/path-parameters.png)
+![path-parameters 예시](/data/blog/java/Spring/RestDocs/path-parameters.png)
 
 ### Request Parameters
 
@@ -64,7 +64,7 @@ requestParameters(
 		),
 ```
 
-![request-parameters 예시](/data/blog/Spring/RestDocs/request-parameters.png)
+![request-parameters 예시](/data/blog/java/Spring/RestDocs/request-parameters.png)
 
 ### Request Fields
 
@@ -78,7 +78,7 @@ requestFields(
 		)
 ```
 
-![request-fields 예시](/data/blog/Spring/RestDocs/request-fields.png)
+![request-fields 예시](/data/blog/java/Spring/RestDocs/request-fields.png)
 
 ### Response Headers
 
@@ -91,14 +91,14 @@ responseHeaders(
 		),
 ```
 
-![response-headers 예시](/data/blog/Spring/RestDocs/response-headers.png)
+![response-headers 예시](/data/blog/java/Spring/RestDocs/response-headers.png)
 
 ### Response Fields
 
 - `PayloadDocumentation.responseFields`: `Response Fields`를 정의합니다.
   - `PayloadDocumentation.fieldWithPath`: 각 `Field`를 정의합니다.
 
-![response-fields 예시](/data/blog/Spring/RestDocs/response-fields.png)
+![response-fields 예시](/data/blog/java/Spring/RestDocs/response-fields.png)
 
 ### Links
 
@@ -114,7 +114,7 @@ links(
 		),
 ```
 
-![response-fields 예시](/data/blog/Spring/RestDocs/links.png)
+![response-fields 예시](/data/blog/java/Spring/RestDocs/links.png)
 
 > `Links`의 경우 이렇게 정의 하더라도, `Response Fields` 부분에서 한 번 더 정의해야 합니다. (불편)
 
