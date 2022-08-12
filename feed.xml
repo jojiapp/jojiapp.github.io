@@ -7,13 +7,23 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Thu, 11 Aug 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Fri, 12 Aug 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/feed.xml" rel="self" type="application/rss+xml"/>
       
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-5-개선된-자바-동시성/Chapter-17-리액티브-프로그래밍</guid>
+    <guid>https://jojiapp.github.io/blog/java/Lombok/lombok-version-error</guid>
+    <title>[Lombok] jps.track.ap.dependencies 에러 해결</title>
+    <link>https://jojiapp.github.io/blog/java/Lombok/lombok-version-error</link>
+    <description>jps.track.ap.dependencies 에러 해결</description>
+    <pubDate>Fri, 12 Aug 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Lombok</category><category>Error</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-17-리액티브-프로그래밍</guid>
     <title>Chapter 17. 리액티브 프로그래밍</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-5-개선된-자바-동시성/Chapter-17-리액티브-프로그래밍</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-17-리액티브-프로그래밍</link>
     <description>Chapter 17. 리액티브 프로그래밍</description>
     <pubDate>Thu, 11 Aug 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -21,9 +31,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/Spring/junit5/MockMvcBuilders</guid>
+    <guid>https://jojiapp.github.io/blog/java/Spring/Junit5/MockMvcBuilders</guid>
     <title>[Junit5] MockMvcBuilders를 이용하여 MockMvc 커스텀하기</title>
-    <link>https://jojiapp.github.io/blog/Spring/junit5/MockMvcBuilders</link>
+    <link>https://jojiapp.github.io/blog/java/Spring/Junit5/MockMvcBuilders</link>
     <description>MockMvcBuilders를 이용하여 MockMvc 커스텀하기</description>
     <pubDate>Wed, 10 Aug 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -61,9 +71,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-5-개선된-자바-동시성/Chapter-16-CompletableFuture-안정적-비동기-프로그래밍</guid>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-16-CompletableFuture-안정적-비동기-프로그래밍</guid>
     <title>Chapter 16. CompletableFuture 안정적 비동기 프로그래밍</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-5-개선된-자바-동시성/Chapter-16-CompletableFuture-안정적-비동기-프로그래밍</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-16-CompletableFuture-안정적-비동기-프로그래밍</link>
     <description>Chapter 16. CompletableFuture 안정적 비동기 프로그래밍</description>
     <pubDate>Mon, 01 Aug 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -71,9 +81,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-5-개선된-자바-동시성/Chapter-15-CompletableFuture와-리액티브-프로그래밍-컨셉의-기초</guid>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-15-CompletableFuture와-리액티브-프로그래밍-컨셉의-기초</guid>
     <title>Chapter 15. CompletableFuture와 리액티브 프로그래밍 컨셉의 기초</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-5-개선된-자바-동시성/Chapter-15-CompletableFuture와-리액티브-프로그래밍-컨셉의-기초</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-15-CompletableFuture와-리액티브-프로그래밍-컨셉의-기초</link>
     <description>Chapter 15. CompletableFuture와 리액티브 프로그래밍 컨셉의 기초</description>
     <pubDate>Sun, 31 Jul 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -81,9 +91,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-4-매일-자바와-함께/Chapter-13-디폴트-메소드</guid>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-13-디폴트-메소드</guid>
     <title>Chapter 13. 디폴트 메소드</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-4-매일-자바와-함께/Chapter-13-디폴트-메소드</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-13-디폴트-메소드</link>
     <description>Chapter 13. 디폴트 메소드</description>
     <pubDate>Mon, 18 Jul 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -91,9 +101,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-4-매일-자바와-함께/Chapter-12-새로운-날짜와-시간-API</guid>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-12-새로운-날짜와-시간-API</guid>
     <title>Chapter 12. 새로운 날짜와 시간 API</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-4-매일-자바와-함께/Chapter-12-새로운-날짜와-시간-API</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-12-새로운-날짜와-시간-API</link>
     <description>Chapter 12. 새로운 날짜와 시간 API</description>
     <pubDate>Mon, 11 Jul 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -101,9 +111,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-4-매일-자바와-함께/Chapter-11-null-대신-Optional-클래스</guid>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-11-null-대신-Optional-클래스</guid>
     <title>Chapter 11. null 대신 Optional 클래스</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-4-매일-자바와-함께/Chapter-11-null-대신-Optional-클래스</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-11-null-대신-Optional-클래스</link>
     <description>Chapter 11. null 대신 Optional 클래스</description>
     <pubDate>Mon, 04 Jul 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -111,9 +121,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/Spring/Spring-Security-570-M2-에-달라진-설정-방법</guid>
+    <guid>https://jojiapp.github.io/blog/java/Spring/Spring-Security-570-M2-에-달라진-설정-방법</guid>
     <title>Spring Security 5.7.0-M2 부터 변경된 설정 방법</title>
-    <link>https://jojiapp.github.io/blog/Spring/Spring-Security-570-M2-에-달라진-설정-방법</link>
+    <link>https://jojiapp.github.io/blog/java/Spring/Spring-Security-570-M2-에-달라진-설정-방법</link>
     <description>Spring Security 5.7.0-M2 부터 변경된 설정 방법</description>
     <pubDate>Thu, 30 Jun 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -121,9 +131,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-10-람다를-이용한-도메인-전용-언어</guid>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-10-람다를-이용한-도메인-전용-언어</guid>
     <title>Chapter 10. 람다를 이용한 도메인 전용 언어</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-10-람다를-이용한-도메인-전용-언어</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-10-람다를-이용한-도메인-전용-언어</link>
     <description>Chapter 10. 람다를 이용한 도메인 전용 언어</description>
     <pubDate>Mon, 27 Jun 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -131,9 +141,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-9-리팩터링-테스팅-디버깅</guid>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-9-리팩터링-테스팅-디버깅</guid>
     <title>Chapter 9. 리팩터링, 테스팅, 디버깅</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-9-리팩터링-테스팅-디버깅</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-9-리팩터링-테스팅-디버깅</link>
     <description>Chapter 9. 리팩터링, 테스팅, 디버깅</description>
     <pubDate>Mon, 20 Jun 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -141,9 +151,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-8-컬렉션-API-개선</guid>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-8-컬렉션-API-개선</guid>
     <title>Chapter 8. 컬렉션 API 개선</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-8-컬렉션-API-개선</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-8-컬렉션-API-개선</link>
     <description>Chapter 8. 컬렉션 API 개선</description>
     <pubDate>Tue, 14 Jun 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -151,9 +161,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/Spring/Template-Engine을-사용하여-PDF파일로-변환하기</guid>
+    <guid>https://jojiapp.github.io/blog/java/Spring/Template-Engine을-사용하여-PDF파일로-변환하기</guid>
     <title>Template Engine(with Thymeleaf)을 사용하여 PDF파일로 변환하기</title>
-    <link>https://jojiapp.github.io/blog/Spring/Template-Engine을-사용하여-PDF파일로-변환하기</link>
+    <link>https://jojiapp.github.io/blog/java/Spring/Template-Engine을-사용하여-PDF파일로-변환하기</link>
     <description>Spring Boot에서 Template Engin를 사용하여 PDF파일</description>
     <pubDate>Thu, 19 May 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -161,9 +171,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/Spring/Spring-Boot에서-Response-DateTime-Format-일괄-적용</guid>
+    <guid>https://jojiapp.github.io/blog/java/Spring/Spring-Boot에서-Response-DateTime-Format-일괄-적용</guid>
     <title>Spring Boot에서 Response DateTime Format 일괄 적용</title>
-    <link>https://jojiapp.github.io/blog/Spring/Spring-Boot에서-Response-DateTime-Format-일괄-적용</link>
+    <link>https://jojiapp.github.io/blog/java/Spring/Spring-Boot에서-Response-DateTime-Format-일괄-적용</link>
     <description>Spring Boot에서 Response DateTime Format 일괄 적용</description>
     <pubDate>Wed, 18 May 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -171,9 +181,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/Spring/Binding-Error-Properties-Message-적용</guid>
+    <guid>https://jojiapp.github.io/blog/java/Spring/Binding-Error-Properties-Message-적용</guid>
     <title>Binding Error Properties Message 적용</title>
-    <link>https://jojiapp.github.io/blog/Spring/Binding-Error-Properties-Message-적용</link>
+    <link>https://jojiapp.github.io/blog/java/Spring/Binding-Error-Properties-Message-적용</link>
     <description>Binding Error Properties Message 적용</description>
     <pubDate>Mon, 16 May 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -181,9 +191,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/jpa/QueryDSL-Support-Custom-하기</guid>
+    <guid>https://jojiapp.github.io/blog/java/JPA/QueryDSL-Support-Custom-하기</guid>
     <title>QueryDSL Support Custom 하기</title>
-    <link>https://jojiapp.github.io/blog/jpa/QueryDSL-Support-Custom-하기</link>
+    <link>https://jojiapp.github.io/blog/java/JPA/QueryDSL-Support-Custom-하기</link>
     <description>QueryDSL Support Custom 하기</description>
     <pubDate>Sun, 15 May 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -191,9 +201,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-7-병렬-데이터-처리와-성능</guid>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-7-병렬-데이터-처리와-성능</guid>
     <title>Chapter 7. 병렬 데이터 처리와 성능</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-7-병렬-데이터-처리와-성능</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-7-병렬-데이터-처리와-성능</link>
     <description>Chapter 7. 병렬 데이터 처리와 성능</description>
     <pubDate>Mon, 25 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -201,9 +211,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-6-스트림으로-데이터-수집</guid>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-6-스트림으로-데이터-수집</guid>
     <title>Chapter 6. 스트림으로 데이터 수집</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-6-스트림으로-데이터-수집</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-6-스트림으로-데이터-수집</link>
     <description>Chapter 6. 스트림으로 데이터 수집</description>
     <pubDate>Sat, 23 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -211,9 +221,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-5-스트림-활용</guid>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-5-스트림-활용</guid>
     <title>Chapter 5. 스트림 활용</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-5-스트림-활용</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-5-스트림-활용</link>
     <description>Chapter 5. 스트림 활용</description>
     <pubDate>Mon, 18 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -221,9 +231,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-4-스트림-소개</guid>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-4-스트림-소개</guid>
     <title>Chapter 4. 스트림 소개</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-2-함수형-데이터-처리/Chapter-4-스트림-소개</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-4-스트림-소개</link>
     <description>Chapter 4. 스트림 소개</description>
     <pubDate>Fri, 15 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -231,9 +241,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-1-기초/Chapter-3-람다-표현식</guid>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-1-기초/Chapter-3-람다-표현식</guid>
     <title>Chapter 3. 람다 표현식</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-1-기초/Chapter-3-람다-표현식</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-1-기초/Chapter-3-람다-표현식</link>
     <description>Chapter 3. 람다 표현식</description>
     <pubDate>Wed, 13 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -241,9 +251,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-1-기초/Chapter-2-동작-파라미터화-코드-전달하기</guid>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-1-기초/Chapter-2-동작-파라미터화-코드-전달하기</guid>
     <title>Chapter 2. 동작 파라미터화 코드 전달하기</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-1-기초/Chapter-2-동작-파라미터화-코드-전달하기</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-1-기초/Chapter-2-동작-파라미터화-코드-전달하기</link>
     <description>Chapter 2. 동작 파라미터화 코드 전달하기</description>
     <pubDate>Thu, 07 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -251,9 +261,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-1-기초/Chapter-1-자바-8-9-10-11-무슨-일이-일어나고-있는가</guid>
+    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-1-기초/Chapter-1-자바-8-9-10-11-무슨-일이-일어나고-있는가</guid>
     <title>Chapter 1. 자바 8, 9, 10, 11: 무슨 일이 일어나고 있는가?</title>
-    <link>https://jojiapp.github.io/blog/java/Modern-Java-in-Action/part-1-기초/Chapter-1-자바-8-9-10-11-무슨-일이-일어나고-있는가</link>
+    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-1-기초/Chapter-1-자바-8-9-10-11-무슨-일이-일어나고-있는가</link>
     <description>Chapter 1. 자바 8, 9, 10, 11: 무슨 일이 일어나고 있는가?</description>
     <pubDate>Fri, 01 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -261,9 +271,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/Spring/RestDocs/Spring-Rest-Docs-Asciidoc-작성</guid>
+    <guid>https://jojiapp.github.io/blog/java/Spring/RestDocs/Spring-Rest-Docs-Asciidoc-작성</guid>
     <title>Spring Rest Docs Asciidoc 작성 방법</title>
-    <link>https://jojiapp.github.io/blog/Spring/RestDocs/Spring-Rest-Docs-Asciidoc-작성</link>
+    <link>https://jojiapp.github.io/blog/java/Spring/RestDocs/Spring-Rest-Docs-Asciidoc-작성</link>
     <description>생성된 snippets를 이용하여 문서를 만들어 보도록 하겠습니다.</description>
     <pubDate>Wed, 16 Mar 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -271,9 +281,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/Spring/RestDocs/Spring-Rest-Docs-Test-코드-작성</guid>
+    <guid>https://jojiapp.github.io/blog/java/Spring/RestDocs/Spring-Rest-Docs-Test-코드-작성</guid>
     <title>Spring Rest Docs Test 코드 작성</title>
-    <link>https://jojiapp.github.io/blog/Spring/RestDocs/Spring-Rest-Docs-Test-코드-작성</link>
+    <link>https://jojiapp.github.io/blog/java/Spring/RestDocs/Spring-Rest-Docs-Test-코드-작성</link>
     <description>snippets을 만들기 위해 Test 코드를 작성하는 방법에 대해 알아보겠습니다.</description>
     <pubDate>Mon, 28 Feb 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -281,9 +291,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/Spring/RestDocs/Spring-Rest-Docs-Gradle-설정</guid>
+    <guid>https://jojiapp.github.io/blog/java/Spring/RestDocs/Spring-Rest-Docs-Gradle-설정</guid>
     <title>Spring Rest Docs Gradle 설정</title>
-    <link>https://jojiapp.github.io/blog/Spring/RestDocs/Spring-Rest-Docs-Gradle-설정</link>
+    <link>https://jojiapp.github.io/blog/java/Spring/RestDocs/Spring-Rest-Docs-Gradle-설정</link>
     <description>문서 자동화를 위해 Spring에서 공식 지원하는 Spring Rest Docs애 대해 알아보고 Gradle 설정 방법을 알아보자.</description>
     <pubDate>Sat, 26 Feb 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>

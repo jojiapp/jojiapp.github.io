@@ -11,9 +11,9 @@
       <atom:link href="https://jojiapp.github.io/tags/spring-rest-docs/feed.xml" rel="self" type="application/rss+xml"/>
       
   <item>
-    <guid>https://jojiapp.github.io/blog/Spring/RestDocs/Spring-Rest-Docs-Asciidoc-작성</guid>
+    <guid>https://jojiapp.github.io/blog/java/Spring/RestDocs/Spring-Rest-Docs-Asciidoc-작성</guid>
     <title>Spring Rest Docs Asciidoc 작성 방법</title>
-    <link>https://jojiapp.github.io/blog/Spring/RestDocs/Spring-Rest-Docs-Asciidoc-작성</link>
+    <link>https://jojiapp.github.io/blog/java/Spring/RestDocs/Spring-Rest-Docs-Asciidoc-작성</link>
     <description>생성된 snippets를 이용하여 문서를 만들어 보도록 하겠습니다.</description>
     <pubDate>Wed, 16 Mar 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -21,9 +21,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/Spring/RestDocs/Spring-Rest-Docs-Test-코드-작성</guid>
+    <guid>https://jojiapp.github.io/blog/java/Spring/RestDocs/Spring-Rest-Docs-Test-코드-작성</guid>
     <title>Spring Rest Docs Test 코드 작성</title>
-    <link>https://jojiapp.github.io/blog/Spring/RestDocs/Spring-Rest-Docs-Test-코드-작성</link>
+    <link>https://jojiapp.github.io/blog/java/Spring/RestDocs/Spring-Rest-Docs-Test-코드-작성</link>
     <description>snippets을 만들기 위해 Test 코드를 작성하는 방법에 대해 알아보겠습니다.</description>
     <pubDate>Mon, 28 Feb 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -31,9 +31,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/Spring/RestDocs/Spring-Rest-Docs-Gradle-설정</guid>
+    <guid>https://jojiapp.github.io/blog/java/Spring/RestDocs/Spring-Rest-Docs-Gradle-설정</guid>
     <title>Spring Rest Docs Gradle 설정</title>
-    <link>https://jojiapp.github.io/blog/Spring/RestDocs/Spring-Rest-Docs-Gradle-설정</link>
+    <link>https://jojiapp.github.io/blog/java/Spring/RestDocs/Spring-Rest-Docs-Gradle-설정</link>
     <description>문서 자동화를 위해 Spring에서 공식 지원하는 Spring Rest Docs애 대해 알아보고 Gradle 설정 방법을 알아보자.</description>
     <pubDate>Sat, 26 Feb 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>

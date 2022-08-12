@@ -7,13 +7,23 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Mon, 16 May 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Fri, 12 Aug 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/tags/error/feed.xml" rel="self" type="application/rss+xml"/>
       
   <item>
-    <guid>https://jojiapp.github.io/blog/Spring/Binding-Error-Properties-Message-적용</guid>
+    <guid>https://jojiapp.github.io/blog/java/Lombok/lombok-version-error</guid>
+    <title>[Lombok] jps.track.ap.dependencies 에러 해결</title>
+    <link>https://jojiapp.github.io/blog/java/Lombok/lombok-version-error</link>
+    <description>jps.track.ap.dependencies 에러 해결</description>
+    <pubDate>Fri, 12 Aug 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Lombok</category><category>Error</category>
+  </item>
+
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Spring/Binding-Error-Properties-Message-적용</guid>
     <title>Binding Error Properties Message 적용</title>
-    <link>https://jojiapp.github.io/blog/Spring/Binding-Error-Properties-Message-적용</link>
+    <link>https://jojiapp.github.io/blog/java/Spring/Binding-Error-Properties-Message-적용</link>
     <description>Binding Error Properties Message 적용</description>
     <pubDate>Mon, 16 May 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>

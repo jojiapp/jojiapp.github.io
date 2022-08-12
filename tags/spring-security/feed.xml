@@ -11,9 +11,9 @@
       <atom:link href="https://jojiapp.github.io/tags/spring-security/feed.xml" rel="self" type="application/rss+xml"/>
       
   <item>
-    <guid>https://jojiapp.github.io/blog/Spring/Spring-Security-570-M2-에-달라진-설정-방법</guid>
+    <guid>https://jojiapp.github.io/blog/java/Spring/Spring-Security-570-M2-에-달라진-설정-방법</guid>
     <title>Spring Security 5.7.0-M2 부터 변경된 설정 방법</title>
-    <link>https://jojiapp.github.io/blog/Spring/Spring-Security-570-M2-에-달라진-설정-방법</link>
+    <link>https://jojiapp.github.io/blog/java/Spring/Spring-Security-570-M2-에-달라진-설정-방법</link>
     <description>Spring Security 5.7.0-M2 부터 변경된 설정 방법</description>
     <pubDate>Thu, 30 Jun 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>

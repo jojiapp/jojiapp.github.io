@@ -11,9 +11,9 @@
       <atom:link href="https://jojiapp.github.io/tags/template-engine/feed.xml" rel="self" type="application/rss+xml"/>
       
   <item>
-    <guid>https://jojiapp.github.io/blog/Spring/Template-Engine을-사용하여-PDF파일로-변환하기</guid>
+    <guid>https://jojiapp.github.io/blog/java/Spring/Template-Engine을-사용하여-PDF파일로-변환하기</guid>
     <title>Template Engine(with Thymeleaf)을 사용하여 PDF파일로 변환하기</title>
-    <link>https://jojiapp.github.io/blog/Spring/Template-Engine을-사용하여-PDF파일로-변환하기</link>
+    <link>https://jojiapp.github.io/blog/java/Spring/Template-Engine을-사용하여-PDF파일로-변환하기</link>
     <description>Spring Boot에서 Template Engin를 사용하여 PDF파일</description>
     <pubDate>Thu, 19 May 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
