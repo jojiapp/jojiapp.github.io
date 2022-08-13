@@ -21,9 +21,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-17-리액티브-프로그래밍</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-17-리액티브-프로그래밍</guid>
     <title>Chapter 17. 리액티브 프로그래밍</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-17-리액티브-프로그래밍</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-17-리액티브-프로그래밍</link>
     <description>Chapter 17. 리액티브 프로그래밍</description>
     <pubDate>Thu, 11 Aug 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -41,9 +41,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-16-CompletableFuture-안정적-비동기-프로그래밍</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-16-CompletableFuture-안정적-비동기-프로그래밍</guid>
     <title>Chapter 16. CompletableFuture 안정적 비동기 프로그래밍</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-16-CompletableFuture-안정적-비동기-프로그래밍</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-16-CompletableFuture-안정적-비동기-프로그래밍</link>
     <description>Chapter 16. CompletableFuture 안정적 비동기 프로그래밍</description>
     <pubDate>Mon, 01 Aug 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -51,9 +51,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-15-CompletableFuture와-리액티브-프로그래밍-컨셉의-기초</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-15-CompletableFuture와-리액티브-프로그래밍-컨셉의-기초</guid>
     <title>Chapter 15. CompletableFuture와 리액티브 프로그래밍 컨셉의 기초</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-15-CompletableFuture와-리액티브-프로그래밍-컨셉의-기초</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-5-개선된-자바-동시성/Chapter-15-CompletableFuture와-리액티브-프로그래밍-컨셉의-기초</link>
     <description>Chapter 15. CompletableFuture와 리액티브 프로그래밍 컨셉의 기초</description>
     <pubDate>Sun, 31 Jul 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -61,9 +61,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-13-디폴트-메소드</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-13-디폴트-메소드</guid>
     <title>Chapter 13. 디폴트 메소드</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-13-디폴트-메소드</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-13-디폴트-메소드</link>
     <description>Chapter 13. 디폴트 메소드</description>
     <pubDate>Mon, 18 Jul 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -71,9 +71,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-12-새로운-날짜와-시간-API</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-12-새로운-날짜와-시간-API</guid>
     <title>Chapter 12. 새로운 날짜와 시간 API</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-12-새로운-날짜와-시간-API</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-12-새로운-날짜와-시간-API</link>
     <description>Chapter 12. 새로운 날짜와 시간 API</description>
     <pubDate>Mon, 11 Jul 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -81,9 +81,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-11-null-대신-Optional-클래스</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-11-null-대신-Optional-클래스</guid>
     <title>Chapter 11. null 대신 Optional 클래스</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-11-null-대신-Optional-클래스</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-4-매일-자바와-함께/Chapter-11-null-대신-Optional-클래스</link>
     <description>Chapter 11. null 대신 Optional 클래스</description>
     <pubDate>Mon, 04 Jul 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -91,9 +91,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-10-람다를-이용한-도메인-전용-언어</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-10-람다를-이용한-도메인-전용-언어</guid>
     <title>Chapter 10. 람다를 이용한 도메인 전용 언어</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-10-람다를-이용한-도메인-전용-언어</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-10-람다를-이용한-도메인-전용-언어</link>
     <description>Chapter 10. 람다를 이용한 도메인 전용 언어</description>
     <pubDate>Mon, 27 Jun 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -101,9 +101,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-9-리팩터링-테스팅-디버깅</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-9-리팩터링-테스팅-디버깅</guid>
     <title>Chapter 9. 리팩터링, 테스팅, 디버깅</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-9-리팩터링-테스팅-디버깅</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-9-리팩터링-테스팅-디버깅</link>
     <description>Chapter 9. 리팩터링, 테스팅, 디버깅</description>
     <pubDate>Mon, 20 Jun 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -111,9 +111,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-8-컬렉션-API-개선</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-8-컬렉션-API-개선</guid>
     <title>Chapter 8. 컬렉션 API 개선</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-8-컬렉션-API-개선</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-3-스트림과-람다를-이용한-효과적-프로그래밍/Chapter-8-컬렉션-API-개선</link>
     <description>Chapter 8. 컬렉션 API 개선</description>
     <pubDate>Tue, 14 Jun 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -161,9 +161,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-7-병렬-데이터-처리와-성능</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-7-병렬-데이터-처리와-성능</guid>
     <title>Chapter 7. 병렬 데이터 처리와 성능</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-7-병렬-데이터-처리와-성능</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-7-병렬-데이터-처리와-성능</link>
     <description>Chapter 7. 병렬 데이터 처리와 성능</description>
     <pubDate>Mon, 25 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -171,9 +171,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-6-스트림으로-데이터-수집</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-6-스트림으로-데이터-수집</guid>
     <title>Chapter 6. 스트림으로 데이터 수집</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-6-스트림으로-데이터-수집</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-6-스트림으로-데이터-수집</link>
     <description>Chapter 6. 스트림으로 데이터 수집</description>
     <pubDate>Sat, 23 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -181,9 +181,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-5-스트림-활용</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-5-스트림-활용</guid>
     <title>Chapter 5. 스트림 활용</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-5-스트림-활용</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-5-스트림-활용</link>
     <description>Chapter 5. 스트림 활용</description>
     <pubDate>Mon, 18 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -191,9 +191,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-4-스트림-소개</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-4-스트림-소개</guid>
     <title>Chapter 4. 스트림 소개</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-4-스트림-소개</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-2-함수형-데이터-처리/Chapter-4-스트림-소개</link>
     <description>Chapter 4. 스트림 소개</description>
     <pubDate>Fri, 15 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -201,9 +201,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-1-기초/Chapter-3-람다-표현식</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-1-기초/Chapter-3-람다-표현식</guid>
     <title>Chapter 3. 람다 표현식</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-1-기초/Chapter-3-람다-표현식</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-1-기초/Chapter-3-람다-표현식</link>
     <description>Chapter 3. 람다 표현식</description>
     <pubDate>Wed, 13 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -211,9 +211,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-1-기초/Chapter-2-동작-파라미터화-코드-전달하기</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-1-기초/Chapter-2-동작-파라미터화-코드-전달하기</guid>
     <title>Chapter 2. 동작 파라미터화 코드 전달하기</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-1-기초/Chapter-2-동작-파라미터화-코드-전달하기</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-1-기초/Chapter-2-동작-파라미터화-코드-전달하기</link>
     <description>Chapter 2. 동작 파라미터화 코드 전달하기</description>
     <pubDate>Thu, 07 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
@@ -221,9 +221,9 @@
   </item>
 
   <item>
-    <guid>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-1-기초/Chapter-1-자바-8-9-10-11-무슨-일이-일어나고-있는가</guid>
+    <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-1-기초/Chapter-1-자바-8-9-10-11-무슨-일이-일어나고-있는가</guid>
     <title>Chapter 1. 자바 8, 9, 10, 11: 무슨 일이 일어나고 있는가?</title>
-    <link>https://jojiapp.github.io/blog/java/Book/Modern-Java-In-Action/part-1-기초/Chapter-1-자바-8-9-10-11-무슨-일이-일어나고-있는가</link>
+    <link>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-1-기초/Chapter-1-자바-8-9-10-11-무슨-일이-일어나고-있는가</link>
     <description>Chapter 1. 자바 8, 9, 10, 11: 무슨 일이 일어나고 있는가?</description>
     <pubDate>Fri, 01 Apr 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
