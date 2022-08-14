@@ -99,7 +99,7 @@ public class Main {
 
 		final MyFiles myFiles = MyFiles.builder()
 				.filenameList(readLines(bf, getFilenameLineCount(lineNumbers)))
-				.extList(readLines(bf, getExtLineCount(lineNumbers)))
+				.extList(new HashSet<>(readLines(bf, getExtLineCount(lineNumbers))))
 				.build();
 		System.out.println(myFiles);
 	}
@@ -123,7 +123,7 @@ public class Main {
 	}
 
 	private static List<String> readLines(BufferedReader bf, int lineNumber) {
-		return IntStream.of(lineNumber)
+		return IntStream.range(0, lineNumber)
 				.mapToObj(__ -> readLine(bf))
 				.toList();
 	}
@@ -145,7 +145,7 @@ public class MyFiles {
 	private final List<MyFile> myFileList;
 
 	@Builder
-	private MyFiles(final List<String> filenameList, final List<String> extList) {
+	private MyFiles(final List<String> filenameList, final Set<String> extList) {
 		this.myFileList = filenameList.stream()
 				.map(filename -> MyFile.builder()
 						.filename(filename)
@@ -167,13 +167,13 @@ public class MyFiles {
 
 ```java
 public class MyFile implements Comparable<MyFile> {
-	private static final String DOC = "\\.";
+	private static final String DOT = "\\.";
 	private final String name;
 	private final String ext;
 	private final Boolean isContainExt;
 
 	@Builder
-	private MyFile(final String filename, final List<String> extList) {
+	private MyFile(final String filename, final Set<String> extList) {
 		this.name = getName(filename);
 		this.ext = getExt(filename);
 		this.isContainExt = extList.contains(this.ext);
@@ -188,7 +188,7 @@ public class MyFile implements Comparable<MyFile> {
 	}
 
 	private static String[] split(final String filename) {
-		return filename.split(DOC);
+		return filename.split(DOT);
 	}
 
 	@Override
@@ -196,7 +196,7 @@ public class MyFile implements Comparable<MyFile> {
 		if (!this.name.equals(myFile.name))
 			return this.name.compareTo(myFile.name);
 		if (!this.isContainExt.equals(myFile.isContainExt)) {
-			return this.isContainExt.compareTo(myFile.isContainExt);
+			return -this.isContainExt.compareTo(myFile.isContainExt);
 		}
 		return this.ext.compareTo(myFile.ext);
 	}
