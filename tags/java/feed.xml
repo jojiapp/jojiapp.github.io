@@ -31,6 +31,16 @@
   </item>
 
   <item>
+    <guid>https://jojiapp.github.io/blog/java/Spring/log/logback</guid>
+    <title>[Log] Logback으로 로그 관리하기</title>
+    <link>https://jojiapp.github.io/blog/java/Spring/log/logback</link>
+    <description>Logback으로 로그 관리하기</description>
+    <pubDate>Thu, 11 Aug 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Spring</category><category>log</category><category>Slf4J</category><category>Logback</category>
+  </item>
+
+  <item>
     <guid>https://jojiapp.github.io/blog/java/Spring/Junit5/MockMvcBuilders</guid>
     <title>[Junit5] MockMvcBuilders를 이용하여 MockMvc 커스텀하기</title>
     <link>https://jojiapp.github.io/blog/java/Spring/Junit5/MockMvcBuilders</link>

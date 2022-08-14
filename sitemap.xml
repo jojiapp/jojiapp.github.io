@@ -221,6 +221,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/java/Spring/log/logback</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/tags/clean-code</loc>
   </url>
 
@@ -281,6 +285,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/tags/logback</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/tags/lombok</loc>
   </url>
 
@@ -302,6 +310,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/refactoring</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/slf4j</loc>
   </url>
 
   <url>
