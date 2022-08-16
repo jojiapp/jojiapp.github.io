@@ -1,6 +1,6 @@
 ---
 title: '[Log] Logback으로 로그 관리하기'
-date: '2022-08-14'
+date: '2022-08-17'
 tags: ['Java', 'Spring', 'log', 'Slf4J', 'Logback']
 draft: false
 summary: Logback으로 로그 관리하기
@@ -145,28 +145,48 @@ logging.level.root='trace'
 
 > 여기서 파일 위치와 이름은 정해져있는 것이기 때문에 다르게 사용하면 안됩니다.
 
+아래 예제는 운영 환경이 아니면 `INFO`레벨 이상은 콘솔에 출력하고
+
+운영 환경이라면 `INFO`레벨만 파일에 로깅 되도록 구성한 것입니다.
+
+이외에 다른 레벨은 아래 예제에서 수정하여 사용하면 될 것 같습니다.
+
 - `logback-spring.xml`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 모든 설정은 해당 태그 하위에 작성합니다. -->
 <configuration>
+    <!-- 날짜 포맷 지정 -->
+    <timestamp key="BY_DATE" datePattern="yyyy-MM-dd"/>
+
+    <!-- 로그 출력 패턴 변수 -->
     <property name="LOG_PATTERN"
               value="[%d{yyyy-MM-dd HH:mm:ss}:%-4relative] %green([%thread]) %highlight(%-5level) %boldWhite([%C.%M:%yellow([%L])) - %msg%n"/>
 
-    <springProfile name="prod">
+    <!-- Profile에 따라 실행되도록 구축 -->
+    <springProfile name="!prod">
         <include resource="console-appender.xml"/>
 
+        <!-- 해당 레벨 이상이면 실행 -->
         <root level="INFO">
+            <!-- 해당 Appender를 참조 -->
             <appender-ref ref="CONSOLE"/>
         </root>
     </springProfile>
 
-    <springProfile name="!prod">
+    <springProfile name="prod">
         <include resource="file-info-appender.xml"/>
+        <include resource="console-appender.xml"/>
 
         <root level="INFO">
             <appender-ref ref="FILE_INFO"/>
         </root>
+
+        <!-- 특정 패키지 이하만 지정 -->
+        <logger name="com.jojiapp.logback.member" level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </logger>
     </springProfile>
 </configuration>
 ```
@@ -174,10 +194,13 @@ logging.level.root='trace'
 - `console-appender.xml`
 
 ```xml
-
+<!-- 타 xml에서 include하기 위해서는 included 태그를 사용해야 함 -->
 <included>
+    <!-- 콘솔 Appender 지정, 여기서 name은 appender-ref에서 사용됨 -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- 어떻게 출력할지 지정 -->
         <encoder>
+            <!-- 로그 출력 패턴 -->
             <pattern>${LOG_PATTERN}</pattern>
         </encoder>
     </appender>
@@ -187,30 +210,97 @@ logging.level.root='trace'
 - `file-info-appender.xml`
 
 ```xml
-
 <included>
+    <!-- RollingFileAppender 지정 -->
     <appender name="FILE_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>./logs/info.log</file>
+        <!-- 로그가 작성될 파일 경로 -->
+        <file>./logs/info-${BY_DATE}.log</file>
+        <!-- 로깅 조건 -->
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!-- 필터링 할 레벨 지정 -->
             <level>INFO</level>
+
+            <!-- 위의 레벨 이상이면 true -->
             <onMatch>ACCEPT</onMatch>
+            <!-- 위의 레벨과 일치하지 않으면 로깅 안함 -->
+            <!-- INFO레벨 이상만 로깅하고 싶다면 해당 조건을 제거하면 됨 -->
             <onMismatch>DENY</onMismatch>
         </filter>
+
+        <!-- 어떻게 출력할지 지정 -->
         <encoder>
+            <!-- 로그 출력 패턴 -->
             <pattern>${LOG_PATTERN}</pattern>
         </encoder>
+
+        <!-- 특정 사이즈 및 시간에 따라 로그 파일이 분리되도록 정책 지정 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+
+            <!-- 위 file 태그에서 지정한 로그 파일이 아래 조건에 만족하여 초과하면 복사되어 저장될 경로 -->
             <fileNamePattern>./backup/info/info-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+
+            <!-- 로그 파일 최대 사이즈 지정. 해당 사이즈가 되면 복사됨 -->
             <maxFileSize>100MB</maxFileSize>
+
+            <!-- 한 파일의 최대 저장 기한 -->
+            <!-- 주의: 일 단위면 30일, 월 단위면 30개월이 됨 -->
             <maxHistory>30</maxHistory>
+
+            <!-- 파일 모두 합쳐 3GB 까지만 허용. 그 이상이 되면 오래된 것부터 삭제 됨 -->
             <totalSizeCap>3GB</totalSizeCap>
         </rollingPolicy>
     </appender>
 </included>
 ```
 
+## Log Pattern
+
+- `%logger`: 패키지 포함 클래스 정보
+- `%logger{0}`: 패키지를 제외한 클래스 이름만 출력
+- `%logger{length}`: Logger name을 축약할 수 있음. `{length}`는 최대 자리 수
+- `%-5level`: 로그 레벨, -5는 출력의 고정폭 값(5글자)
+- `${PID:-}`: 프로세스 아이디
+- `%d`: 로그 기록시간 출력
+- `%p`: 로깅 레벨 출력
+- `%F`: 로깅이 발생한 프로그램 파일명 출력
+- `%M`: 로깅일 발생한 메소드의 명 출력
+- `%line`: 로깅이 발생한 호출지의 라인
+- `%L`: 로깅이 발생한 호출지의 라인
+- `%thread`: 현재 Thread 명
+- `%t`: 로깅이 발생한 Thread 명
+- `%c`: 로깅이 발생한 카테고리
+- `%C`: 로깅이 발생한 클래스 명
+- `%m`: 로그 메시지
+- `%msg`: 로그 메시지 (=%message)
+- `%n`: 줄바꿈(new line)
+- `%%`: %를 출력
+- `%r` : 애플리케이션 시작 이후부터 로깅이 발생한 시점까지의 시간(ms)
+- `%d{yyyy-MM-dd-HH:mm:ss:sss}`: %d는 date를 의미하며 중괄호에 들어간 문자열은 dateformat을 의미
+- `%-4relative`: 초 아래 단위 시간(밀리초)을 나타냄
+
+## Color Pattern
+
+`()`으로 감싸 범위를 지정합니다.
+
+> ex) %highlight(-5level)
+
+- `%highlight`: 로그 레벨별로 컬러 자동 지정
+- `%black`
+- `%red`
+- `%green`
+- `%green`
+- `%yellow`
+- `%blue`
+- `%magenta`
+- `%cyan`
+- `%white`
+- `%gray`
+- `%boldXxx`: 컬러 앞에 bold를 붙여 굵게 표시할 수 있음
+
 ## 참고 사이트
 
 - [Logback 으로 쉽고 편리하게 로그 관리를 해볼까요?](https://tecoble.techcourse.co.kr/post/2021-08-07-logback-tutorial/)
+- [[Logging] Logback이란?](https://livenow14.tistory.com/64)
+- [Logback 컬러링 기능](https://forgiveall.tistory.com/467)
 - [[10분 테코톡] ☂️ 검프의 Logging(로깅) #1](https://www.youtube.com/watch?v=1MD5xbwznlI)
 - [[10분 테코톡] ☂️ 검프의 Logging(로깅) #2](https://www.youtube.com/watch?v=JqZzy7RyudI)
