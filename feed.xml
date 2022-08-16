@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Mon, 15 Aug 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Tue, 16 Aug 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/Book/Clean-Code/1장-깨끗한-코드</guid>
+    <title>1장. 깨끗한 코드</title>
+    <link>https://jojiapp.github.io/blog/Book/Clean-Code/1장-깨끗한-코드</link>
+    <description>1장. 깨끗한 코드</description>
+    <pubDate>Tue, 16 Aug 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Clean Code</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/Book/Modern-Java-In-Action/part-6-함수형-프로그래밍과-자바-진화의-미래/Chapter-18-함수형-관점으로-생각하기</guid>
     <title>Chapter 18. 함수형 관점으로 생각하기</title>
@@ -208,16 +218,6 @@
     <pubDate>Wed, 18 May 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
     <category>Java</category><category>Spring</category><category>JSON</category><category>DateTime</category>
-  </item>
-
-  <item>
-    <guid>https://jojiapp.github.io/blog/Book/Clean-Code/1장-깨끗한-코드</guid>
-    <title>1장. 깨끗한 코드</title>
-    <link>https://jojiapp.github.io/blog/Book/Clean-Code/1장-깨끗한-코드</link>
-    <description>1장. 깨끗한 코드</description>
-    <pubDate>Mon, 16 May 2022 00:00:00 GMT</pubDate>
-    <author>jojiapp@gmail.com (조지헌)</author>
-    <category>Clean Code</category>
   </item>
 
   <item>
