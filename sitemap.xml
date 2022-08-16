@@ -215,6 +215,12 @@
   </url>
 
   <url>
+    <loc
+      >https://jojiapp.github.io/blog/React/Blog/markdown-editor/마크다운-에디터-만들기-1-contentEditable</loc
+    >
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/java/Spring/Junit5/MockMvcBuilders</loc>
   </url>
 
@@ -232,6 +238,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/blog/java/Spring/log/logback</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/blog</loc>
   </url>
 
   <url>
@@ -307,6 +317,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/tags/markdown-editor</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/tags/mockmvc</loc>
   </url>
 
@@ -316,6 +330,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/querydsl</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/react</loc>
   </url>
 
   <url>
