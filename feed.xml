@@ -21,6 +21,16 @@
   </item>
 
   <item>
+    <guid>https://jojiapp.github.io/blog/Svelte/Svelte-반응형</guid>
+    <title>[Svelte] 반응형</title>
+    <link>https://jojiapp.github.io/blog/Svelte/Svelte-반응형</link>
+    <description>Svelte 반응형</description>
+    <pubDate>Thu, 18 Aug 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Svelte</category>
+  </item>
+
+  <item>
     <guid>https://jojiapp.github.io/blog/React/Blog/markdown-editor/마크다운-에디터-만들기-1-contentEditable</guid>
     <title>[React] 마크다운 에디터 만들기 1. contentEditable 속성</title>
     <link>https://jojiapp.github.io/blog/React/Blog/markdown-editor/마크다운-에디터-만들기-1-contentEditable</link>
