@@ -81,6 +81,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/Svelte/SvelteKit-시작</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/Book/Clean-Code/1장-깨끗한-코드</loc>
   </url>
 
@@ -366,6 +370,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/svelte</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/svelte-kit</loc>
   </url>
 
   <url>
