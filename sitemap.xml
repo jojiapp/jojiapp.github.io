@@ -81,6 +81,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/Svelte/SvelteKit-Routing</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/Svelte/SvelteKit-시작</loc>
   </url>
 
@@ -94,10 +98,6 @@
 
   <url>
     <loc>https://jojiapp.github.io/blog/java/JPA/QueryDSL-Support-Custom-하기</loc>
-  </url>
-
-  <url>
-    <loc>https://jojiapp.github.io/blog/java/Lombok/lombok-version-error</loc>
   </url>
 
   <url>
@@ -118,6 +118,10 @@
     <loc
       >https://jojiapp.github.io/blog/java/Spring/Template-Engine을-사용하여-PDF파일로-변환하기</loc
     >
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/blog/java/Lombok/lombok-version-error</loc>
   </url>
 
   <url>
