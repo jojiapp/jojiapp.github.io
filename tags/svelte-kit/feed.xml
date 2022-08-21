@@ -21,6 +21,16 @@
   </item>
 
   <item>
+    <guid>https://jojiapp.github.io/blog/Svelte/SvelteKit-마크다운-에디터</guid>
+    <title>[Svelte] 마크다운 에디터 적용하기 (feat. Toast-ui Editor)</title>
+    <link>https://jojiapp.github.io/blog/Svelte/SvelteKit-마크다운-에디터</link>
+    <description>마크다운 에디터 적용하기 (feat. Toast-ui Editor)</description>
+    <pubDate>Sat, 20 Aug 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Svelte</category><category>Svelte-Kit</category>
+  </item>
+
+  <item>
     <guid>https://jojiapp.github.io/blog/Svelte/SvelteKit-시작</guid>
     <title>[Svelte] SvelteKit 시작</title>
     <link>https://jojiapp.github.io/blog/Svelte/SvelteKit-시작</link>
