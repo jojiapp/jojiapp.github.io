@@ -58,6 +58,10 @@ export function load({ params }) {
 }
 ```
 
+동적 경로 (pathParameter)의 경우 폴더이름을 `[slug]`처럼 지으면 됩니다.
+
+하위 모든 동적 경로의 경우 `[...slug]` 처럼 작성하면 됩니다. (NextJS와 동일)
+
 > 함수명은 반드시 `load`여야 인식합니다.
 
 ## +page.server.ts
@@ -182,7 +186,28 @@ export function GET({ url }) {
 
 `page`의 경우 `PageData`, `layout`의 경우 `LayoutData`로 해당 타입임을 의미합니다.
 
-해당 주석이 없어도 문제 없이 실행은 되나, 안정성을 제공한다고 합니다. (아직 잘 모르겠습니다.)
+해당 주석이 없어도 문제 없이 실행은 되나, 안정성을 제공한다고 합니다.
+
+`Typescript`를 사용하는 경우 `+page.ts`는 아래 처럼 사용할 수 있습니다.
+
+- `+page.ts`
+
+```ts
+import type { PageLoad } from './$types'
+
+type AboutType = {
+  title: string
+  content: string
+}
+
+export const load: PageLoad<AboutType> = ({ params }) => {
+  console.log(params)
+  return {
+    title: 'title',
+    content: 'content',
+  }
+}
+```
 
 ## 실행 순서
 
