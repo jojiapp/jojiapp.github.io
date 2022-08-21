@@ -85,6 +85,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/Svelte/SvelteKit-TailwindCSS</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/Svelte/SvelteKit-마크다운-에디터</loc>
   </url>
 
@@ -382,6 +386,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/svelte-kit</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/tailwind-css</loc>
   </url>
 
   <url>
