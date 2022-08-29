@@ -77,6 +77,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/Svelte/Svelte-FontAwesome</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/Svelte/Svelte-Toast-UI-Editor-Image-Upload</loc>
   </url>
 
@@ -347,11 +351,11 @@
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/lombok</loc>
+    <loc>https://jojiapp.github.io/tags/logback</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/logback</loc>
+    <loc>https://jojiapp.github.io/tags/lombok</loc>
   </url>
 
   <url>
