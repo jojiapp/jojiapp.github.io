@@ -81,6 +81,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/Svelte/Svelte-Markdown-CSS-적용</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/Svelte/Svelte-Toast-UI-Editor-Image-Upload</loc>
   </url>
 
@@ -360,6 +364,14 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/mac-os</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/markdown</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/markdown-css</loc>
   </url>
 
   <url>
