@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Fri, 02 Sep 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Sun, 04 Sep 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/tags/markdown-css/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/Svelte/Svelte-Markdown-image-custom</guid>
+    <title>[Svelte] Markdown Image CSS 적용하기 (약간의 커스텀)</title>
+    <link>https://jojiapp.github.io/blog/Svelte/Svelte-Markdown-image-custom</link>
+    <description>Markdown Image CSS 적용하기 (약간의 커스텀)</description>
+    <pubDate>Sun, 04 Sep 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Svelte</category><category>Markdown</category><category>Markdown CSS</category><category>marked</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/Svelte/Svelte-Markdown-code-block-prismjs-적용</guid>
     <title>[Svelte] Markdown code block prismjs 적용</title>

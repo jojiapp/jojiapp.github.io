@@ -89,6 +89,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/Svelte/Svelte-Markdown-image-custom</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/Svelte/Svelte-Toast-UI-Editor-Image-Upload</loc>
   </url>
 
@@ -404,6 +408,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/markdown-editor</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/marked</loc>
   </url>
 
   <url>
