@@ -105,6 +105,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/Svelte/Svelte-배포</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/Svelte/Svelte-상태관리</loc>
   </url>
 
@@ -348,6 +352,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/datetime</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/deploy</loc>
   </url>
 
   <url>
