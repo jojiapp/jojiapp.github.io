@@ -77,6 +77,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/Svelte/Svelt-Pagination</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/Svelte/Svelte-FontAwesome</loc>
   </url>
 
@@ -444,6 +448,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/modern-java-in-action</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/pagination</loc>
   </url>
 
   <url>
