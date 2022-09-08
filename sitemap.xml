@@ -331,6 +331,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/java/Spring/webflux/Webflux-기본</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/tags/blog</loc>
   </url>
 
@@ -484,6 +488,14 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/spring-security</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/spring-webflux</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/static-resources</loc>
   </url>
 
   <url>
