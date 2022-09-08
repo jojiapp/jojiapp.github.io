@@ -2,7 +2,7 @@
 title: Local 환경에서 Static Resources 읽어오기
 date: '2022-05-17'
 tags: ['Java', 'Spring', 'Static Resources']
-draft: true
+draft: flase
 summary: Local 환경에서 Static Resources 읽어오기
 ---
 
