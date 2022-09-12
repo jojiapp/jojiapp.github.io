@@ -331,6 +331,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/java/Spring/webflux/Webflux-GlobalExceptionHandler</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/java/Spring/webflux/Webflux-Validation</loc>
   </url>
 
@@ -376,6 +380,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/error</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/exception</loc>
   </url>
 
   <url>
