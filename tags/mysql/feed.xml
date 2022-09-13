@@ -1,0 +1,24 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>JLOG</title>
+      <link>https://jojiapp.github.io/blog</link>
+      <description>매일 공부한 것을 정리하여 블로그를 작성중입니다.</description>
+      <language>ko</language>
+      <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
+      <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
+      <lastBuildDate>Tue, 13 Sep 2022 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://jojiapp.github.io/tags/mysql/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://jojiapp.github.io/blog/Book/Real-MySQL/4장-아키텍처</guid>
+    <title>4장. 아키텍처</title>
+    <link>https://jojiapp.github.io/blog/Book/Real-MySQL/4장-아키텍처</link>
+    <description>4장 아키텍처</description>
+    <pubDate>Tue, 13 Sep 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>MySQL</category><category>Real MySQL</category><category>DB</category>
+  </item>
+
+    </channel>
+  </rss>

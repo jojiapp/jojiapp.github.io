@@ -165,6 +165,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/Book/Real-MySQL/4장-아키텍처</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/java/JPA/QueryDSL-Support-Custom-하기</loc>
   </url>
 
@@ -371,6 +375,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/tags/db</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/tags/deploy</loc>
   </url>
 
@@ -467,6 +475,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/tags/mysql</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/tags/pagination</loc>
   </url>
 
@@ -480,6 +492,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/react</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/real-mysql</loc>
   </url>
 
   <url>
