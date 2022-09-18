@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Wed, 14 Sep 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Sun, 18 Sep 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/tags/spring/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Spring/webflux/WebFlux-BindingError-심화</guid>
+    <title>Spring Webflux Binding Error 심화</title>
+    <link>https://jojiapp.github.io/blog/java/Spring/webflux/WebFlux-BindingError-심화</link>
+    <description>Spring Webflux Binding Error 심화</description>
+    <pubDate>Sun, 18 Sep 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Spring</category><category>Spring Webflux</category><category>Exception</category><category>BindException</category><category>Binding Error</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/java/Spring/webflux/WebFlux-BindingError-기본</guid>
     <title>Spring Webflux Binding Error 기본 처리</title>
