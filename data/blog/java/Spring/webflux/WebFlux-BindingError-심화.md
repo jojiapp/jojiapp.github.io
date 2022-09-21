@@ -1,6 +1,6 @@
 ---
 title: Spring Webflux Binding Error 심화
-date: '2022-09-20'
+date: '2022-09-21'
 tags: ['Java', 'Spring', 'Spring Webflux', 'Exception', 'BindException', 'Binding Error']
 draft: false
 summary: Spring Webflux Binding Error 심화
@@ -324,3 +324,89 @@ public class FieldErrorCreator {
 
 }
 ```
+
+## BindingResult
+
+`FieldError`를 만들었으니 이제 `BindingResult`를 만들어 보겠습니다.
+
+`BindingResult`는 바인딩에 실패한 객체와 객체 타입, 그리고 유효성 체크에 실패하여 만들어진 `FieldError`들을 가지고 만들 수 있습니다.
+
+- `BindingResultCreator`
+
+```java
+@Component
+@RequiredArgsConstructor
+public class BindingResultCreator {
+
+    private static final String EMPTY_ERROR_MESSAGE = "유효성에 실패한 요소가 없습니다.";
+    private final FieldErrorCreator fieldErrorCreator;
+
+    public <T> BindingResult create(final Set<ConstraintViolation<T>> violations) {
+        if (violations.isEmpty()) {
+            throw new IllegalArgumentException(EMPTY_ERROR_MESSAGE);
+        }
+
+        final BindingResult bindingResult = getBindingResult(violations);
+        addFieldErrors(bindingResult, violations);
+        return bindingResult;
+    }
+
+    private <T> void addFieldErrors(
+            final BindingResult bindingResult,
+            final Set<ConstraintViolation<T>> violations
+    ) {
+        violations.forEach(violation ->
+                bindingResult.addError(fieldErrorCreator.create(violation))
+        );
+    }
+
+    private static <T> BindingResult getBindingResult(final Set<ConstraintViolation<T>> violations) {
+        return violations.stream()
+                .map(BindingResultCreator::createDefaultBindingResult)
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException(EMPTY_ERROR_MESSAGE));
+    }
+
+    private static <T> BeanPropertyBindingResult createDefaultBindingResult(
+            final ConstraintViolation<T> violation
+    ) {
+        return new BeanPropertyBindingResult(
+                violation.getRootBean(),
+                FieldErrorCreator.getObjectName(violation)
+        );
+    }
+}
+```
+
+## Validator
+
+이제 다시 `Validator`로 돌아와 방금 만든 `BindingResult`를 이용하여 `BindException`을 생성하여 줍니다.
+
+- `WebfluxValidator`
+
+```java
+@Component
+@RequiredArgsConstructor
+public class WebfluxValidator {
+
+    private final Validator validator;
+    private final BindingResultCreator bindingResultCreator;
+
+    public <BODY> Mono<BODY> body(final Mono<BODY> bodyMono) {
+        return bodyMono.flatMap(
+                body -> {
+                    final Set<ConstraintViolation<BODY>> validate = validator.validate(body);
+                    if (validate.isEmpty()) {
+                        return Mono.just(body);
+                    }
+                    return Mono.error(
+                            new BindException(bindingResultCreator.create(validate))
+                    );
+                }
+        );
+    }
+}
+```
+
+> `Request` 외에도 사용을 할수는 있을 것 같아(거의 안하겠지만)  
+> 이전의 `RequestValidator`에서 `WebfluxValidator`로 이름을 변경하였습니다.
