@@ -1,6 +1,6 @@
 ---
 title: Spring Webflux Binding Error 심화
-date: '2022-09-21'
+date: '2022-09-22'
 tags: ['Java', 'Spring', 'Spring Webflux', 'Exception', 'BindException', 'Binding Error']
 draft: false
 summary: Spring Webflux Binding Error 심화
@@ -16,7 +16,7 @@ summary: Spring Webflux Binding Error 심화
 ## FieldError
 
 `BindException`을 만들려면 `BindingResult`가 필요하고
-실직적으로 실패한 요소들의 정보는 `BindingResult`의 `List 타입`의 `ObjectError`에 담기게 됩니다.
+실질적으로 실패한 요소들의 정보는 `BindingResult`의 `List 타입`의 `ObjectError`에 담기게 됩니다.
 
 여기서 저희는 각 필드가 어떤 유효성 체크에 실패했는지 알아야 하기 때문에
 `ObjectError`를 상속받은 `FieldError`를 생성하여 `BindingResult`에 주입해 주어야 합니다.
@@ -237,6 +237,52 @@ private static boolean isValidationArgs(final String key) {
 }
 ```
 
+### ErrorMessage 생성 (messages.properties 적용)
+
+```java
+@Component
+@RequiredArgsConstructor
+public class BindingErrorMessageConverter {
+
+    private final MessageSource messageSource;
+
+    public String getMessage(final String[] codes,
+                             final Object[] args,
+                             final String defaultMessage) {
+
+        return Arrays.stream(codes)
+                .map(code -> createMessageOrNull(code, args))
+                .filter(Objects::nonNull)
+                .findFirst()
+                .orElse(defaultMessage);
+    }
+
+    private String createMessageOrNull(final String code,
+                                       final Object[] args) {
+
+        try {
+            return messageSource.getMessage(
+                    code,
+                    args,
+                    LocaleContextHolder.getLocale()
+            );
+        } catch (NoSuchMessageException e) {
+            return null;
+        }
+    }
+}
+```
+
+`Spring Boot`에서 `MessageSource`는 `spring.messages.basename`에 설정된 파일을 구현체로 등록 합니다.
+
+기본값은 `messages`이므로 `messages.properties`로 파일을 만들어 사용하면 별도의 설정이 필요 없습니다.
+
+위 `BindingErrorMessageConverter`는 `codes`를 반복하며 존재하면 해당 값을 에러 메세지를 반환하고 아니면 기본 값을 에러 메세지로 반환하는 로직입니다.
+
+여기서 `fieldError.getArguments()`를 넘겨 `{0}`처럼 설정된 메세지에 값을 세팅하기도 합니다.
+
+> 만약 인코딩이 되지 않는다면 `인텔리제이 설정`에서 `File Encodings`에서 하단의 `Properties Files` 부분을 `UTF-8`로 변경하시면 됩니다.
+
 ### FieldError 생성
 
 위의 로직들을 활용하여 `FieldError`를 생성하는 별도의 클래스를 만들었습니다.
@@ -265,20 +311,26 @@ public class FieldErrorCreator {
 
     private static final List<String> COMMON_ATTRIBUTES = List.of("groups", "message", "payload");
     private final MessageCodesResolver messageCodesResolver;
+    private final BindingErrorMessageConverter bindingErrorMessageConverter;
 
     public <T> FieldError create(final ConstraintViolation<T> violation) {
+
+        final String[] codes = getCodes(violation);
+        final Object[] args = getValidationArgs(violation);
+
         return new FieldError(
                 getObjectName(violation),
                 getFieldName(violation),
                 violation.getInvalidValue(),
                 true,
-                getCodes(violation),
-                getValidationArgs(violation),
-                violation.getMessage()
+                codes,
+                args,
+                bindingErrorMessageConverter.getMessage(codes, args, violation.getMessage())
         );
     }
 
     private static <T> Object[] getValidationArgs(final ConstraintViolation<T> violation) {
+
         return violation.getConstraintDescriptor()
                 .getAttributes()
                 .entrySet()
@@ -289,10 +341,12 @@ public class FieldErrorCreator {
     }
 
     private static boolean isValidationArgs(final String key) {
+
         return !COMMON_ATTRIBUTES.contains(key);
     }
 
     private <T> String[] getCodes(final ConstraintViolation<T> violation) {
+
         return messageCodesResolver.resolveMessageCodes(
                 getErrorCode(violation),
                 getObjectName(violation),
@@ -301,25 +355,29 @@ public class FieldErrorCreator {
         );
     }
 
-    private static <T> String getFieldName(final ConstraintViolation<T> violation) {
-        return violation.getPropertyPath().toString();
+    private static <T> String getErrorCode(final ConstraintViolation<T> violation) {
+
+        return violation.getConstraintDescriptor()
+                .getAnnotation()
+                .annotationType()
+                .getSimpleName();
     }
 
-    private static <T> Class<?> getFieldType(final ConstraintViolation<T> violation) {
-        return violation.getInvalidValue().getClass();
-    }
+    public static <T> String getObjectName(final ConstraintViolation<T> violation) {
 
-    private static <T> String getObjectName(final ConstraintViolation<T> violation) {
         return StringUtils.uncapitalize(
                 violation.getRootBeanClass().getSimpleName()
         );
     }
 
-    private static <T> String getErrorCode(final ConstraintViolation<T> violation) {
-        return violation.getConstraintDescriptor()
-                .getAnnotation()
-                .annotationType()
-                .getSimpleName();
+    private static <T> String getFieldName(final ConstraintViolation<T> violation) {
+
+        return violation.getPropertyPath().toString();
+    }
+
+    private static <T> Class<?> getFieldType(final ConstraintViolation<T> violation) {
+
+        return violation.getInvalidValue().getClass();
     }
 
 }
@@ -342,34 +400,35 @@ public class BindingResultCreator {
     private final FieldErrorCreator fieldErrorCreator;
 
     public <T> BindingResult create(final Set<ConstraintViolation<T>> violations) {
+
         if (violations.isEmpty()) {
             throw new IllegalArgumentException(EMPTY_ERROR_MESSAGE);
         }
 
         final BindingResult bindingResult = getBindingResult(violations);
         addFieldErrors(bindingResult, violations);
+
         return bindingResult;
     }
 
-    private <T> void addFieldErrors(
-            final BindingResult bindingResult,
-            final Set<ConstraintViolation<T>> violations
-    ) {
+    private <T> void addFieldErrors(final BindingResult bindingResult,
+                                    final Set<ConstraintViolation<T>> violations) {
+
         violations.forEach(violation ->
                 bindingResult.addError(fieldErrorCreator.create(violation))
         );
     }
 
     private static <T> BindingResult getBindingResult(final Set<ConstraintViolation<T>> violations) {
+
         return violations.stream()
                 .map(BindingResultCreator::createDefaultBindingResult)
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException(EMPTY_ERROR_MESSAGE));
     }
 
-    private static <T> BeanPropertyBindingResult createDefaultBindingResult(
-            final ConstraintViolation<T> violation
-    ) {
+    private static <T> BeanPropertyBindingResult createDefaultBindingResult(final ConstraintViolation<T> violation) {
+
         return new BeanPropertyBindingResult(
                 violation.getRootBean(),
                 FieldErrorCreator.getObjectName(violation)
@@ -393,14 +452,17 @@ public class WebfluxValidator {
     private final BindingResultCreator bindingResultCreator;
 
     public <BODY> Mono<BODY> body(final Mono<BODY> bodyMono) {
-        return bodyMono.flatMap(
-                body -> {
-                    final Set<ConstraintViolation<BODY>> validate = validator.validate(body);
-                    if (validate.isEmpty()) {
+
+        return bodyMono.flatMap(body -> {
+
+                    final Set<ConstraintViolation<BODY>> violations = validator.validate(body);
+
+                    if (violations.isEmpty()) {
                         return Mono.just(body);
                     }
+
                     return Mono.error(
-                            new BindException(bindingResultCreator.create(validate))
+                            new BindException(bindingResultCreator.create(violations))
                     );
                 }
         );
@@ -410,3 +472,134 @@ public class WebfluxValidator {
 
 > `Request` 외에도 사용을 할수는 있을 것 같아(거의 안하겠지만)  
 > 이전의 `RequestValidator`에서 `WebfluxValidator`로 이름을 변경하였습니다.
+
+## GlobalAttributes
+
+- `BaseResponse`
+
+```java
+@Builder
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Getter
+public class BaseResponse<T> {
+
+    private final String status;
+    private final String message;
+    private final T data;
+
+}
+```
+
+- `GlobalErrorAttributes`
+
+```java
+@Component
+@RequiredArgsConstructor
+public class GlobalErrorAttributes extends DefaultErrorAttributes {
+
+    private static final String BINDING_ERROR_MESSAGE_SEP = ", ";
+    private final ObjectMapper objectMapper;
+    @Override
+    public Map<String, Object> getErrorAttributes(final ServerRequest request,
+                                                  final ErrorAttributeOptions options) {
+
+        final Throwable error = getError(request);
+
+        if(error instanceof IllegalStateException e) {
+            return getResponse(BAD_REQUEST, e.getMessage());
+        }
+
+        if(error instanceof BindException e) {
+            return getResponse(BAD_REQUEST, getBindingErrorMessage(e.getFieldErrors()));
+        }
+
+        return getResponse(INTERNAL_SERVER_ERROR, error.getMessage());
+    }
+
+    private String getBindingErrorMessage(final List<FieldError> fieldErrors) {
+
+        return fieldErrors
+                .stream()
+                .map(this::getBindingErrorMessage)
+                .collect(joining(BINDING_ERROR_MESSAGE_SEP));
+    }
+
+    private String getBindingErrorMessage(final FieldError fieldError) {
+
+        return "%s: %s".formatted(
+                fieldError.getField(),
+                fieldError.getDefaultMessage()
+        );
+    }
+
+    private Map<String, Object> getResponse(final HttpStatus httpStatus,
+                                            final String message) {
+
+        final BaseResponse<Object> response = BaseResponse.builder()
+                .status(String.valueOf(httpStatus.value()))
+                .message(message)
+                .build();
+
+        return objectMapper.convertValue(response, new TypeReference<>() {});
+    }
+}
+```
+
+`error`가 `BindException`라면 `BindingErrorMessageConverter`를 이용하여 메세지를 변환시켜
+`response`를 만들어 반환합니다.
+
+> 프로젝트의 `공통 Response`에 따라 조금씩 다르게 작성하면 됩니다.
+
+## GlobalExceptionHandler
+
+- `GlobalExceptionHandler`
+
+```java
+@Slf4j
+@Component
+public class GlobalExceptionHandler extends AbstractErrorWebExceptionHandler {
+
+    public GlobalExceptionHandler(final ErrorAttributes errorAttributes,
+                                  final WebProperties.Resources resources,
+                                  final ApplicationContext applicationContext,
+                                  final ServerCodecConfigurer serverCodecConfigurer) {
+
+        super(errorAttributes, resources, applicationContext);
+        super.setMessageReaders(serverCodecConfigurer.getReaders());
+        super.setMessageWriters(serverCodecConfigurer.getWriters());
+    }
+
+    @Override
+    protected RouterFunction<ServerResponse> getRoutingFunction(final ErrorAttributes errorAttributes) {
+
+        return RouterFunctions.route(RequestPredicates.all(), this::renderErrorResponse);
+    }
+
+    private Mono<ServerResponse> renderErrorResponse(final ServerRequest request) {
+
+        final Map<String, Object> errorProperties = getErrorAttributes(request, ErrorAttributeOptions.defaults());
+
+        return ServerResponse.status(getStatus(errorProperties))
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(BodyInserters.fromValue(errorProperties));
+    }
+
+    private static int getStatus(final Map<String, Object> errorProperties) {
+
+        return Integer.parseInt(errorProperties.get("status").toString());
+    }
+}
+```
+
+`GlobalExceptionHandler`는 `GlobalErrorAttributes`에서 반환한
+`response` 값을 받아 클라이언트 단으로 응답을 내려줍니다.
+
+빈 값으로 테스트를 해보면 아래와 같이 잘 나오는 것을 확인할 수 있습니다.
+
+```json
+{
+  "status": "400",
+  "message": "markdown: 빈값 X",
+  "data": null
+}
+```
