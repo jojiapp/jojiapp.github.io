@@ -1,6 +1,6 @@
 ---
 title: Spring Webflux Binding Error 심화
-date: '2022-09-22'
+date: '2022-09-24'
 tags: ['Java', 'Spring', 'Spring Webflux', 'Exception', 'BindException', 'Binding Error']
 draft: false
 summary: Spring Webflux Binding Error 심화
@@ -53,6 +53,7 @@ public FieldError(String objectName, String field, @Nullable Object rejectedValu
 
 ```java
 private <BODY> String getObjectName(BODY body) {
+
     return StringUtils.uncapitalize(
             body.getClass().getSimpleName()
     );
@@ -63,6 +64,7 @@ private <BODY> String getObjectName(BODY body) {
 
 ```java
 private static <T> String getObjectName(final ConstraintViolation<T> violation) {
+
     return StringUtils.uncapitalize(
             violation.getRootBeanClass().getSimpleName()
     );
@@ -76,6 +78,7 @@ private static <T> String getObjectName(final ConstraintViolation<T> violation) 
 
 ```java
 private static <T> String getFieldName(final ConstraintViolation<T> violation) {
+
     return violation.getPropertyPath().toString();
 }
 ```
@@ -86,6 +89,7 @@ private static <T> String getFieldName(final ConstraintViolation<T> violation) {
 
 ```java
 private static <T> String getRejectValue(final ConstraintViolation<T> violation) {
+
     return violation.getInvalidValue();
 }
 ```
@@ -115,6 +119,7 @@ public class MessageCodesResolverConfig {
 
     @Bean
     public MessageCodesResolver messageCodesResolver() {
+
         return new DefaultMessageCodesResolver();
     }
 }
@@ -146,6 +151,7 @@ ConstraintDescriptorImpl{annotation=j.v.c.NotBlank, payloads=[], hasComposingCon
 
 ```java
 private static <T> String getErrorCode(final ConstraintViolation<T> violation) {
+
     return violation.getConstraintDescriptor()
             .getAnnotation()
             .annotationType()
@@ -163,6 +169,7 @@ private static <T> String getErrorCode(final ConstraintViolation<T> violation) {
 
 ```java
 private static <T> Class<?> getFieldType(final ConstraintViolation<T> violation) {
+
     return violation.getInvalidValue().getClass();
 }
 ```
@@ -223,6 +230,7 @@ ConstraintDescriptorImpl{annotation=j.v.c.Size, payloads=[], hasComposingConstra
 private static final List<String> COMMON_ATTRIBUTES = List.of("groups", "message", "payload");
 
 private static <T> Object[] getValidationArgs(final ConstraintViolation<T> violation) {
+
     return violation.getConstraintDescriptor()
             .getAttributes()
             .entrySet()
@@ -233,6 +241,7 @@ private static <T> Object[] getValidationArgs(final ConstraintViolation<T> viola
 }
 
 private static boolean isValidationArgs(final String key) {
+
     return !COMMON_ATTRIBUTES.contains(key);
 }
 ```
@@ -297,6 +306,7 @@ public class MessageCodesResolverConfig {
 
     @Bean
     public MessageCodesResolver messageCodesResolver() {
+
         return new DefaultMessageCodesResolver();
     }
 }
@@ -603,3 +613,145 @@ public class GlobalExceptionHandler extends AbstractErrorWebExceptionHandler {
   "data": null
 }
 ```
+
+## QueryParams 유효성 체크
+
+지금까지 위의 내용은 `Mono<Body>`타입에 대해서 유효성 체크를 하였습니다.
+
+추가로 일반 `QueryParams`를 유효성 체크를 하는 방법에 대해 알아보겠습니다.
+
+위의 내용을 이해하였다면 `bodyMono.flatMap` 제외하면 되는 것을 알 수 있습니다.
+
+맞습니다. 하지만 `BindException`이 `CheckedException`이기 때문에 호출 하는 곳에서
+매번 예외를 잡아주어야 하기 때문에 효율적이지 못합니다.
+
+- `BindingException`
+
+```java
+@AllArgsConstructor
+public class BindingException extends RuntimeException{
+
+    private final BindingResult bindingResult;
+
+    public List<FieldError> getFieldErrors() {
+
+        return bindingResult.getFieldErrors();
+    }
+}
+```
+
+그래서 저는 `UncheckedException`용 `BindingException`을 별도로 하나 만들어 주었습니다.
+
+- `WebfluxValidator`
+
+```java
+@Component
+@RequiredArgsConstructor
+public class WebfluxValidator {
+
+    private final Validator validator;
+    private final BindingResultCreator bindingResultCreator;
+
+    private final QueryParamsConverterResolver queryParamsConverterResolver;
+
+    public <T> Mono<T> valid(final Mono<T> bodyMono) {
+
+        return bodyMono.flatMap(body -> Mono.just(valid(body)));
+    }
+
+    public <T> T valid(final MultiValueMap<String, String> queryParams, Class<T> classType) {
+
+        return valid(queryParamsConverterResolver.convert(queryParams, classType));
+    }
+
+    private  <T> T valid(final T object) {
+
+        final Set<ConstraintViolation<T>> violations = validator.validate(object);
+
+        if (!violations.isEmpty()) {
+            throw new BindingException(bindingResultCreator.create(violations));
+        }
+
+        return object;
+    }
+}
+```
+
+`BindException`을 사용하던 부분을 방금 만든 `BindingException`을 사용하도록 변경하여 줍니다.
+
+추가로 `WebfluxValidator`에서 `QueryParams`를 지원하도록 메소드를 추가하였습니다.
+
+하는 역할이 중복 되기 때문에 별도의 검증 메소드를 별도로 추출하였습니다.
+
+> `QueryParams`는 `MultiValueMap`타입 이기 때문에 `DTO`로 변환하는 작업이 필요합니다.
+>
+> 저는 `QueryParamsConverterResolver`를 만들어 `QueryParams`를 `DTO`로 변환하도록 하였습니다.
+>
+> `QueryParamsConverterResolver`를 이용하여 `QueryParams`를 `DTO`로 변한하는 과정에 대해서는 별도로 포스팅 하겠습니다.
+
+- `GlobalErrorAttributes`
+
+```java
+@Component
+@RequiredArgsConstructor
+public class GlobalErrorAttributes extends DefaultErrorAttributes {
+
+    private static final String BINDING_ERROR_MESSAGE_SEP = ", ";
+    private final ObjectMapper objectMapper;
+
+    @Override
+    public Map<String, Object> getErrorAttributes(final ServerRequest request,
+                                                  final ErrorAttributeOptions options) {
+
+        final Throwable error = getError(request);
+
+        if(error instanceof BindingException e) {
+            return getResponse(BAD_REQUEST, getBindingErrorMessage(e.getFieldErrors()));
+        }
+
+        return getResponse(INTERNAL_SERVER_ERROR, error.getMessage());
+    }
+
+    private String getBindingErrorMessage(final List<FieldError> fieldErrors) {
+
+        return fieldErrors
+                .stream()
+                .map(this::getBindingErrorMessage)
+                .collect(joining(BINDING_ERROR_MESSAGE_SEP));
+    }
+
+    private String getBindingErrorMessage(final FieldError fieldError) {
+
+        return "%s: %s".formatted(
+                fieldError.getField(),
+                fieldError.getDefaultMessage()
+        );
+    }
+
+    private Map<String, Object> getResponse(final HttpStatus httpStatus,
+                                            final String message) {
+
+        final BaseResponse<Object> response = BaseResponse.builder()
+                .status(String.valueOf(httpStatus.value()))
+                .message(message)
+                .build();
+
+        return objectMapper.convertValue(response, new TypeReference<>() {});
+    }
+}
+```
+
+`GlobalErrorAttributes`에서 기존의 `BindException`부분을 `BindingException`을 잡도록 변경하여 줍니다.
+
+## 마치며
+
+`Spring MVC`에서 `@Valid`만 사용하면 유효성 체크를 다 해줬었는데
+이번에 직접 만들어 보면서 얼마나 많은 것을 자동으로 해주고 있었는지 알게 된거 같아 좋았습니다.
+
+만약 `@Valid`로 인한 문제가 생겨도 이제는 직접 해결할 수 있을 거 같은 기분이 듭니다.
+
+다음 포스팅에서는 `QueryParams`를 `DTO`로 변환하는 과정을 작성해 보겠습니다.
+
+## 참고 사이트
+
+- [[인프런] 스프링 MVC 2편 - 백엔드 웹 개발 활용 기술 - 김영한](https://www.inflearn.com/course/스프링-mvc-2)
