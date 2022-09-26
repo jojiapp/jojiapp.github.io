@@ -652,7 +652,7 @@ public class WebfluxValidator {
     private final Validator validator;
     private final BindingResultCreator bindingResultCreator;
 
-    private final QueryParamsConverterResolver queryParamsConverterResolver;
+    private final MultiValueMapToObjectConverterResolver multiValueMapToObjectConverterResolver;
 
     public <T> Mono<T> valid(final Mono<T> bodyMono) {
 
@@ -661,7 +661,7 @@ public class WebfluxValidator {
 
     public <T> T valid(final MultiValueMap<String, String> queryParams, Class<T> classType) {
 
-        return valid(queryParamsConverterResolver.convert(queryParams, classType));
+        return valid(multiValueMapToObjectConverterResolver.convert(queryParams, classType));
     }
 
     private  <T> T valid(final T object) {
@@ -685,9 +685,9 @@ public class WebfluxValidator {
 
 > `QueryParams`는 `MultiValueMap`타입 이기 때문에 `DTO`로 변환하는 작업이 필요합니다.
 >
-> 저는 `QueryParamsConverterResolver`를 만들어 `QueryParams`를 `DTO`로 변환하도록 하였습니다.
+> 저는 `MultiValueMapToObjectConverterResolver`를 만들어 `QueryParams`를 `DTO`로 변환하도록 하였습니다.
 >
-> `QueryParamsConverterResolver`를 이용하여 `QueryParams`를 `DTO`로 변한하는 과정에 대해서는 별도로 포스팅 하겠습니다.
+> `MultiValueMapToObjectConverterResolver`를 이용하여 `QueryParams`를 `DTO`로 변한하는 과정에 대해서는 별도로 포스팅 하겠습니다.
 
 - `GlobalErrorAttributes`
 
