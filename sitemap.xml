@@ -351,6 +351,12 @@
   </url>
 
   <url>
+    <loc
+      >https://jojiapp.github.io/blog/java/Spring/webflux/Webflux-MultiValueMapToObjectConverter</loc
+    >
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/java/Spring/webflux/Webflux-Validation</loc>
   </url>
 
@@ -388,6 +394,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/config</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/converter</loc>
   </url>
 
   <url>
@@ -492,6 +502,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/modern-java-in-action</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/multivaluemap</loc>
   </url>
 
   <url>
