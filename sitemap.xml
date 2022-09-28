@@ -347,6 +347,12 @@
   </url>
 
   <url>
+    <loc
+      >https://jojiapp.github.io/blog/java/Spring/webflux/Webflux-GlobalExceptionHandler-Bean-Test-Error</loc
+    >
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/java/Spring/webflux/Webflux-GlobalExceptionHandler</loc>
   </url>
 
@@ -574,6 +580,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/template-engine</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/test</loc>
   </url>
 
   <url>
