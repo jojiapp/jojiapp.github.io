@@ -357,6 +357,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/java/Spring/webflux/Webflux-MessageSource-Test</loc>
+  </url>
+
+  <url>
     <loc
       >https://jojiapp.github.io/blog/java/Spring/webflux/Webflux-MultiValueMapToObjectConverter</loc
     >
@@ -376,6 +380,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/binding-error</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/bindingerror</loc>
   </url>
 
   <url>
@@ -500,6 +508,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/marked</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/messagesource</loc>
   </url>
 
   <url>
