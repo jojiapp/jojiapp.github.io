@@ -375,6 +375,16 @@
   </url>
 
   <url>
+    <loc
+      >https://jojiapp.github.io/blog/java/Spring/webflux/api-gateway-request-response-logging</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/api-gateway</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/tags/bindexception</loc>
   </url>
 
@@ -484,6 +494,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/logback</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/logging</loc>
   </url>
 
   <url>

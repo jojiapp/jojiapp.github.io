@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Thu, 29 Sep 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Sun, 02 Oct 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/tags/spring-webflux/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Spring/webflux/api-gateway-request-response-logging</guid>
+    <title>Spring API Gateway Request Response Logging</title>
+    <link>https://jojiapp.github.io/blog/java/Spring/webflux/api-gateway-request-response-logging</link>
+    <description>Spring API Gateway Request Response Logging</description>
+    <pubDate>Sun, 02 Oct 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Spring</category><category>Spring Webflux</category><category>API Gateway</category><category>Logging</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/java/Spring/webflux/Webflux-MessageSource-Test</guid>
     <title>Spring Webflux에서 MessageSource 테스트</title>
