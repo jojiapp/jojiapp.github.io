@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Wed, 10 Aug 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Tue, 04 Oct 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/tags/junit5/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Spring/Junit5/junit5으로-Annotation-테스트환경-통일하기</guid>
+    <title>Junit5 Annotation으로 테스트 환경 통일하기</title>
+    <link>https://jojiapp.github.io/blog/java/Spring/Junit5/junit5으로-Annotation-테스트환경-통일하기</link>
+    <description>Junit5 Annotation으로 테스트 환경 통일하기</description>
+    <pubDate>Tue, 04 Oct 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Spring</category><category>Junit5</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/java/Spring/Junit5/MockMvcBuilders</guid>
     <title>[Junit5] MockMvcBuilders를 이용하여 MockMvc 커스텀하기</title>

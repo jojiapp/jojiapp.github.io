@@ -323,6 +323,12 @@
   </url>
 
   <url>
+    <loc
+      >https://jojiapp.github.io/blog/java/Spring/Junit5/junit5으로-Annotation-테스트환경-통일하기</loc
+    >
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/java/Spring/RestDocs/Spring-Rest-Docs-Asciidoc-작성</loc>
   </url>
 
