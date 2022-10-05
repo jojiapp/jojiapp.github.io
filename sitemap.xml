@@ -377,6 +377,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/java/Spring/webflux/Webflux-Validator생성</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/java/Spring/webflux/Webflux-기본</loc>
   </url>
 
@@ -624,5 +628,9 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/validation</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/validator</loc>
   </url>
 </urlset>
