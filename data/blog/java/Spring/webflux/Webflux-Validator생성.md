@@ -1,6 +1,6 @@
 ---
 title: Spring Webflux Validator 생성
-date: '2022-10-05'
+date: '2022-10-06'
 tags: ['Java', 'Spring', 'Spring Webflux', 'Validation', 'Validator']
 draft: false
 summary: Spring Webflux Validator 생성
@@ -196,3 +196,44 @@ class FieldErrorCreatorTest {
 
 `validator.validate()`의 반환 타입이 `Set`이라 테스트를 위해 `List`로 변환하였는데 만족스럽지는 않아
 조금 더 테스트 방법에 대해 생각이 필요할 것 같습니다.
+
+## 테스트 코드 깨짐 해결
+
+아니나 다를까 다음날 다시 돌려보니 테스트가 실패하였습니다.
+
+이유는 마치며에 작성했던 대로 `Set`이기 때문에 순서를 보장하지 않는다는 점이였습니다.
+
+사실 `FieldError`생성에 관한 테스트라 2개 이상을 할 이유도 없지만,
+그래도 각각 다른 필드에 대해 다르게 생성이 되는지 까지는 하는게 맞는 것 같았습니다.
+
+저는 순서를 고정할 수 있도록 `sorted`를 추가하였고, 이제는 간혈적으로 실패하지 않게 되었습니다.
+
+```java
+@Test
+void 정상적으로_fieldError를_생성한다() throws Exception {
+
+    // Given
+    final ValidationDTO validationDTO = new ValidationDTO(NAME, AGE);
+
+    final Set<ConstraintViolation<ValidationDTO>> violations = validator.validate(validationDTO);
+
+    // When
+    final List<FieldError> fieldErrors = violations.stream()
+            .map(fieldErrorCreator::create)
+            .sorted(Comparator.comparing(FieldError::getField))
+            .toList();
+
+    // Then
+    final FieldError ageError = fieldErrors.get(0);
+    assertThat(ageError.getObjectName()).isEqualTo("validationDTO");
+    assertThat(ageError.getField()).isEqualTo("age");
+    assertThat(ageError.getRejectedValue()).isEqualTo(AGE);
+    assertThat(ageError.getDefaultMessage()).isEqualTo("0 이상만 허용 됩니다.");
+
+    final FieldError nameError = fieldErrors.get(1);
+    assertThat(nameError.getObjectName()).isEqualTo("validationDTO");
+    assertThat(nameError.getField()).isEqualTo("name");
+    assertThat(nameError.getRejectedValue()).isEqualTo(NAME);
+    assertThat(nameError.getDefaultMessage()).isEqualTo("빈값은 안됩니다.");
+}
+```
