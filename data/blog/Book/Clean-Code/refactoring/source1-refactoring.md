@@ -10,7 +10,7 @@ summary: '클린코드 스터디 - 소스 1 리팩토링'
 
 이번에 하고 있는 클린 코드 스터디에서 아래와 같은 소스를 리팩토링 해보기로 하였습니다.
 
-> 아래 코드는 [Github](https://github.com/jojiapp/clean-code-study)에 올려두었습니다.
+> 아래 코드는 [Github](https://github.com/jojiapp/clean-code-study/tree/main/src/main/java/com/jojiapp/cleancode/source1)에 올려두었습니다.
 
 - 원본 소스
 
