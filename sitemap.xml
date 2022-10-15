@@ -137,6 +137,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/gradle/멀티모듈-자동화</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/Book/Clean-Code/1장-깨끗한-코드</loc>
   </url>
 
@@ -475,6 +479,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/tags/gradle</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/tags/homebrew</loc>
   </url>
 
@@ -591,6 +599,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/tags/spring-boot</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/tags/spring-rest-docs</loc>
   </url>
 
@@ -636,5 +648,9 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/validator</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/멀티-모듈</loc>
   </url>
 </urlset>
