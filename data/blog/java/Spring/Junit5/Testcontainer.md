@@ -27,6 +27,8 @@ summary: '[Junit] Spring Boot에서 Testcontainer 사용'
 
 > 여기서는 MySQL을 기준으로 할 것이지만 내용을 다 읽고 다른 DB로 바꾸는 것은 문제가 없을 것이라 생각합니다.
 
+> 아래 소스는 [Github](https://github.com/jojiapp/spring-boot-testcontainers)에 올려두었습니다.
+
 ## 의존성 받기
 
 우선 Testcontainer를 사용하기 위해서는 `gradle`에 의존성을 주입받아야 합니다.
@@ -57,6 +59,7 @@ testImplementation 'org.testcontainers:mysql'
 ## MySQL Container 사용
 
 ```JAVA
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -72,6 +75,7 @@ public class Member {
 ```
 
 ```java
+
 @Service
 @RequiredArgsConstructor
 @Transactional
@@ -98,16 +102,18 @@ public interface MemberRepo extends JpaRepository<Member, Long> {
 ### MySQL Container - 첫 번째 방법
 
 ```java
+
 @SpringBootTest
 @Testcontainers
 class MemberServiceTest {
 
-	private static final String USERNAME = "root";
-	private static final String PASSWORD = "password";
-	private static final String DATABASE_NAME = "mysql_testcontainer";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "password";
+    private static final String DATABASE_NAME = "mysql_testcontainer";
 
+    @ClassRule
     @Container
-    static MySQLContainer mySQLContainer = new MySQLContainer("mysql:8.0")
+    static MySQLContainer<?> mySQLContainer = new MySQLContainer<>("mysql:8.0")
             .withUsername(USERNAME)
             .withPassword(PASSWORD)
             .withDatabaseName(DATABASE_NAME);
@@ -251,6 +257,7 @@ services:
 해당 `docker-compose.yml`파일은 `src/test/resources`에 넣어 두었습니다.
 
 ```java
+
 @SpringBootTest
 @Testcontainers
 class MemberServiceTest {
@@ -260,8 +267,8 @@ class MemberServiceTest {
 
     @ClassRule
     @Container
-    static final DockerComposeContainer dockerComposeContainer =
-            new DockerComposeContainer(new File("src/test/resources/docker-compose.yml"))
+    static final DockerComposeContainer<?> dockerComposeContainer =
+            new DockerComposeContainer<>(new File("src/test/resources/docker-compose.yml"))
                     .withExposedService(
                             MYSQL_DB,
                             MY_SQL_PORT,
@@ -306,7 +313,7 @@ static final DockerComposeContainer dockerComposeContainer =
                         MYSQL_DB,
                         MY_SQL_PORT,
                         Wait.forListeningPort().withStartupTimeout(Duration.ofSeconds(30))
-                );
+        );
 ```
 
 방금 작성한 `docker-compose.yml`파일을 파라미터로 넘겨 줍니다.
@@ -319,15 +326,15 @@ static final DockerComposeContainer dockerComposeContainer =
 
 ```java
 @DynamicPropertySource
-public static void overrideProps(DynamicPropertyRegistry dynamicPropertyRegistry) {
+public static void overrideProps(DynamicPropertyRegistry dynamicPropertyRegistry){
 
-    final String host = dockerComposeContainer.getServiceHost(MYSQL_DB, MY_SQL_PORT);
-    final Integer port = dockerComposeContainer.getServicePort(MYSQL_DB, MY_SQL_PORT);
-    dynamicPropertyRegistry.add("spring.datasource.url",
-            () -> "jdbc:mysql://%s:%d/test_container_test".formatted(host, port));
-    dynamicPropertyRegistry.add("spring.datasource.username", () -> "root");
-    dynamicPropertyRegistry.add("spring.datasource.password", () -> "password");
-    dynamicPropertyRegistry.add("spring.jpa.hibernate.ddl-auto", () -> "create");
+    final String host=dockerComposeContainer.getServiceHost(MYSQL_DB,MY_SQL_PORT);
+    final Integer port=dockerComposeContainer.getServicePort(MYSQL_DB,MY_SQL_PORT);
+        dynamicPropertyRegistry.add("spring.datasource.url",
+            ()->"jdbc:mysql://%s:%d/test_container_test".formatted(host,port));
+        dynamicPropertyRegistry.add("spring.datasource.username",()->"root");
+        dynamicPropertyRegistry.add("spring.datasource.password",()->"password");
+        dynamicPropertyRegistry.add("spring.jpa.hibernate.ddl-auto",()->"create");
 }
 ```
 
