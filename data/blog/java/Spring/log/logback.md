@@ -17,6 +17,8 @@ summary: Logback으로 로그 관리하기
 
 하지만 저는 이런 설정도 로그 관리도 해본 적이 없기 때문에 본격적으로 설정을 하기 전 미리 공부하여 정리를 해두려 합니다.
 
+> 아래 소스는 [Github](https://github.com/jojiapp/logback)에 올려두었습니다.
+
 ## Logback 이란?
 
 `Logback`은 `Slf4j`이 구현체 중 하나로 로깅을 위한 라이브러리 입니다.
