@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Tue, 18 Oct 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Wed, 19 Oct 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/Book/Real-MySQL/4장-아키텍처</guid>
+    <title>4장. 아키텍처</title>
+    <link>https://jojiapp.github.io/blog/Book/Real-MySQL/4장-아키텍처</link>
+    <description>4장 아키텍처</description>
+    <pubDate>Wed, 19 Oct 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>MySQL</category><category>Real MySQL</category><category>DB</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/java/Spring/Junit5/Testcontainer</guid>
     <title>[Junit] Spring Boot에서 Testcontainer 사용</title>
@@ -28,16 +38,6 @@
     <pubDate>Mon, 17 Oct 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
     <category>Gradle</category><category>멀티 모듈</category><category>Spring Boot</category>
-  </item>
-
-  <item>
-    <guid>https://jojiapp.github.io/blog/Book/Real-MySQL/4장-아키텍처</guid>
-    <title>4장. 아키텍처</title>
-    <link>https://jojiapp.github.io/blog/Book/Real-MySQL/4장-아키텍처</link>
-    <description>4장 아키텍처</description>
-    <pubDate>Wed, 12 Oct 2022 00:00:00 GMT</pubDate>
-    <author>jojiapp@gmail.com (조지헌)</author>
-    <category>MySQL</category><category>Real MySQL</category><category>DB</category>
   </item>
 
   <item>
