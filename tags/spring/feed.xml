@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Thu, 06 Oct 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Tue, 18 Oct 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/tags/spring/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Spring/Junit5/Testcontainer</guid>
+    <title>[Junit] Spring Boot에서 Testcontainer 사용</title>
+    <link>https://jojiapp.github.io/blog/java/Spring/Junit5/Testcontainer</link>
+    <description>[Junit] Spring Boot에서 Testcontainer 사용</description>
+    <pubDate>Tue, 18 Oct 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Java</category><category>Spring</category><category>Junit</category><category>Testcontainer</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/java/Spring/webflux/Webflux-Validator생성</guid>
     <title>Spring Webflux Validator 생성</title>

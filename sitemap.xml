@@ -331,6 +331,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/java/Spring/Junit5/Testcontainer</loc>
+  </url>
+
+  <url>
     <loc
       >https://jojiapp.github.io/blog/java/Spring/Junit5/junit5으로-Annotation-테스트환경-통일하기</loc
     >
@@ -503,6 +507,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/tags/junit</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/tags/junit5</loc>
   </url>
 
@@ -636,6 +644,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/test</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/testcontainer</loc>
   </url>
 
   <url>
