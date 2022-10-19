@@ -21,6 +21,16 @@
   </item>
 
   <item>
+    <guid>https://jojiapp.github.io/blog/gradle/QueryDSL-설정</guid>
+    <title>[Gradle] QueryDSL 설정</title>
+    <link>https://jojiapp.github.io/blog/gradle/QueryDSL-설정</link>
+    <description>[Gradle] QueryDSL 설정</description>
+    <pubDate>Wed, 19 Oct 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Gradle</category><category>QueryDSL</category>
+  </item>
+
+  <item>
     <guid>https://jojiapp.github.io/blog/java/Spring/Junit5/Testcontainer</guid>
     <title>[Junit] Spring Boot에서 Testcontainer 사용</title>
     <link>https://jojiapp.github.io/blog/java/Spring/Junit5/Testcontainer</link>
