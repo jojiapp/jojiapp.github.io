@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Wed, 19 Oct 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Thu, 20 Oct 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/Book/Clean-Code/9장-단위-테스트</guid>
+    <title>9장. 단위 테스트</title>
+    <link>https://jojiapp.github.io/blog/Book/Clean-Code/9장-단위-테스트</link>
+    <description>9장. 단위 테스트</description>
+    <pubDate>Thu, 20 Oct 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Clean Code</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/Book/Real-MySQL/4장-아키텍처</guid>
     <title>4장. 아키텍처</title>
