@@ -1,3 +1,11 @@
+---
+title: '[Gradle] JaCoCo 설정'
+date: '2022-10-21'
+tags: ['Gradle', 'JaCoCo', 'Test', 'Test Coverage']
+draft: false
+summary: '[Gradle] JaCoCo 설정'
+---
+
 # Gradle JaCoCo 적용
 
 내가 얼만큼 테스트를 작성했는지, 어느 부분은 놓쳤는지 같은 지표를 보여주는 것을 테스트 커버리지 라고 합니다.
