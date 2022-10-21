@@ -141,7 +141,15 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/gradle/jacoco-gradle-설정</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/gradle/멀티모듈-자동화</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/blog/Book/Clean-Code/10장-클래스</loc>
   </url>
 
   <url>
@@ -503,6 +511,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/tags/jacoco</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/tags/java</loc>
   </url>
 
@@ -652,6 +664,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/test</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/test-coverage</loc>
   </url>
 
   <url>

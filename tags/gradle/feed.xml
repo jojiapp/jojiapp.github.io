@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Wed, 19 Oct 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Fri, 21 Oct 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/tags/gradle/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/gradle/jacoco-gradle-설정</guid>
+    <title>[Gradle] JaCoCo 설정</title>
+    <link>https://jojiapp.github.io/blog/gradle/jacoco-gradle-설정</link>
+    <description>[Gradle] JaCoCo 설정</description>
+    <pubDate>Fri, 21 Oct 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Gradle</category><category>JaCoCo</category><category>Test</category><category>Test Coverage</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/gradle/QueryDSL-설정</guid>
     <title>[Gradle] QueryDSL 설정</title>
