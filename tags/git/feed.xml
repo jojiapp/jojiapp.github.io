@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Mon, 07 Feb 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Sat, 22 Oct 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/tags/git/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/Git/pre-commit</guid>
+    <title>[Git] pre-commit</title>
+    <link>https://jojiapp.github.io/blog/Git/pre-commit</link>
+    <description>[Git] pre-commit</description>
+    <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Git</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/Git/설정</guid>
     <title>Git 설정</title>
