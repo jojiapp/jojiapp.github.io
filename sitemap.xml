@@ -377,6 +377,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/java/Spring/swagger/Spring-Boot-Swagger-설정-시-에러</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/java/Spring/webflux/WebFlux-BindingError-기본</loc>
   </url>
 
@@ -527,11 +531,11 @@
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/json</loc>
+    <loc>https://jojiapp.github.io/tags/junit</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/junit</loc>
+    <loc>https://jojiapp.github.io/tags/json</loc>
   </url>
 
   <url>
@@ -656,6 +660,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/svelte-kit</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/swagger</loc>
   </url>
 
   <url>
