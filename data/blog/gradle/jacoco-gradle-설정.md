@@ -246,14 +246,14 @@ jacocoTestCoverageVerification {
             limit {
                 counter = 'LINE'
                 value = 'COVEREDRATIO'
-                minimum = 1
+                minimum = 0.8
             }
 
             // 브랜치 커버리지 제한을 80%로 설정
             limit {
                 counter = 'BRANCH'
                 value = 'COVEREDRATIO'
-                minimum = 1
+                minimum = 0.8
             }
 
             // 빈 줄을 제외한 코드의 라인수를 최대 200라인으로 제한합니다.
@@ -418,14 +418,14 @@ jacocoTestCoverageVerification {
             limit {
                 counter = 'LINE'
                 value = 'COVEREDRATIO'
-                minimum = 1
+                minimum = 0.8
             }
 
             // 브랜치 커버리지 제한을 80%로 설정
             limit {
                 counter = 'BRANCH'
                 value = 'COVEREDRATIO'
-                minimum = 1
+                minimum = 0.8
             }
 
             // 빈 줄을 제외한 코드의 라인수를 최대 200라인으로 제한합니다.
