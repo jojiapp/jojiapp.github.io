@@ -7,7 +7,7 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Mon, 17 Oct 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Sat, 22 Oct 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/tags/멀티-모듈/feed.xml" rel="self" type="application/rss+xml"/>
       
   <item>
@@ -15,7 +15,7 @@
     <title>[Gradle] 멀티 모듈 자동화</title>
     <link>https://jojiapp.github.io/blog/gradle/멀티모듈-자동화</link>
     <description>[Gradle] 멀티 모듈 자동화</description>
-    <pubDate>Mon, 17 Oct 2022 00:00:00 GMT</pubDate>
+    <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
     <category>Gradle</category><category>멀티 모듈</category><category>Spring Boot</category>
   </item>

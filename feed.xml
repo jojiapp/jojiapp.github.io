@@ -21,6 +21,16 @@
   </item>
 
   <item>
+    <guid>https://jojiapp.github.io/blog/gradle/멀티모듈-자동화</guid>
+    <title>[Gradle] 멀티 모듈 자동화</title>
+    <link>https://jojiapp.github.io/blog/gradle/멀티모듈-자동화</link>
+    <description>[Gradle] 멀티 모듈 자동화</description>
+    <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Gradle</category><category>멀티 모듈</category><category>Spring Boot</category>
+  </item>
+
+  <item>
     <guid>https://jojiapp.github.io/blog/Book/Clean-Code/10장-클래스</guid>
     <title>10장. 클래스</title>
     <link>https://jojiapp.github.io/blog/Book/Clean-Code/10장-클래스</link>
@@ -78,16 +88,6 @@
     <pubDate>Tue, 18 Oct 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
     <category>Java</category><category>Spring</category><category>Junit</category><category>Testcontainer</category>
-  </item>
-
-  <item>
-    <guid>https://jojiapp.github.io/blog/gradle/멀티모듈-자동화</guid>
-    <title>[Gradle] 멀티 모듈 자동화</title>
-    <link>https://jojiapp.github.io/blog/gradle/멀티모듈-자동화</link>
-    <description>[Gradle] 멀티 모듈 자동화</description>
-    <pubDate>Mon, 17 Oct 2022 00:00:00 GMT</pubDate>
-    <author>jojiapp@gmail.com (조지헌)</author>
-    <category>Gradle</category><category>멀티 모듈</category><category>Spring Boot</category>
   </item>
 
   <item>

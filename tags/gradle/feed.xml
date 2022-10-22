@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Fri, 21 Oct 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Sat, 22 Oct 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/tags/gradle/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/gradle/멀티모듈-자동화</guid>
+    <title>[Gradle] 멀티 모듈 자동화</title>
+    <link>https://jojiapp.github.io/blog/gradle/멀티모듈-자동화</link>
+    <description>[Gradle] 멀티 모듈 자동화</description>
+    <pubDate>Sat, 22 Oct 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Gradle</category><category>멀티 모듈</category><category>Spring Boot</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/gradle/jacoco-gradle-설정</guid>
     <title>[Gradle] JaCoCo 설정</title>
@@ -28,16 +38,6 @@
     <pubDate>Wed, 19 Oct 2022 00:00:00 GMT</pubDate>
     <author>jojiapp@gmail.com (조지헌)</author>
     <category>Gradle</category><category>QueryDSL</category>
-  </item>
-
-  <item>
-    <guid>https://jojiapp.github.io/blog/gradle/멀티모듈-자동화</guid>
-    <title>[Gradle] 멀티 모듈 자동화</title>
-    <link>https://jojiapp.github.io/blog/gradle/멀티모듈-자동화</link>
-    <description>[Gradle] 멀티 모듈 자동화</description>
-    <pubDate>Mon, 17 Oct 2022 00:00:00 GMT</pubDate>
-    <author>jojiapp@gmail.com (조지헌)</author>
-    <category>Gradle</category><category>멀티 모듈</category><category>Spring Boot</category>
   </item>
 
     </channel>
