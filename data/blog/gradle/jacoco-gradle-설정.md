@@ -12,6 +12,8 @@ summary: '[Gradle] JaCoCo 설정'
 
 자바 진영에는 `JaCoCo`라는 라이브러리를 이용하면 쉽게 테스트 커버리지를 확인 할 수 있습니다.
 
+> 아래 소스는 [Github](https://github.com/jojiapp/jacoco-gradle)에 올려두었습니다.
+
 ## 냅다 적용 해보기
 
 ```groovy
