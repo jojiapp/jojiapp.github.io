@@ -21,6 +21,16 @@
   </item>
 
   <item>
+    <guid>https://jojiapp.github.io/blog/Book/Real-MySQL/5장-트랜잭션과-잠금</guid>
+    <title>5장. 트랜잭션과 잠금</title>
+    <link>https://jojiapp.github.io/blog/Book/Real-MySQL/5장-트랜잭션과-잠금</link>
+    <description>5장 트랜잭션과 잠금</description>
+    <pubDate>Sun, 23 Oct 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>MySQL</category><category>Real MySQL</category><category>DB</category>
+  </item>
+
+  <item>
     <guid>https://jojiapp.github.io/blog/Git/pre-commit</guid>
     <title>[Git] pre-commit</title>
     <link>https://jojiapp.github.io/blog/Git/pre-commit</link>

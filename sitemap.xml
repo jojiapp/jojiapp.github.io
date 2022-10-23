@@ -201,6 +201,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/Book/Real-MySQL/5장-트랜잭션과-잠금</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/java/JPA/QueryDSL-Support-Custom-하기</loc>
   </url>
 
@@ -551,11 +555,11 @@
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/logback</loc>
+    <loc>https://jojiapp.github.io/tags/log</loc>
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/log</loc>
+    <loc>https://jojiapp.github.io/tags/logback</loc>
   </url>
 
   <url>
