@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Fri, 21 Oct 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Sun, 23 Oct 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/tags/clean-code/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/Book/Clean-Code/11장-시스템</guid>
+    <title>11장. 시스템</title>
+    <link>https://jojiapp.github.io/blog/Book/Clean-Code/11장-시스템</link>
+    <description>11장. 시스템</description>
+    <pubDate>Sun, 23 Oct 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Clean Code</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/Book/Clean-Code/10장-클래스</guid>
     <title>10장. 클래스</title>
