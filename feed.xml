@@ -7,9 +7,19 @@
       <language>ko</language>
       <managingEditor>jojiapp@gmail.com (조지헌)</managingEditor>
       <webMaster>jojiapp@gmail.com (조지헌)</webMaster>
-      <lastBuildDate>Mon, 24 Oct 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Tue, 25 Oct 2022 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://jojiapp.github.io/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://jojiapp.github.io/blog/java/Spring/swagger/Spring-Boot-Swagger3-사용</guid>
+    <title>Spring Boot Swagger 3.0 사용</title>
+    <link>https://jojiapp.github.io/blog/java/Spring/swagger/Spring-Boot-Swagger3-사용</link>
+    <description>Spring Boot Swagger 3.0 사용</description>
+    <pubDate>Tue, 25 Oct 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Spring</category><category>Spring Boot</category><category>Swagger</category><category>Docs</category>
+  </item>
+
   <item>
     <guid>https://jojiapp.github.io/blog/Book/Clean-Code/12장-창발성</guid>
     <title>12장. 창발성</title>
