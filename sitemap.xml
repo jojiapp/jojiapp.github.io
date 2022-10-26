@@ -153,6 +153,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/Book/Clean-Architecture/1장-소개</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/Book/Clean-Code/10장-클래스</loc>
   </url>
 
@@ -468,6 +472,10 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/cicd</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/clean-architecture</loc>
   </url>
 
   <url>

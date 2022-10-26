@@ -401,6 +401,16 @@
   </item>
 
   <item>
+    <guid>https://jojiapp.github.io/blog/Book/Clean-Architecture/1장-소개</guid>
+    <title>1장. 소개</title>
+    <link>https://jojiapp.github.io/blog/Book/Clean-Architecture/1장-소개</link>
+    <description>1장. 소개</description>
+    <pubDate>Sat, 27 Aug 2022 00:00:00 GMT</pubDate>
+    <author>jojiapp@gmail.com (조지헌)</author>
+    <category>Clean Architecture</category>
+  </item>
+
+  <item>
     <guid>https://jojiapp.github.io/blog/Book/Clean-Code/3장-함수</guid>
     <title>3장. 함수</title>
     <link>https://jojiapp.github.io/blog/Book/Clean-Code/3장-함수</link>
