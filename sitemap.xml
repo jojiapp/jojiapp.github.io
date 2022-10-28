@@ -157,6 +157,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/Book/Clean-Architecture/2장-두-가지-가치에-대한-이야기</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/Book/Clean-Code/10장-클래스</loc>
   </url>
 
@@ -691,15 +695,15 @@
   </url>
 
   <url>
-    <loc>https://jojiapp.github.io/tags/swagger</loc>
-  </url>
-
-  <url>
     <loc>https://jojiapp.github.io/tags/tailwind-css</loc>
   </url>
 
   <url>
     <loc>https://jojiapp.github.io/tags/template-engine</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/swagger</loc>
   </url>
 
   <url>
