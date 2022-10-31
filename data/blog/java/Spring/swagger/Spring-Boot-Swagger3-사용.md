@@ -1,6 +1,6 @@
 ---
 title: 'Spring Boot Swagger 3.0 사용'
-date: '2022-10-25'
+date: '2022-10-31'
 tags: ['Spring', 'Spring Boot', 'Swagger', 'Docs']
 draft: false
 summary: 'Spring Boot Swagger 3.0 사용'
@@ -321,7 +321,105 @@ public class MemberResponse {
 }
 ```
 
+## Swagger 접속 링크
+
+[http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+
+> 계속 `http://localhost:8080/swagger-ui` 이렇게 접근해서 `404`가 발생했습니다.
+>
+> `/index.html`까지 붙여주어야 정상적으로 접근이 가능합니다.
+
+## Spring Security + JWT 추가
+
+`Spring Security` + `JWT`를 사용중이라면 `Authorization` 헤더에 `Bearer <Token>`값을 넣어서 요청을 보내야 합니다.
+
+이를 위해 `SwaggerConfig`에 아래 요소를 추가하여 줍니다.
+
+## SwaggerConfig 전체 로직
+
+```java
+@Configuration
+public class SwaggerConfig {
+
+    private static final String TITLE = "[Spring Swagger] REST API";
+    private static final String DESCRIPTION = "[Spring Swagger] BackEnd REST API Details";
+    private static final String NAME = "[jojiapp]";
+    private static final String BASE_PACKAGE = "com.jojiapp.springswagger";
+    private static final String URL = "https://github.com/jojiapp";
+    private static final String EMAIL = "jojiapp@gmail.com";
+    private static final String VERSION = "1.0";
+    private static final String HEADER = "header";
+    private static final String BEARER = "Bearer ";
+    private static final String SCOPE = "global";
+    private static final String SCOPE_DESCRIPTION = "accessEverything";
+
+    @Bean
+    public Docket api() {
+
+        return new Docket(DocumentationType.OAS_30)
+                .consumes(getConsumeContentTypes())
+                .produces(getProduceContentTypes())
+                .useDefaultResponseMessages(false)
+                .apiInfo(getApiInfo())
+                .securityContexts(List.of(securityContext()))
+                .securitySchemes(List.of(apiKey()))
+                .select()
+                .apis(RequestHandlerSelectors.basePackage(BASE_PACKAGE))
+                .paths(PathSelectors.ant("/**"))
+                .build();
+    }
+
+    private Set<String> getConsumeContentTypes() {
+
+        Set<String> consumes = new HashSet<>();
+        consumes.add(MediaType.APPLICATION_JSON_VALUE);
+        consumes.add(MediaType.APPLICATION_FORM_URLENCODED_VALUE);
+        return consumes;
+    }
+
+    private Set<String> getProduceContentTypes() {
+
+        Set<String> produces = new HashSet<>();
+        produces.add(MediaType.APPLICATION_JSON_VALUE);
+        return produces;
+    }
+
+    private ApiInfo getApiInfo() {
+
+        return new ApiInfoBuilder()
+                .title(TITLE)
+                .description(DESCRIPTION)
+                .contact(new Contact(NAME, URL, EMAIL))
+                .version(VERSION)
+                .build();
+    }
+
+    private SecurityContext securityContext() {
+
+        return SecurityContext.builder()
+                .securityReferences(defaultAuth())
+                .build();
+    }
+
+    private List<SecurityReference> defaultAuth() {
+
+        return List.of(
+                new SecurityReference(
+                        AUTHORIZATION,
+                        new AuthorizationScope[]{new AuthorizationScope(SCOPE, SCOPE_DESCRIPTION)}
+                )
+        );
+    }
+
+    private ApiKey apiKey() {
+
+        return new ApiKey(AUTHORIZATION, BEARER, HEADER);
+    }
+}
+```
+
 ## 참고 사이트
 
 - [Swagger 공식문서](https://swagger.io/docs/specification/about/)
 - [[Swagger UI] Annotation 설명](https://velog.io/@gillog/Swagger-UI-Annotation-%EC%84%A4%EB%AA%85)
+- [[swagger3] 설정 및 authroize button 활성화하기(Bearer 사용)](https://lemontia.tistory.com/1027)
