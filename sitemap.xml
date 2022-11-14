@@ -21,6 +21,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/blog/블로그-이전</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/blog/Git/GitHub_SSH_연결</loc>
   </url>
 
@@ -615,6 +619,10 @@
   </url>
 
   <url>
+    <loc>https://jojiapp.github.io/tags/medium</loc>
+  </url>
+
+  <url>
     <loc>https://jojiapp.github.io/tags/messagesource</loc>
   </url>
 
@@ -732,5 +740,9 @@
 
   <url>
     <loc>https://jojiapp.github.io/tags/멀티-모듈</loc>
+  </url>
+
+  <url>
+    <loc>https://jojiapp.github.io/tags/블로그</loc>
   </url>
 </urlset>
